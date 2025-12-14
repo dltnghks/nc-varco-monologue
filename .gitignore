@@ -104,5 +104,6 @@ $RECYCLE.BIN/
 /[Aa]ssets/[Ss]treamingAssets/Audio/GeneratedSoundBanks/
 *.bnk
 *.wem
+*.wav
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,windows

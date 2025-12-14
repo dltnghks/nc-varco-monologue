@@ -1,0 +1,509 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{CB790050-D1EB-43E1-8F66-0C52F7931D78}",
+    "Language": "SFX",
+    "Hash": "{F8B7591D-3C66-EC84-DB92-EB0ACAD80565}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "65625335",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Sys_Shutdown.wav",
+      "CachePath": "BF/{BF9E94DD-E2C9-BC4C-30B5-87DE1CBE9D5F}.wem"
+     },
+     {
+      "Id": "141226847",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Card_Beep.wav",
+      "CachePath": "63/{637705BF-EC06-C764-8273-A973807F8359}.wem"
+     },
+     {
+      "Id": "267565705",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Footstep_Concrete.wav",
+      "CachePath": "99/{99F6FF86-B0E6-267D-A53A-537400F372B9}.wem"
+     },
+     {
+      "Id": "271290716",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Door_Unlock.wav",
+      "CachePath": "CD/{CD1B4C35-227F-7ECD-BE80-8E46E5DA6008}.wem"
+     },
+     {
+      "Id": "286851484",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Heartbeat.wav",
+      "CachePath": "A2/{A263C009-10F3-5ACB-9D8F-D9E7B90C3AF9}.wem"
+     },
+     {
+      "Id": "305510752",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Monster_Breath.wav",
+      "CachePath": "98/{98BA0FC5-63BD-D34F-96F1-1CA8322882CC}.wem"
+     },
+     {
+      "Id": "360225617",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Drone_Signal.wav",
+      "CachePath": "13/{1360E420-64D4-B7AE-CB63-46889F4BE057}.wem"
+     },
+     {
+      "Id": "381612052",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "AMB_Bunker_Silence.wav",
+      "CachePath": "A5/{A57304BB-3DCB-33A4-E43D-E4B9DB5B876B}.wem"
+     },
+     {
+      "Id": "405163170",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_footsteps-on-concrete-39202.wav",
+      "CachePath": "45/{45504E98-1D46-5FDE-E2D6-587C5D03FD8C}.wem"
+     },
+     {
+      "Id": "476860103",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Door_Slam.wav",
+      "CachePath": "FC/{FCE0282A-FE3A-81E8-D0AE-84FE3FD77072}.wem"
+     },
+     {
+      "Id": "548333672",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Footstep_Glass.wav",
+      "CachePath": "78/{78F8AF07-986F-A577-692E-4C144BAA7F8B}.wem"
+     },
+     {
+      "Id": "612498766",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Swipe_Up.wav",
+      "CachePath": "7B/{7B2C02BE-D953-1551-858D-813624B2CEB5}.wem"
+     },
+     {
+      "Id": "651928919",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Scan_Active.wav",
+      "CachePath": "30/{30C50D1C-0867-488A-C98C-1AADF83A4F02}.wem"
+     },
+     {
+      "Id": "686456979",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_metal-steps-75081.wav",
+      "CachePath": "AD/{ADE21630-32B1-6D49-CD18-4C60E12B753D}.wem"
+     },
+     {
+      "Id": "705431635",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Monster_Scream.wav",
+      "CachePath": "98/{98BA0FC5-63BD-D34F-96F1-1CA8322882CC}.wem"
+     },
+     {
+      "Id": "727493027",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Sys_Boot.wav",
+      "CachePath": "4F/{4FE779BC-DC1B-D0C7-0149-4D1D907144D2}.wem"
+     },
+     {
+      "Id": "739721429",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Warning_Beep.wav",
+      "CachePath": "BA/{BA81684A-0EAC-0726-584A-2AB564E67EF3}.wem"
+     },
+     {
+      "Id": "750607744",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Door_Open_Heavy.wav",
+      "CachePath": "7D/{7D2B18BD-D9F6-F019-B42E-CE483E3FCDD6}.wem"
+     },
+     {
+      "Id": "810883541",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Glitch_Noise.wav",
+      "CachePath": "09/{0905A664-EBBA-8532-E221-FF0021BFF635}.wem"
+     },
+     {
+      "Id": "951084248",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "AMBDsgn_Factory Hall with Large Steam Mashines 02_JSE_SG.wav",
+      "CachePath": "CB/{CB12C5F3-BB66-D50E-7FE2-628BBEAF1B56}.wem"
+     },
+     {
+      "Id": "963425529",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Monster_Run.wav",
+      "CachePath": "AC/{AC7F3248-6E2D-06DC-F1BA-E7CE36E1FE6B}.wem"
+     },
+     {
+      "Id": "1072414887",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Debris_Fall.wav",
+      "CachePath": "A9/{A9C96661-74D3-2FF9-80E6-479721B7F945}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "859388510",
+      "Name": "Play_AMB_Bunker_Silence",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_AMB_Bunker_Silence",
+      "GUID": "{8216A353-F853-4668-8FA9-D63EC2C6302E}",
+      "DurationType": "OneShot",
+      "DurationMin": "297.504",
+      "DurationMax": "297.504",
+      "MediaRefs": [
+       {
+        "Id": "381612052"
+       }
+      ]
+     },
+     {
+      "Id": "1931373960",
+      "Name": "Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG",
+      "GUID": "{893EBDD8-3F95-4AB0-86AA-A03B45285E87}",
+      "DurationType": "OneShot",
+      "DurationMin": "94.4",
+      "DurationMax": "94.4",
+      "MediaRefs": [
+       {
+        "Id": "951084248"
+       }
+      ]
+     },
+     {
+      "Id": "1641089727",
+      "Name": "Play_SFX_Card_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Card_Beep",
+      "GUID": "{6D70384D-0ED4-46B1-AE8D-4D4FB66ECBCD}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0433333",
+      "DurationMax": "1.0433333",
+      "MediaRefs": [
+       {
+        "Id": "141226847"
+       }
+      ]
+     },
+     {
+      "Id": "4224361305",
+      "Name": "Play_SFX_Debris_Fall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Debris_Fall",
+      "GUID": "{BC6999F2-CC5D-493A-9ADB-4D3178604FE9}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.599875",
+      "DurationMax": "1.599875",
+      "MediaRefs": [
+       {
+        "Id": "1072414887"
+       }
+      ]
+     },
+     {
+      "Id": "2199223429",
+      "Name": "Play_SFX_Door_Open_Heavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Open_Heavy",
+      "GUID": "{0BE8CC9F-A757-4B20-8A55-94DF7DA787C7}",
+      "DurationType": "OneShot",
+      "DurationMin": "8.388803",
+      "DurationMax": "8.388803",
+      "MediaRefs": [
+       {
+        "Id": "750607744"
+       }
+      ]
+     },
+     {
+      "Id": "4102901186",
+      "Name": "Play_SFX_Door_Slam",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Slam",
+      "GUID": "{D2B9B44A-D538-4F4B-82D9-E10987658FC4}",
+      "DurationType": "OneShot",
+      "DurationMin": "14.793032",
+      "DurationMax": "14.793032",
+      "MediaRefs": [
+       {
+        "Id": "476860103"
+       }
+      ]
+     },
+     {
+      "Id": "3448000873",
+      "Name": "Play_SFX_Door_Unlock",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Unlock",
+      "GUID": "{5DFADEA8-4684-446D-BBB7-53F30C030965}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.625",
+      "DurationMax": "1.625",
+      "MediaRefs": [
+       {
+        "Id": "271290716"
+       }
+      ]
+     },
+     {
+      "Id": "1336410719",
+      "Name": "Play_SFX_Drone_Signal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Drone_Signal",
+      "GUID": "{00C01674-06FA-4D66-A206-E3F604C671B3}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.08057292",
+      "DurationMax": "0.08057292",
+      "MediaRefs": [
+       {
+        "Id": "360225617"
+       }
+      ]
+     },
+     {
+      "Id": "4169252818",
+      "Name": "Play_SFX_Footstep_Concrete",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footstep_Concrete",
+      "GUID": "{7472A722-3083-4FB5-A59D-AE1BA69573E6}",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "267565705"
+       }
+      ]
+     },
+     {
+      "Id": "2840398577",
+      "Name": "Play_SFX_Footstep_Glass",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footstep_Glass",
+      "GUID": "{E96B966E-48BE-4A3F-8030-B47B05308968}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7133021",
+      "DurationMax": "0.7133021",
+      "MediaRefs": [
+       {
+        "Id": "548333672"
+       }
+      ]
+     },
+     {
+      "Id": "3083963112",
+      "Name": "Play_SFX_Footsteps_Concrete_2",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footsteps_Concrete_2",
+      "GUID": "{E6452409-AFF6-4744-86AB-264AB75A29A2}",
+      "DurationType": "OneShot",
+      "DurationMin": "12.312",
+      "DurationMax": "12.312",
+      "MediaRefs": [
+       {
+        "Id": "405163170"
+       }
+      ]
+     },
+     {
+      "Id": "2186204307",
+      "Name": "Play_SFX_Footsteps_Metal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footsteps_Metal",
+      "GUID": "{C990B005-D4AB-48B8-9138-16590D9018B2}",
+      "DurationType": "OneShot",
+      "DurationMin": "18.096",
+      "DurationMax": "18.096",
+      "MediaRefs": [
+       {
+        "Id": "686456979"
+       }
+      ]
+     },
+     {
+      "Id": "3872142358",
+      "Name": "Play_SFX_Glitch_Noise",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Glitch_Noise",
+      "GUID": "{74A50078-183A-4E69-9405-D55A9C54F029}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.5",
+      "DurationMax": "4.5",
+      "MediaRefs": [
+       {
+        "Id": "810883541"
+       }
+      ]
+     },
+     {
+      "Id": "4054446234",
+      "Name": "Play_SFX_Heartbeat",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Heartbeat",
+      "GUID": "{B39E34AF-4B69-4676-B62B-04F3AB4488E7}",
+      "DurationType": "OneShot",
+      "DurationMin": "14.506667",
+      "DurationMax": "14.506667",
+      "MediaRefs": [
+       {
+        "Id": "286851484"
+       }
+      ]
+     },
+     {
+      "Id": "833084561",
+      "Name": "Play_SFX_Monster_Breath",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Breath",
+      "GUID": "{7D1FEE0E-7041-465F-A8B8-7691F59F2C01}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.72",
+      "DurationMax": "1.72",
+      "MediaRefs": [
+       {
+        "Id": "305510752"
+       }
+      ]
+     },
+     {
+      "Id": "2528789258",
+      "Name": "Play_SFX_Monster_Run",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Run",
+      "GUID": "{8BB58598-291C-4CF9-BF6C-62A1779DE80E}",
+      "DurationType": "OneShot",
+      "DurationMin": "8.932813",
+      "DurationMax": "8.932813",
+      "MediaRefs": [
+       {
+        "Id": "963425529"
+       }
+      ]
+     },
+     {
+      "Id": "4270445848",
+      "Name": "Play_SFX_Monster_Scream",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Scream",
+      "GUID": "{CCF0154A-08D8-4868-87C4-DDE9485D6C34}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.72",
+      "DurationMax": "1.72",
+      "MediaRefs": [
+       {
+        "Id": "705431635"
+       }
+      ]
+     },
+     {
+      "Id": "3053511078",
+      "Name": "Play_SFX_Scan_Active",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Scan_Active",
+      "GUID": "{B0E7FF04-A173-4BFA-B928-2BB8753A2617}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.810698",
+      "DurationMax": "4.810698",
+      "MediaRefs": [
+       {
+        "Id": "651928919"
+       }
+      ]
+     },
+     {
+      "Id": "4160029712",
+      "Name": "Play_SFX_Swipe_Up",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Swipe_Up",
+      "GUID": "{A369B83C-C123-4D78-8727-14E7A7445FBA}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.8243021",
+      "DurationMax": "1.8243021",
+      "MediaRefs": [
+       {
+        "Id": "612498766"
+       }
+      ]
+     },
+     {
+      "Id": "3328004224",
+      "Name": "Play_SFX_Sys_Boot",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Sys_Boot",
+      "GUID": "{E43C19E9-0D14-4E34-8D83-94049A06767E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.4375",
+      "DurationMax": "1.4375",
+      "MediaRefs": [
+       {
+        "Id": "727493027"
+       }
+      ]
+     },
+     {
+      "Id": "1729752934",
+      "Name": "Play_SFX_Sys_Shutdown",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Sys_Shutdown",
+      "GUID": "{31121CBF-04F0-44B6-BEFC-85A98997C07D}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3573542",
+      "DurationMax": "1.3573542",
+      "MediaRefs": [
+       {
+        "Id": "65625335"
+       }
+      ]
+     },
+     {
+      "Id": "1560004293",
+      "Name": "Play_SFX_Warning_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Warning_Beep",
+      "GUID": "{049CFC2B-4578-414D-85B5-6EAE12234F32}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0625",
+      "DurationMax": "2.0625",
+      "MediaRefs": [
+       {
+        "Id": "739721429"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{26482B83-E042-3B2A-789E-208D55C61FB3}"
+ }
+}

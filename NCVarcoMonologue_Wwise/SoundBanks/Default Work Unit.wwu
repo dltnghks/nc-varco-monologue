@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5746F822-55EA-4639-BCFD-062DFBCBAE15}" SchemaVersion="133">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{5746F822-55EA-4639-BCFD-062DFBCBAE15}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{CB790050-D1EB-43E1-8F66-0C52F7931D78}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_SFX_Warning_Beep" ID="{049CFC2B-4578-414D-85B5-6EAE12234F32}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Door_Unlock" ID="{5DFADEA8-4684-446D-BBB7-53F30C030965}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Sys_Shutdown" ID="{31121CBF-04F0-44B6-BEFC-85A98997C07D}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Monster_Breath" ID="{7D1FEE0E-7041-465F-A8B8-7691F59F2C01}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_AMB_Bunker_Silence" ID="{8216A353-F853-4668-8FA9-D63EC2C6302E}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Heartbeat" ID="{B39E34AF-4B69-4676-B62B-04F3AB4488E7}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Card_Beep" ID="{6D70384D-0ED4-46B1-AE8D-4D4FB66ECBCD}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Footsteps_Concrete_2" ID="{E6452409-AFF6-4744-86AB-264AB75A29A2}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Monster_Scream" ID="{CCF0154A-08D8-4868-87C4-DDE9485D6C34}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Footsteps_Metal" ID="{C990B005-D4AB-48B8-9138-16590D9018B2}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Debris_Fall" ID="{BC6999F2-CC5D-493A-9ADB-4D3178604FE9}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Footstep_Glass" ID="{E96B966E-48BE-4A3F-8030-B47B05308968}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG" ID="{893EBDD8-3F95-4AB0-86AA-A03B45285E87}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Door_Open_Heavy" ID="{0BE8CC9F-A757-4B20-8A55-94DF7DA787C7}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Scan_Active" ID="{B0E7FF04-A173-4BFA-B928-2BB8753A2617}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Monster_Run" ID="{8BB58598-291C-4CF9-BF6C-62A1779DE80E}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Drone_Signal" ID="{00C01674-06FA-4D66-A206-E3F604C671B3}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Swipe_Up" ID="{A369B83C-C123-4D78-8727-14E7A7445FBA}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Sys_Boot" ID="{E43C19E9-0D14-4E34-8D83-94049A06767E}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Glitch_Noise" ID="{74A50078-183A-4E69-9405-D55A9C54F029}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Door_Slam" ID="{D2B9B44A-D538-4F4B-82D9-E10987658FC4}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Footstep_Concrete" ID="{7472A722-3083-4FB5-A59D-AE1BA69573E6}" WorkUnitID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
