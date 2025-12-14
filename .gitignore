@@ -100,4 +100,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Wwise Generated Banks 제외
+/[Aa]ssets/[Ss]treamingAssets/Audio/GeneratedSoundBanks/
+*.bnk
+*.wem
+
 # End of https://www.toptal.com/developers/gitignore/api/unity,windows
