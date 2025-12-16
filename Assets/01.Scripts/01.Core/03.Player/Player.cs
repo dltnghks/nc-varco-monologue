@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     [Tooltip("Movement speed in meters per second.")]
     [SerializeField] private FloatVariable moveSpeed;
     [SerializeField] private FloatVariable playerHP;
+
+    [Header("Player Inventory")]
+    [SerializeField] private InventoryObject inventory;
     
     [Header("Tilt-based Rotation (New)")]
     [Tooltip("How fast the player rotates when tilting the device.")]
@@ -196,10 +199,21 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Interaction triggered!");
 
+        // Draw a debug ray to visualize the interaction raycast
+        // The ray will be red and visible for 1 second in the Scene view.
+        Debug.DrawRay(transform.position, transform.forward * 3.0f, Color.red, 1.0f);
+
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, 3.0f))
         {
             Debug.Log("Player is facing: " + hit.collider.name);
+            IInteractObject interactObject = hit.collider.GetComponent<IInteractObject>();
+            if(interactObject == null)
+            {
+                return;
+            }
+
+            interactObject.Interaction();
         }
     }
 }
