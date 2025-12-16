@@ -1,0 +1,48 @@
+Event	ID	Name			Wwise Object Path	Notes
+	833084561	Play_SFX_Monster_Breath			\Default Work Unit\Play_SFX_Monster_Breath	
+	859388510	Play_AMB_Bunker_Silence			\Default Work Unit\Play_AMB_Bunker_Silence	
+	1336410719	Play_SFX_Drone_Signal			\Default Work Unit\Play_SFX_Drone_Signal	
+	1560004293	Play_SFX_Warning_Beep			\Default Work Unit\Play_SFX_Warning_Beep	
+	1641089727	Play_SFX_Card_Beep			\Default Work Unit\Play_SFX_Card_Beep	
+	1729752934	Play_SFX_Sys_Shutdown			\Default Work Unit\Play_SFX_Sys_Shutdown	
+	1931373960	Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG			\Default Work Unit\Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG	
+	2186204307	Play_SFX_Footsteps_Metal			\Default Work Unit\Play_SFX_Footsteps_Metal	
+	2199223429	Play_SFX_Door_Open_Heavy			\Default Work Unit\Play_SFX_Door_Open_Heavy	
+	2528789258	Play_SFX_Monster_Run			\Default Work Unit\Play_SFX_Monster_Run	
+	2840398577	Play_SFX_Footstep_Glass			\Default Work Unit\Play_SFX_Footstep_Glass	
+	3053511078	Play_SFX_Scan_Active			\Default Work Unit\Play_SFX_Scan_Active	
+	3083963112	Play_SFX_Footsteps_Concrete_2			\Default Work Unit\Play_SFX_Footsteps_Concrete_2	
+	3328004224	Play_SFX_Sys_Boot			\Default Work Unit\Play_SFX_Sys_Boot	
+	3448000873	Play_SFX_Door_Unlock			\Default Work Unit\Play_SFX_Door_Unlock	
+	3872142358	Play_SFX_Glitch_Noise			\Default Work Unit\Play_SFX_Glitch_Noise	
+	4054446234	Play_SFX_Heartbeat			\Default Work Unit\Play_SFX_Heartbeat	
+	4102901186	Play_SFX_Door_Slam			\Default Work Unit\Play_SFX_Door_Slam	
+	4160029712	Play_SFX_Swipe_Up			\Default Work Unit\Play_SFX_Swipe_Up	
+	4169252818	Play_SFX_Footstep_Concrete			\Default Work Unit\Play_SFX_Footstep_Concrete	
+	4224361305	Play_SFX_Debris_Fall			\Default Work Unit\Play_SFX_Debris_Fall	
+	4270445848	Play_SFX_Monster_Scream			\Default Work Unit\Play_SFX_Monster_Scream	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	65625335	SFX_Sys_Shutdown	.cache\BF\{BF9E94DD-E2C9-BC4C-30B5-87DE1CBE9D5F}.wem		\Containers\Default Work Unit\SFX\SFX_Sys_Shutdown		260708
+	141226847	SFX_Card_Beep	.cache\63\{637705BF-EC06-C764-8273-A973807F8359}.wem		\Containers\Default Work Unit\SFX\SFX_Card_Beep		200416
+	267565705	SFX_Footstep_Concrete	.cache\99\{99F6FF86-B0E6-267D-A53A-537400F372B9}.wem		\Containers\Default Work Unit\SFX\SFX_Footstep_Concrete		384096
+	271290716	SFX_Door_Unlock	.cache\CD\{CD1B4C35-227F-7ECD-BE80-8E46E5DA6008}.wem		\Containers\Default Work Unit\SFX\SFX_Door_Unlock		312096
+	286851484	SFX_Heartbeat	.cache\A2\{A263C009-10F3-5ACB-9D8F-D9E7B90C3AF9}.wem		\Containers\Default Work Unit\SFX\SFX_Heartbeat		2785376
+	305510752	SFX_Monster_Breath	.cache\98\{98BA0FC5-63BD-D34F-96F1-1CA8322882CC}.wem		\Containers\Default Work Unit\SFX\SFX_Monster_Breath		330336
+	360225617	SFX_Drone_Signal	.cache\13\{1360E420-64D4-B7AE-CB63-46889F4BE057}.wem		\Containers\Default Work Unit\SFX\SFX_Drone_Signal		15564
+	381612052	AMB_Bunker_Silence	.cache\A5\{A57304BB-3DCB-33A4-E43D-E4B9DB5B876B}.wem		\Containers\Default Work Unit\AMB\AMB_Bunker_Silence		57120864
+	405163170	SFX_Footsteps_Concrete_2	.cache\45\{45504E98-1D46-5FDE-E2D6-587C5D03FD8C}.wem		\Containers\Default Work Unit\SFX\SFX_Footsteps_Concrete_2		1182048
+	476860103	SFX_Door_Slam	.cache\FC\{FCE0282A-FE3A-81E8-D0AE-84FE3FD77072}.wem		\Containers\Default Work Unit\SFX\SFX_Door_Slam		2840356
+	548333672	SFX_Footstep_Glass	.cache\78\{78F8AF07-986F-A577-692E-4C144BAA7F8B}.wem		\Containers\Default Work Unit\SFX\SFX_Footstep_Glass		68572
+	612498766	SFX_Swipe_Up	.cache\7B\{7B2C02BE-D953-1551-858D-813624B2CEB5}.wem		\Containers\Default Work Unit\SFX\SFX_Swipe_Up		350360
+	651928919	SFX_Scan_Active	.cache\30\{30C50D1C-0867-488A-C98C-1AADF83A4F02}.wem		\Containers\Default Work Unit\SFX\SFX_Scan_Active		923748
+	686456979	SFX_Footsteps_Metal	.cache\AD\{ADE21630-32B1-6D49-CD18-4C60E12B753D}.wem		\Containers\Default Work Unit\SFX\SFX_Footsteps_Metal		1737312
+	705431635	SFX_Monster_Scream	.cache\98\{98BA0FC5-63BD-D34F-96F1-1CA8322882CC}.wem		\Containers\Default Work Unit\SFX\SFX_Monster_Scream		330336
+	727493027	SFX_Sys_Boot	.cache\4F\{4FE779BC-DC1B-D0C7-0149-4D1D907144D2}.wem		\Containers\Default Work Unit\SFX\SFX_Sys_Boot		276096
+	739721429	SFX_Warning_Beep	.cache\BA\{BA81684A-0EAC-0726-584A-2AB564E67EF3}.wem		\Containers\Default Work Unit\SFX\SFX_Warning_Beep		396096
+	750607744	SFX_Door_Open_Heavy	.cache\7D\{7D2B18BD-D9F6-F019-B42E-CE483E3FCDD6}.wem		\Containers\Default Work Unit\SFX\SFX_Door_Open_Heavy		1610744
+	810883541	SFX_Glitch_Noise	.cache\09\{0905A664-EBBA-8532-E221-FF0021BFF635}.wem		\Containers\Default Work Unit\SFX\SFX_Glitch_Noise		864096
+	951084248	AMB_Dsgn_Factory Hall with Large Steam Mashines 02_JSE_SG	.cache\CB\{CB12C5F3-BB66-D50E-7FE2-628BBEAF1B56}.wem		\Containers\Default Work Unit\AMB\AMB_Dsgn_Factory Hall with Large Steam Mashines 02_JSE_SG		18124896
+	963425529	SFX_Monster_Run	.cache\AC\{AC7F3248-6E2D-06DC-F1BA-E7CE36E1FE6B}.wem		\Containers\Default Work Unit\SFX\SFX_Monster_Run		1715196
+	1072414887	SFX_Debris_Fall	.cache\A9\{A9C96661-74D3-2FF9-80E6-479721B7F945}.wem		\Containers\Default Work Unit\SFX\SFX_Debris_Fall		307272
+
