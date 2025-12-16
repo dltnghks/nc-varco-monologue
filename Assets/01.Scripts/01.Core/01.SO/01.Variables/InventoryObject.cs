@@ -27,4 +27,19 @@ public class InventoryObject : ScriptableObject
             Container.Add(new InventorySlot(_item, _amount));
         }
     }
+
+    public bool CheckItem(ItemData _item)
+    {
+        bool hasItem = false;
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (Container[i].item == _item)
+            {
+                hasItem = true;
+                break;
+            }
+        }
+
+        return hasItem;
+    }
 }
