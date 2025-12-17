@@ -123,3 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: aef63b3664fc10746bd919e4841475b6, type: 2}
   playerInventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
+  eventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
+  eventToRaise: 2

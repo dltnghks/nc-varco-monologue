@@ -6,10 +6,20 @@ public class ItemPickup : MonoBehaviour, IInteractObject
     public ItemData itemData; // 위에서 만든 'KeyCard_Red' SO를 여기에 드래그
     public InventoryObject playerInventory; // 'PlayerInventory' SO를 여기에 드래그
 
+    [Header("이벤트 채널")]
+    public GameplayEventChannel eventChannel;
+    public EInGameEvent eventToRaise;
+
+
     // 외부(플레이어)에서 호출할 함수
     public void Pickup()
     {
         playerInventory.AddItem(itemData, 1);
+
+        if (eventChannel != null)
+        {
+            eventChannel.RaiseEvent(eventToRaise);
+        }
     
         Destroy(gameObject);
     }
