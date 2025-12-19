@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        inventory.Container.Clear();
     }
 
     void Start()

@@ -7,15 +7,16 @@ public class Enterence : MonoBehaviour, IInteractObject
 
     [Header("이벤트 채널")]
     [SerializeField] private TutorialEventChannel tutorialChannel;
-    [SerializeField] private ETutorialEvent eventOnInteract;
-    [SerializeField] private ETutorialEvent eventOnOpen;
+    [SerializeField] private ETutorialEvent OnInteract_E;
+    [SerializeField] private ETutorialEvent OnOpen_E;
 
     // 외부(플레이어)에서 호출할 함수
     public void Open()
     {
         if (tutorialChannel != null)
         {
-            tutorialChannel.RaiseEvent(eventOnOpen);
+            tutorialChannel.RaiseEvent(OnOpen_E);
+            
         }
         Destroy(gameObject);
     }
@@ -29,7 +30,7 @@ public class Enterence : MonoBehaviour, IInteractObject
     {
         if (tutorialChannel != null)
         {
-            tutorialChannel.RaiseEvent(eventOnInteract);
+            tutorialChannel.RaiseEvent(OnInteract_E);
         }
 
         if (!CanInteraction())

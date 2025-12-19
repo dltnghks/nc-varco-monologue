@@ -4,14 +4,15 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     [Header("Listening")]
-    [SerializeField] private TutorialEventChannel gameplayChannel;
+    [SerializeField] private TutorialEventChannel tutorialEventChannel;
     [SerializeField] private TutorialSequence tutorialSequence;
+    private bool[] completedTutorial = new bool[(int)ETutorialEvent.End];
 
     private WwiseSoundEmitter soundEmitter;
     private int currentStepIndex = -1;
     private TutorialStep currentTutorialStep;
 
-    void Start()
+    public void Awake()
     {
         StartTutorial();
     }
@@ -19,15 +20,16 @@ public class TutorialManager : MonoBehaviour
     private void OnEnable()
     {
         // 채널 구독
-        if (gameplayChannel != null)
-            gameplayChannel.OnEventRaised += HandleGameplayEvent;
+        if (tutorialEventChannel != null)
+            tutorialEventChannel.OnEventRaised += HandleGameplayEvent;
+
     }
 
     private void OnDisable()
     {
         // 채널 구독 해지
-        if (gameplayChannel != null)
-            gameplayChannel.OnEventRaised -= HandleGameplayEvent;
+        if (tutorialEventChannel != null)
+            tutorialEventChannel.OnEventRaised -= HandleGameplayEvent;
     }
 
     private void StartTutorial()
@@ -47,18 +49,38 @@ public class TutorialManager : MonoBehaviour
 
         currentTutorialStep = tutorialSequence.tutorialSteps[currentStepIndex];
         Debug.Log($"Tutorial Step {currentStepIndex + 1}: Loaded {currentTutorialStep.name}");
-        Debug.Log($"Waiting for event: {currentTutorialStep.TutorialID}");
+
+        if (currentTutorialStep.AutomateNextEvent)
+        {
+            Debug.Log($"Automate next event: {currentTutorialStep.TutorialID}");
+            HandleGameplayEvent(currentTutorialStep.TutorialID);
+        }
+        else
+        {
+            Debug.Log($"Waiting for event: {currentTutorialStep.TutorialID}");
+        }
     }
 
     private void HandleGameplayEvent(ETutorialEvent eventKey)
     {
-        if (currentTutorialStep != null && eventKey == currentTutorialStep.TutorialID)
+        if(currentStepIndex != (int)eventKey)
         {
-            PlayVoice();
-
-            Debug.Log($"Tutorial Step {currentStepIndex + 1} completed by event: {eventKey}");
-            AdvanceTutorial();
+            Debug.LogWarning($"순서에 맞지 않습니다. currentStepIndex : {currentStepIndex}, eventKey : {eventKey}");
+            return; 
         }
+
+        if(completedTutorial[(int)eventKey]) {
+            Debug.Log($"이미 수행한 튜토리얼입니다. : {eventKey}");
+            return;
+        }
+
+
+        completedTutorial[(int)eventKey] = true;
+
+        PlayVoice(currentTutorialStep.AudioData);
+
+        Debug.Log($"Tutorial Step {currentStepIndex + 1} completed by event: {eventKey}");
+        AdvanceTutorial();
     }
 
     private void AdvanceTutorial()
@@ -67,11 +89,11 @@ public class TutorialManager : MonoBehaviour
         LoadCurrentStep();
     }
 
-    private void PlayVoice()
+    private void PlayVoice(WwiseAudioData audioData)
     {
         if(currentTutorialStep == null) return;
         if(soundEmitter == null) return;
 
-        soundEmitter.PlaySequence(currentTutorialStep.AudioData);
+        soundEmitter.PlaySequence(audioData);
     }
 }

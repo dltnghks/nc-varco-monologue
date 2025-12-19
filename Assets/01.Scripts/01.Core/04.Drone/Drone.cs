@@ -3,11 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Drone : MonoBehaviour
 {
+    [Header("Tutorial Event Channel")]
     [SerializeField] private TutorialEventChannel tutorialEventChannel;
-    [SerializeField] private Transform playerTransform;
+    [SerializeField] private ETutorialEvent OnPlayerAimingAtDrone_E;
     private Rigidbody rb;
 
     [Header("Position Offset")]
+    [SerializeField] private Transform playerTransform;
     [SerializeField] private Vector3 offset = new Vector3(0, 2, -3);
 
     [Header("Movement Settings")]
@@ -15,25 +17,25 @@ public class Drone : MonoBehaviour
     [SerializeField] private LayerMask obstacleLayerMask;
     [SerializeField] private float wallDistance = 1.5f; // Distance to keep from walls
 
-    // For a smooth, floating effect, set the Rigidbody's 'Drag' to ~2 and 'Angular Drag' to ~1 in the Inspector.
+
+
+
 
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
-        // Ensure the Rigidbody does not use gravity to allow for free floating.
         rb.useGravity = false;
-        tutorialEventChannel.RaiseEvent(ETutorialEvent.AimToDrone_S);
     }
 
     public void Update()
     {
-        // Always look at the player
         transform.LookAt(playerTransform);
     }
 
     public void FixedUpdate()
     {
         HandleMovement();
+        IsPlayerAimingAtDrone();
     }
 
     private void HandleMovement()
@@ -63,5 +65,30 @@ public class Drone : MonoBehaviour
         }
 
         rb.MovePosition(transform.position + dir * followSpeed * Time.deltaTime);
+    }
+
+    // 플레이어가 드론을 바라보는지 확인하는 함수
+    public bool IsPlayerAimingAtDrone()
+    {
+        // 플레이어의 정면 방향 벡터
+        Vector3 playerForward = playerTransform.forward;
+        // 플레이어에서 드론으로 향하는 방향 벡터
+        Vector3 directionToDrone = transform.position - playerTransform.position;
+
+        // Y축(높이) 차이를 무시하기 위해 두 벡터를 XZ 평면에 투영합니다.
+        playerForward.y = 0;
+        directionToDrone.y = 0;
+
+        // 두 벡터 사이의 각도를 계산합니다.
+        float angle = Vector3.Angle(playerForward, directionToDrone);
+
+        // 각도가 5도 미만이면 플레이어가 드론을 바라보는 것으로 간주합니다.
+        if(angle < 5f)
+        {
+            tutorialEventChannel.RaiseEvent(OnPlayerAimingAtDrone_E);
+            return true;
+        }
+
+        return false;
     }
 }

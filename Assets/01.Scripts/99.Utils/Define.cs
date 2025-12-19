@@ -11,6 +11,7 @@ public enum ETutorialEvent
     PickupKey_E,
     OpenDoor_S,
     OpenDoor_E,
+    End,
 }
 
 public enum ESoundEvent

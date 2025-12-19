@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: T00_GameStart_E
   m_EditorClassIdentifier: 
   TutorialID: 1
+  AutomateNextEvent: 1
   TutorialText: 
-  Voice:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+  AudioData: {fileID: 0}
+  DelayBetweenEvents: 0.5

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d98aff3909c0f49b7d7f6af49d787b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplayChannel: {fileID: 0}
+  tutorialEventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
   tutorialSequence: {fileID: 11400000, guid: da515dc96dbdd1b4b8829058339c34bc, type: 2}
 --- !u!1 &1915615311819742315
 GameObject:
@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialEventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
+  OnGameStart_S: 0
+  OnPlayerAimingAtDrone_E: 3
   playerTransform: {fileID: 0}
   offset: {x: 2, y: 1, z: 0}
   followSpeed: 5

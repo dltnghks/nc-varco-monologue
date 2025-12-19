@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120a27e1ce005e446b6d844bd1c51274, type: 3}
   m_Name: TutorialEventChannel
   m_EditorClassIdentifier: 
-  showDebugLog: 1
+  showDebugLog: 0

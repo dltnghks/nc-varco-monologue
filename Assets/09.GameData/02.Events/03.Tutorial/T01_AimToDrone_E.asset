@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: T01_AimToDrone_E
   m_EditorClassIdentifier: 
   TutorialID: 2
+  AutomateNextEvent: 0
   TutorialText: 
-  Voice:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+  AudioData: {fileID: 0}
+  DelayBetweenEvents: 0.5

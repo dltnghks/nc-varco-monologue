@@ -127,29 +127,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1049639340191418068, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1693185707649979366, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2348532308282356028, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
       propertyPath: m_Name
       value: StartingRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 2569565874023625182, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223079889435558599, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8481233477280910322, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8795820650437675523, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -661,8 +641,8 @@ MonoBehaviour:
   requirementItem: {fileID: 11400000, guid: aef63b3664fc10746bd919e4841475b6, type: 2}
   playerInventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
   tutorialChannel: {fileID: 0}
-  eventOnInteract: 0
-  eventOnOpen: 0
+  OnInteract_E: 0
+  OnOpen_E: 0
 --- !u!33 &2538649396882768951
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -789,30 +769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone
       objectReference: {fileID: 0}
-    - target: {fileID: 3165768662614571711, guid: e1b1a3d050eaa6d4b86847287e174914, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3165768662614571711, guid: e1b1a3d050eaa6d4b86847287e174914, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929611536294388667, guid: e1b1a3d050eaa6d4b86847287e174914, type: 3}
-      propertyPath: offset.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929611536294388667, guid: e1b1a3d050eaa6d4b86847287e174914, type: 3}
-      propertyPath: offset.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6929611536294388667, guid: e1b1a3d050eaa6d4b86847287e174914, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 846027508}
-    - target: {fileID: 6929611536294388667, guid: e1b1a3d050eaa6d4b86847287e174914, type: 3}
-      propertyPath: obstacleLayerMask.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 7706435151298717593, guid: e1b1a3d050eaa6d4b86847287e174914, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.02

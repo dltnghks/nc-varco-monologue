@@ -6,6 +6,7 @@ public class TutorialStep : ScriptableObject
 {
     [Header("튜토리얼 이벤트")] 
     public ETutorialEvent TutorialID; // ID같은 느낌?
+    public bool AutomateNextEvent = false;
 
     [Header("내용")]
     [TextArea(3, 5)] 

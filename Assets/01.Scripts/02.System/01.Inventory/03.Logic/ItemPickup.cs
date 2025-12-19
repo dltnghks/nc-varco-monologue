@@ -7,8 +7,8 @@ public class ItemPickup : MonoBehaviour, IInteractObject
     public InventoryObject playerInventory; // 'PlayerInventory' SO를 여기에 드래그
 
     [Header("이벤트 채널")]
-    public TutorialEventChannel eventChannel;
-    public ETutorialEvent eventToRaise;
+    public TutorialEventChannel tutorialEventChannel;
+    public ETutorialEvent OnPickUp_E;
 
 
     // 외부(플레이어)에서 호출할 함수
@@ -16,9 +16,9 @@ public class ItemPickup : MonoBehaviour, IInteractObject
     {
         playerInventory.AddItem(itemData, 1);
 
-        if (eventChannel != null)
+        if (tutorialEventChannel != null)
         {
-            eventChannel.RaiseEvent(eventToRaise);
+            tutorialEventChannel.RaiseEvent(OnPickUp_E);
         }
     
         Destroy(gameObject);
