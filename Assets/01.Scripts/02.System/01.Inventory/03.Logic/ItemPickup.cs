@@ -7,8 +7,8 @@ public class ItemPickup : MonoBehaviour, IInteractObject
     public InventoryObject playerInventory; // 'PlayerInventory' SO를 여기에 드래그
 
     [Header("이벤트 채널")]
-    public GameplayEventChannel eventChannel;
-    public EInGameEvent eventToRaise;
+    public TutorialEventChannel eventChannel;
+    public ETutorialEvent eventToRaise;
 
 
     // 외부(플레이어)에서 호출할 함수

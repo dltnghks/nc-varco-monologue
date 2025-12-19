@@ -4,10 +4,10 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     [Header("Listening")]
-    [SerializeField] private GameplayEventChannel gameplayChannel;
-
+    [SerializeField] private TutorialEventChannel gameplayChannel;
     [SerializeField] private TutorialSequence tutorialSequence;
 
+    private WwiseSoundEmitter soundEmitter;
     private int currentStepIndex = -1;
     private TutorialStep currentTutorialStep;
 
@@ -18,14 +18,14 @@ public class TutorialManager : MonoBehaviour
 
     private void OnEnable()
     {
-        // 채널 구독 (전화기 켬)
+        // 채널 구독
         if (gameplayChannel != null)
             gameplayChannel.OnEventRaised += HandleGameplayEvent;
     }
 
     private void OnDisable()
     {
-        // 채널 구독 해지 (전화기 끔) - 필수! 메모리 누수 방지
+        // 채널 구독 해지
         if (gameplayChannel != null)
             gameplayChannel.OnEventRaised -= HandleGameplayEvent;
     }
@@ -47,13 +47,15 @@ public class TutorialManager : MonoBehaviour
 
         currentTutorialStep = tutorialSequence.tutorialSteps[currentStepIndex];
         Debug.Log($"Tutorial Step {currentStepIndex + 1}: Loaded {currentTutorialStep.name}");
-        Debug.Log($"Waiting for event: {currentTutorialStep.completionEvent}");
+        Debug.Log($"Waiting for event: {currentTutorialStep.TutorialID}");
     }
 
-    private void HandleGameplayEvent(EInGameEvent eventKey)
+    private void HandleGameplayEvent(ETutorialEvent eventKey)
     {
-        if (currentTutorialStep != null && eventKey == currentTutorialStep.completionEvent)
+        if (currentTutorialStep != null && eventKey == currentTutorialStep.TutorialID)
         {
+            PlayVoice();
+
             Debug.Log($"Tutorial Step {currentStepIndex + 1} completed by event: {eventKey}");
             AdvanceTutorial();
         }
@@ -63,5 +65,13 @@ public class TutorialManager : MonoBehaviour
     {
         currentStepIndex++;
         LoadCurrentStep();
+    }
+
+    private void PlayVoice()
+    {
+        if(currentTutorialStep == null) return;
+        if(soundEmitter == null) return;
+
+        soundEmitter.PlaySequence(currentTutorialStep.AudioData);
     }
 }

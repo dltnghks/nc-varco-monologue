@@ -184,7 +184,6 @@ GameObject:
   - component: {fileID: 4412728156321314789}
   - component: {fileID: 920322291368198976}
   - component: {fileID: 8738953996875363207}
-  - component: {fileID: 3136729015694407952}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -296,13 +295,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cd8f0165c1ed1438bdcfb2779cf184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerActionChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
   moveSpeed: {fileID: 11400000, guid: 42a4ed401c13259468a7e5fb1fd8db93, type: 2}
   playerHP: {fileID: 11400000, guid: 2bc085d94d7da0d4ca77d328f0946671, type: 2}
   inventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
   tiltRotationSpeed: 300
   tiltDeadZone: 0.05
   holdToMoveTime: 0.185
+  gazeTag: Drone
+  gazeDistance: 5
 --- !u!54 &8738953996875363207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -330,19 +330,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &3136729015694407952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8558679401228940498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f93a46f3fd9fa4abd7f4cef3bab37c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footstepEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}

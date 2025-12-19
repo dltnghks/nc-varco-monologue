@@ -1,16 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "new step", menuName = "Tutorial/TutorialStep")]
 public class TutorialStep : ScriptableObject
 {
-    [Header("완료 조건")]
-    [Tooltip("이 단계를 완료시키기 위해 필요한 게임 이벤트입니다.")]
-    public EInGameEvent completionEvent;
+    [Header("튜토리얼 이벤트")] 
+    public ETutorialEvent TutorialID; // ID같은 느낌?
 
     [Header("내용")]
     [TextArea(3, 5)] 
-    public string tutorialText;
+    public string TutorialText;
 
-    [Tooltip("튜토리얼 오디오 이벤트")]
-    public AK.Wwise.Event voiceEvent;
+    [Header("나레이션")]
+    public WwiseAudioData AudioData;
+
+    [Tooltip("각 이벤트 사이의 딜레이 (초)")]
+    public float DelayBetweenEvents = 0.5f;
 }
