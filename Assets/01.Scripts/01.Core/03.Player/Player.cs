@@ -4,6 +4,7 @@ using UnityEngine;
 // - Gyroscope for rotation.
 // - Touch to move forward.
 // - Double-tap to interact.
+// - Second finger touch to run.
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class Player : MonoBehaviour
     [Header("Mobile Touch Controls")]
     [Tooltip("Time in seconds to hold a touch before it counts as movement.")]
     [SerializeField] private float holdToMoveTime = 0.2f;
+    [Tooltip("Multiplier for the movement speed when running.")]
+    [SerializeField] private float runSpeedMultiplier = 2.0f;
 
     private Rigidbody rb;
     private bool gyroSupported;
@@ -34,6 +37,7 @@ public class Player : MonoBehaviour
     private float mouseRotationInput = 0f;
     private float gyroRotationInput = 0f;
     private bool moveForwardInput = false;
+    private bool runInput = false;
 
     // Touch hold state
     private float touchStartTime = 0f;
@@ -74,6 +78,11 @@ public class Player : MonoBehaviour
 
     private void HandleInputs()
     {
+        // Reset per-frame input state
+        moveForwardInput = false;
+        runInput = false;
+        gyroRotationInput = 0f;
+
 #if UNITY_IOS || UNITY_ANDROID
         // Gyro rotation
         if (gyroSupported)
@@ -83,61 +92,58 @@ public class Player : MonoBehaviour
             {
                 gyroRotationInput = tilt * tiltRotationSpeed;
             }
-            else
-            {
-                gyroRotationInput = 0f;
-            }
         }
         
-        // Touch movement and interaction
+        // Touch movement, interaction, and running
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
+            // Handle double-tap for interaction separately
+            if (touch.phase == TouchPhase.Began && touch.tapCount == 2)
+            {
+                Interact();
+                isHolding = false; // Reset hold state to prevent movement
+                return; // Exit to avoid processing movement on a double-tap
+            }
+
+            // Handle holding for movement
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    if (touch.tapCount == 2)
-                    {
-                        // This is a double-tap for interaction.
-                        Interact();
-                        isHolding = false;
-                        moveForwardInput = false;
-                    }
-                    else
-                    {
-                        // This is a single tap, which could be the start of a hold.
-                        touchStartTime = Time.time;
-                        isHolding = false;
-                        moveForwardInput = false;
-                    }
+                    touchStartTime = Time.time;
+                    isHolding = false;
                     break;
-
+                
                 case TouchPhase.Stationary:
                 case TouchPhase.Moved:
-                    // The touch is being held down. Check if the hold time has passed.
                     if (!isHolding && (Time.time - touchStartTime) > holdToMoveTime)
                     {
                         isHolding = true;
                     }
-                    
-                    // If we are in a recognized "hold" state, then we should move.
-                    moveForwardInput = isHolding;
                     break;
-
+                
                 case TouchPhase.Ended:
                 case TouchPhase.Canceled:
-                    // The touch has been released. Stop holding and moving.
                     isHolding = false;
-                    moveForwardInput = false;
                     break;
+            }
+
+            // If we are in a recognized "hold" state, we should move.
+            if (isHolding)
+            {
+                moveForwardInput = true;
+                // If moving and a second finger is down, we are running.
+                if (Input.touchCount > 1)
+                {
+                    runInput = true;
+                }
             }
         }
         else
         {
-            // No touches on the screen.
+            // No touches on the screen, so not holding.
             isHolding = false;
-            moveForwardInput = false;
         }
 #else
         // PC keyboard and mouse input
@@ -155,9 +161,10 @@ public class Player : MonoBehaviour
         // Keyboard rotation
         keyboardRotationInput = Input.GetAxis("Horizontal") * 50f;
         
-        // Movement
+        // Movement and Running
         moveForwardInput = Input.GetMouseButton(0);
-        
+        runInput = Input.GetKey(KeyCode.LeftControl);
+
         // Interaction
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -191,7 +198,9 @@ public class Player : MonoBehaviour
     {
         if (moveForwardInput)
         {
-            rb.MovePosition(rb.position + transform.forward * moveSpeed.Value * Time.fixedDeltaTime);
+            // Apply run speed multiplier if run input is active
+            float currentSpeed = runInput ? moveSpeed.Value * runSpeedMultiplier : moveSpeed.Value;
+            rb.MovePosition(rb.position + transform.forward * currentSpeed * Time.fixedDeltaTime);
         }
     }
 
