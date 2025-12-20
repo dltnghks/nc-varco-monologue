@@ -6,16 +6,17 @@ public class Enterence : MonoBehaviour, IInteractObject
     [SerializeField] private InventoryObject playerInventory;
 
     [Header("이벤트 채널")]
-    [SerializeField] private GameplayEventChannel eventChannel;
-    [SerializeField] private EInGameEvent eventOnInteract;
-    [SerializeField] private EInGameEvent eventOnOpen;
+    [SerializeField] private TutorialEventChannel tutorialChannel;
+    [SerializeField] private ETutorialEvent OnInteract_E;
+    [SerializeField] private ETutorialEvent OnOpen_E;
 
     // 외부(플레이어)에서 호출할 함수
     public void Open()
     {
-        if (eventChannel != null)
+        if (tutorialChannel != null)
         {
-            eventChannel.RaiseEvent(eventOnOpen);
+            tutorialChannel.RaiseEvent(OnOpen_E);
+            
         }
         Destroy(gameObject);
     }
@@ -27,9 +28,9 @@ public class Enterence : MonoBehaviour, IInteractObject
 
     public void Interaction()
     {
-        if (eventChannel != null)
+        if (tutorialChannel != null)
         {
-            eventChannel.RaiseEvent(eventOnInteract);
+            tutorialChannel.RaiseEvent(OnInteract_E);
         }
 
         if (!CanInteraction())

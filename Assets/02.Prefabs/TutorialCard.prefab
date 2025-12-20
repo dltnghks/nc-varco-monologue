@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7373083221185525914}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -123,5 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: aef63b3664fc10746bd919e4841475b6, type: 2}
   playerInventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
-  eventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
-  eventToRaise: 2
+  tutorialEventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
+  OnPickUp_E: 7
