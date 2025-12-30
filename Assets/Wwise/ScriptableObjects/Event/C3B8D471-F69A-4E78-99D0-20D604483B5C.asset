@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e964dc06fe8d7194c9e9399e260db3a4, type: 3}
-  m_Name: T00_GameStart_E
+  m_Script: {fileID: 11500000, guid: 43929a8f9f1e3454eb792b87285e8f11, type: 3}
+  m_Name: C3B8D471-F69A-4E78-99D0-20D604483B5C
   m_EditorClassIdentifier: 
-  TutorialID: 1
-  AutomateNextEvent: 1
-  TutorialText: 
-  AudioData: {fileID: 11400000, guid: 91ddd799681f8c64e93a17626c3c16fd, type: 2}
-  DelayBetweenEvents: 0.5
+  objectName: Play_T02_E
+  id: 3546902360
+  guid: C3B8D471-F69A-4E78-99D0-20D604483B5C
+  IsInUserDefinedSoundBank: 0

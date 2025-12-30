@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WwiseSoundEmitter : MonoBehaviour
 {
-    public Queue<AK.Wwise.Event> EventsSequenceQueue;
+    public Queue<AK.Wwise.Event> EventsSequenceQueue = new Queue<AK.Wwise.Event>();
     
     [Tooltip("각 이벤트 사이의 딜레이 (초)")]
     public float DelayBetweenEvents = 0.5f;
@@ -42,6 +42,7 @@ public class WwiseSoundEmitter : MonoBehaviour
         {
             // 핵심: Post 시에 Callback Flags와 Callback 함수를 전달
             // (uint)AkCallbackType.AK_EndOfEvent : 이벤트가 완전히 끝났을 때 콜백 발생
+            Debug.Log($"Playing Wwise Event: {evt.Name}");
             evt.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, OnEventCallback, null);
         }
         else

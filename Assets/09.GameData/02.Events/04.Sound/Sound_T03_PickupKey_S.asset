@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e964dc06fe8d7194c9e9399e260db3a4, type: 3}
-  m_Name: T00_GameStart_E
+  m_Script: {fileID: 11500000, guid: 899c594ba4801f14e8e707317575aa48, type: 3}
+  m_Name: Sound_T03_PickupKey_S
   m_EditorClassIdentifier: 
-  TutorialID: 1
-  AutomateNextEvent: 1
-  TutorialText: 
-  AudioData: {fileID: 11400000, guid: 91ddd799681f8c64e93a17626c3c16fd, type: 2}
-  DelayBetweenEvents: 0.5
+  wwiseEvents:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 745f8e4ce402d704fa67a3a54f2913e2, type: 2}
+  comment: 

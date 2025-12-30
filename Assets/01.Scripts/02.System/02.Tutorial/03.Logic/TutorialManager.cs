@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(WwiseSoundEmitter))]
 public class TutorialManager : MonoBehaviour
 {
     [Header("Listening")]
@@ -14,6 +15,7 @@ public class TutorialManager : MonoBehaviour
 
     public void Awake()
     {
+        soundEmitter = GetComponent<WwiseSoundEmitter>();
         StartTutorial();
     }
 
@@ -94,6 +96,7 @@ public class TutorialManager : MonoBehaviour
         if(currentTutorialStep == null) return;
         if(soundEmitter == null) return;
 
+        Debug.Log($"Playing tutorial voice: {audioData.wwiseEvents[0].Name}");
         soundEmitter.PlaySequence(audioData);
     }
 }
