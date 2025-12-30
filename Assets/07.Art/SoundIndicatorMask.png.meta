@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a792edab0c4c3d847a4b23e74e642dee
+guid: 3031136447604a5498cce7c94f02f64f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,23 +123,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameTitle_0
+      name: SoundIndicatorMask
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1072
-        height: 1920
+        width: 3336
+        height: 3268
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1a2cb4fbf1c16d479ebdfdae7fb318d
-      internalID: 755083144
+      spriteID: 4880c972437f1a54fbc12b0a9e6fde8d
+      internalID: 506505306
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b506a4f0a6902f4393acd47fe63b155
+    spriteID: aea0569822f847a41a57980de9b3a406
     internalID: 0
     vertices: []
     indices: 
@@ -158,7 +158,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GameTitle_0: 755083144
+      SoundIndicatorMask: 506505306
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

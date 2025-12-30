@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a792edab0c4c3d847a4b23e74e642dee
+guid: f9f11a01fc1bfb4468e7132bd77b34a2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameTitle_0
+      name: Icon_speaker_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1072
-        height: 1920
+        x: 3
+        y: 14
+        width: 45
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,8 +138,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1a2cb4fbf1c16d479ebdfdae7fb318d
-      internalID: 755083144
+      spriteID: 72ca08a692880e34a8bf2b5e0873bf92
+      internalID: 1601735584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_speaker_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 37
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4009646efd840be45a197a0bdb3099c7
+      internalID: -628833281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_speaker_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 28
+        width: 14
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25eb908153efd148a603381fa4b8a99
+      internalID: 1556775426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_speaker_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 21
+        width: 16
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82313b25ac30da40958127d8594e43d
+      internalID: 1661908990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_speaker
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da4ef41e556d7b44addd7c81603c3d1
+      internalID: 1067551856
       vertices: []
       indices: 
       edges: []
@@ -148,7 +236,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b506a4f0a6902f4393acd47fe63b155
+    spriteID: d6e01e6a293afed4883481104369b458
     internalID: 0
     vertices: []
     indices: 
@@ -158,7 +246,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GameTitle_0: 755083144
+      Icon_speaker: 1067551856
+      Icon_speaker_0: 1601735584
+      Icon_speaker_1: -628833281
+      Icon_speaker_2: 1556775426
+      Icon_speaker_3: 1661908990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
