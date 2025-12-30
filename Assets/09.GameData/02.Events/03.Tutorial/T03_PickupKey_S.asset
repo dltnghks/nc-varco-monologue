@@ -15,5 +15,5 @@ MonoBehaviour:
   TutorialID: 6
   AutomateNextEvent: 1
   TutorialText: 
-  AudioData: {fileID: 0}
+  AudioData: {fileID: 11400000, guid: 7d5551a69f990ca4fa23555700926461, type: 2}
   DelayBetweenEvents: 0.5

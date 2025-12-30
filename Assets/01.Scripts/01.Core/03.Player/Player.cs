@@ -31,6 +31,10 @@ public class Player : MonoBehaviour
     [Tooltip("Multiplier for the movement speed when running.")]
     [SerializeField] private float runSpeedMultiplier = 2.0f;
 
+    [Header("Sound Settings")]
+    private WwiseSoundEmitter soundEmitter;
+    [SerializeField] private WwiseAudioData footstepAudioData;
+
     private Rigidbody rb;
     private bool gyroSupported;
     private Gyroscope gyro;
@@ -48,6 +52,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        soundEmitter = GetComponent<WwiseSoundEmitter>();
         rb = GetComponent<Rigidbody>();
         inventory.Container.Clear();
     }
@@ -149,7 +154,9 @@ public class Player : MonoBehaviour
             // No touches on the screen, so not holding.
             isHolding = false;
         }
-#else
+#endif
+
+#if UNITY_EDITOR
         // PC keyboard and mouse input
         
         // Mouse rotation
@@ -185,7 +192,9 @@ public class Player : MonoBehaviour
             Quaternion deltaRotation = Quaternion.Euler(0, gyroRotationInput * Time.fixedDeltaTime, 0);
             rb.MoveRotation(rb.rotation * deltaRotation);
         }
-#else
+#endif
+
+#if UNITY_EDITOR
         // PC Rotation
         Quaternion keyboardDeltaRotation = Quaternion.Euler(0, keyboardRotationInput * Time.fixedDeltaTime, 0);
         rb.MoveRotation(rb.rotation * keyboardDeltaRotation);
@@ -205,6 +214,12 @@ public class Player : MonoBehaviour
             // Apply run speed multiplier if run input is active
             float currentSpeed = runInput ? moveSpeed.Value * runSpeedMultiplier : moveSpeed.Value;
             rb.MovePosition(rb.position + transform.forward * currentSpeed * Time.fixedDeltaTime);
+
+            // Play footstep sound
+            if (footstepAudioData != null)
+            {
+                soundEmitter.PlaySequence(footstepAudioData);
+            }
         }
     }
 

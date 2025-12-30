@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4815711126366912347}
   - component: {fileID: 8780267641713597015}
+  - component: {fileID: 7790225947921314561}
+  - component: {fileID: 3031152400684283773}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -46,6 +48,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialEventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
   tutorialSequence: {fileID: 11400000, guid: da515dc96dbdd1b4b8829058339c34bc, type: 2}
+--- !u!114 &7790225947921314561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358549163244169394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bde537ab2599ed42922d76c0c4ff0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DelayBetweenEvents: 0.5
+--- !u!114 &3031152400684283773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358549163244169394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bde537ab2599ed42922d76c0c4ff0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DelayBetweenEvents: 0.5
 --- !u!1 &1915615311819742315
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,14 +198,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialEventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
-  OnGameStart_S: 0
   OnPlayerAimingAtDrone_E: 3
   playerTransform: {fileID: 0}
-  offset: {x: 2, y: 1, z: 0}
+  offset: {x: 0, y: 3, z: -2}
   followSpeed: 5
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   wallDistance: 1.5
 --- !u!54 &3165768662614571711
 Rigidbody:
