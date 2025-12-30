@@ -4,25 +4,19 @@ using DG.Tweening;
 using System.Collections.Generic;
 using System.Collections; // For Coroutines
 
-// Enum to define the types of sounds, similar to Fortnite's system
-public enum SoundType
-{
-    Common,
-    Warning,
-    Special,
-}
-
-// Struct to hold style information for each sound type
 [System.Serializable]
 public struct SoundIndicatorStyle
 {
-    public SoundType soundType;
+    public ESoundType soundType;
     public Color indicatorColor;
 }
 
 
 public class InGameUI : MonoBehaviour
 {
+    [Header("Event Channels")]
+    [SerializeField] private SoundEventChannel soundEventChannel;
+
     [Header("UI Elements")]
     [SerializeField]
     private RectTransform centerCircle; // The parent RectTransform for indicators
@@ -57,18 +51,32 @@ public class InGameUI : MonoBehaviour
 
     private List<Image> indicatorPool;
     private Camera mainCamera;
-    private Dictionary<SoundType, SoundIndicatorStyle> styleLookup;
+    private Dictionary<ESoundType, SoundIndicatorStyle> styleLookup;
     private Dictionary<Image, Coroutine> activeIndicatorCoroutines = new Dictionary<Image, Coroutine>();
     private Sprite defaultIndicatorSprite; // To store the original sprite from the prefab.
 
-    private int testSoundTypeIndex = 0;
+    void OnEnable()
+    {
+        if (soundEventChannel != null)
+        {
+            soundEventChannel.OnSoundPlayed += ShowSoundIndicator;
+        }
+    }
+
+    void OnDisable()
+    {
+        if (soundEventChannel != null)
+        {
+            soundEventChannel.OnSoundPlayed -= ShowSoundIndicator;
+        }
+    }
 
     void Start()
     {
         mainCamera = Camera.main;
         indicatorPool = new List<Image>();
 
-        styleLookup = new Dictionary<SoundType, SoundIndicatorStyle>();
+        styleLookup = new Dictionary<ESoundType, SoundIndicatorStyle>();
         foreach (var style in indicatorStyles)
         {
             if (!styleLookup.ContainsKey(style.soundType))
@@ -110,23 +118,6 @@ public class InGameUI : MonoBehaviour
         return indicator;
     }
 
-    // For testing: Click in the game view to see an indicator appear.
-    private void Update()
-    {
-        // 테스트 코드
-        if (Input.GetMouseButtonDown(0))
-        {
-            float angle = Random.Range(0, 360f);
-            float distance = Random.Range(minDistance, maxDistance + 10f);
-            Vector3 direction = Quaternion.Euler(0, angle, 0) * mainCamera.transform.forward;
-            Vector3 position = mainCamera.transform.position + direction * distance;
-            
-            SoundType type = (SoundType)(testSoundTypeIndex % System.Enum.GetValues(typeof(SoundType)).Length);
-            ShowSoundIndicator(position, type);
-            testSoundTypeIndex++;
-        }
-    }
-
     private Image GetIndicatorFromPool()
     {
         foreach (var indicator in indicatorPool)
@@ -147,7 +138,7 @@ public class InGameUI : MonoBehaviour
         return null;
     }
     
-    public void ShowSoundIndicator(Vector3 soundWorldPosition, SoundType soundType)
+    public void ShowSoundIndicator(Vector3 soundWorldPosition, ESoundType soundType)
     {
         if (centerCircle == null || mainCamera == null) return;
 
@@ -168,7 +159,7 @@ public class InGameUI : MonoBehaviour
         activeIndicatorCoroutines[indicator] = newCoroutine;
     }
 
-    private IEnumerator ProcessFortniteIndicator(Image indicator, Vector3 soundWorldPosition, SoundType soundType, Transform playerTransform)
+    private IEnumerator ProcessFortniteIndicator(Image indicator, Vector3 soundWorldPosition, ESoundType soundType, Transform playerTransform)
     {
         // --- Setup for Arc/Ring display ---
         indicator.type = Image.Type.Filled;

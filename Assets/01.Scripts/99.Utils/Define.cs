@@ -14,7 +14,16 @@ public enum ETutorialEvent
     End,
 }
 
+// 게임 내 사운드 발생 이벤트
 public enum ESoundEvent
 {
     
+}
+
+// 사운드 종류
+public enum ESoundType
+{
+    Common,
+    Warning,
+    Special,
 }

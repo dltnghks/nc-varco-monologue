@@ -8,6 +8,10 @@ public class WwiseAudioData : ScriptableObject
     // 문자열("Play_Footstep") 대신 Wwise Type을 쓰면 드래그&드롭이 가능하고 안전합니다.
     public List<AK.Wwise.Event> wwiseEvents; 
 
+    [Header("Visual Indicator")]
+    public bool needsVisualIndicator = true;
+    public ESoundType soundType;
+
     [Header("Optional Settings")]
     public string comment; // 사운드 디자이너를 위한 메모
 }
