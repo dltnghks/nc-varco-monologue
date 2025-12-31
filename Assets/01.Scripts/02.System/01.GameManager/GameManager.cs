@@ -75,18 +75,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("GAME STARTED LOGIC");
-        if (ambEvent != null)
-        {
-            ambEvent.Post(gameObject);
-            Debug.Log("[GameManager] Posted AMB event.");
-        }
-
-        if (heartbeatEvent != null)
-        {
-            heartbeatEvent.Post(gameObject);
-            Debug.Log("[GameManager] Posted heartbeatEvent event.");
-        }
+        // This logic is now handled by HandleGameStart() to support restarting the game.
     }
 
     private void OnEnable()
@@ -119,6 +108,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandlePlayerEvent(EPlayerEvent playerEvent)
     {
+        if (isGameOverInProgress) return;
+
         if (playerEvent == EPlayerEvent.StartedRunning && isInDangerState)
         {
             Debug.LogWarning("[GameManager] Game Over: Player started running during Danger State!");
@@ -131,13 +122,26 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandleGameEvent(EGameEvent eventKey)
     {
+        if (isGameOverInProgress && eventKey != EGameEvent.GameStarted) return;
+        
         Debug.Log($"[GameManager] Received Event: <color=green>{eventKey}</color>");
 
         switch (eventKey)
         {
             case EGameEvent.StepOnGlass:
                 // Play the glass sound, then immediately raise a DangerDetected event.
-                HandleDefaultEvent(eventKey, () => gameEventChannel.RaiseEvent(EGameEvent.DangerDetected));
+                if (isEnteringDangerState || isInDangerState)
+                {
+                    Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
+                    StartGameOverSequence("One noise is a warning, two is a death sentence.");
+                }
+                else
+                {
+                    // This is the first danger event. Start the process of entering the danger state.
+                    HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
+                    if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
+                    dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod/5f));
+                }
                 break;
 
             case EGameEvent.DangerDetected:
@@ -151,17 +155,27 @@ public class GameManager : MonoBehaviour
                     // This is the first danger event. Start the process of entering the danger state.
                     HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
                     if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
-                    dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence());
+                    dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod));
                 }
                 break;
 
             case EGameEvent.GameStarted:
+                ResetState();
                 HandleDefaultEvent(eventKey, () => HandleGameStart());
+                break;
+
+            case EGameEvent.EscapeRouteOpen:
+                // For GameEnd (Game Clear), play a final dialogue, then load the clear scene.
+                Action onGameEndDialogueFinished = () => {
+                    Debug.Log("GAME CLEAR: Loading GameClearScene with fade.");
+                    SceneTransitionManager.Instance.LoadScene("GameClearScene");
+                };
+                HandleDefaultEvent(eventKey, onGameEndDialogueFinished);
                 break;
 
             case EGameEvent.GameEnd:
                 // For GameEnd (Game Clear), play a final dialogue, then load the clear scene.
-                Action onGameEndDialogueFinished = () => {
+                onGameEndDialogueFinished = () => {
                     Debug.Log("GAME CLEAR: Loading GameClearScene with fade.");
                     SceneTransitionManager.Instance.LoadScene("GameClearScene");
                 };
@@ -204,12 +218,12 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Coroutine that implements the grace period before entering the full danger state.
     /// </summary>
-    private IEnumerator EnterDangerStateSequence()
+    private IEnumerator EnterDangerStateSequence(float period)
     {
         isEnteringDangerState = true;
-        Debug.Log($"[GameManager] Entering danger grace period for {dangerGracePeriod} seconds.");
+        Debug.Log($"[GameManager] Entering danger grace period for {period} seconds.");
 
-        yield return new WaitForSeconds(dangerGracePeriod);
+        yield return new WaitForSeconds(period);
 
         isEnteringDangerState = false;
         isInDangerState = true;
@@ -249,12 +263,63 @@ public class GameManager : MonoBehaviour
             gameEventChannel.RaiseEvent(onDangerEndedEvent);
         }
     }
+    
+    /// <summary>
+    /// Resets all state variables to their default values for a new game.
+    /// </summary>
+    private void ResetState()
+    {
+        Debug.Log("[GameManager] Resetting state for new game.");
+
+        // Stop any running coroutines
+        if (dangerStateCoroutine != null)
+        {
+            StopCoroutine(dangerStateCoroutine);
+            dangerStateCoroutine = null;
+        }
+
+        // Kill any running tweens
+        dangerLevelTween?.Kill();
+        dangerLevelTween = null;
+
+        // Reset state flags
+        isGameOverInProgress = false;
+        isEnteringDangerState = false;
+        isInDangerState = false;
+
+        // Reset RTPC value
+        currentDangerLevel = 0f;
+        if (dangerLevelRtpc != null)
+        {
+            dangerLevelRtpc.SetValue(gameObject, 0);
+        }
+
+        Debug.Log("GAME STARTED LOGIC");
+
+        // Stop all sounds on this game object to ensure a clean slate for the new session
+        AkSoundEngine.StopAll(gameObject);
+
+        // Post initial sounds for the new game session
+        if (ambEvent != null)
+        {
+            ambEvent.Post(gameObject);
+            Debug.Log("[GameManager] Posted AMB event.");
+        }
+
+        if (heartbeatEvent != null)
+        {
+            heartbeatEvent.Post(gameObject);
+            Debug.Log("[GameManager] Posted heartbeatEvent event.");
+        }
+    }
+
 
     /// <summary>
     /// Contains the logic to be executed when the game starts (after any intro dialogue).
     /// </summary>
     private void HandleGameStart()
     {
+        
         this.enabled = true; // Ensure the component is active at game start.
     }
 

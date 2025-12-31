@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
-  onTrapEvent: 3
+  onTrapEvent: 2
   noiseSound: {fileID: 11400000, guid: d6e800e205dcd0e40b66332fe9c40850, type: 2}
 --- !u!135 &6231971836705961288
 SphereCollider:
