@@ -12,6 +12,10 @@ public class WwiseAudioData : ScriptableObject
     public bool needsVisualIndicator = true;
     public ESoundType soundType;
 
+    [Header("Gameplay Settings")]
+    [Tooltip("If true, player interaction will be blocked while this audio is playing as dialogue.")]
+    public bool blocksPlayerInteraction = false;
+
     [Header("Optional Settings")]
     public string comment; // 사운드 디자이너를 위한 메모
 }

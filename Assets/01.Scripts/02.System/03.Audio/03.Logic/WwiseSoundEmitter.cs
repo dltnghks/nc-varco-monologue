@@ -27,13 +27,13 @@ public class WwiseSoundEmitter : MonoBehaviour
     }
 
     // For sounds attached to an object, managed manually
-    public void PlaySequence(WwiseAudioData audioData)
+    public void PlaySequence(WwiseAudioData audioData, Action onFinished = null)
     {
         SetWwiseAudioData(audioData);
         
-        // Removed: if (isPlaying) Stop();
         // This allows multiple single-shot sounds to layer without interrupting each other.
         // The 'IsPlaying' flag primarily manages internal sequence progression, not individual sound outputs.
+        onSequenceFinished = onFinished;
     
         IsPlaying = true;
         PlayNextEvent();
@@ -43,8 +43,7 @@ public class WwiseSoundEmitter : MonoBehaviour
     public void PlaySequenceAndReturn(WwiseAudioData audioData)
     {
         // When the sequence is done, this emitter will be returned to the pool.
-        onSequenceFinished = () => AudioManager.Instance.ReturnEmitterToPool(this);
-        PlaySequence(audioData);
+        PlaySequence(audioData, () => AudioManager.Instance.ReturnEmitterToPool(this));
     }
 
     private void PlayNextEvent()

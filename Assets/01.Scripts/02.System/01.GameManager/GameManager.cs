@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameEventChannel gameEventChannel;
     [SerializeField] private EGameEvent onStartGameEvent; 
 
+    /// <summary>
+    /// Returns true if player interaction should be blocked (e.g., during a specific dialogue).
+    /// This provides a central point for other systems to check this state.
+    /// </summary>
+    public bool IsInteractionBlocked => DialogueManager.Instance != null && DialogueManager.Instance.IsInteractionBlocked;
+
     //SerializedDictionary
     [Header("Event to Voice")]
     [SerializeField] private SerializedDictionary<EGameEvent, List<WwiseAudioData>> eventToVoiceData = new SerializedDictionary<EGameEvent, List<WwiseAudioData>>();
@@ -65,7 +71,9 @@ public class GameManager : MonoBehaviour
 
         List<WwiseAudioData> audioDatas;
         if(eventToVoiceData.TryGetValue(eventKey, out audioDatas))
-            AudioManager.Instance.PlayAudioSequence(audioDatas, Camera.main.transform.position);
+        {
+            DialogueManager.Instance.PlayDialogueSequence(audioDatas);
+        }
 
         switch (eventKey)
         {

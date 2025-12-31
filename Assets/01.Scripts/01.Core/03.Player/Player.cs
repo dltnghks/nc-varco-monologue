@@ -80,11 +80,22 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.IsInteractionBlocked)
+        {
+            return;
+        }
+
         HandleInputs();
     }
 
     void FixedUpdate()
     {
+        if (GameManager.Instance.IsInteractionBlocked)
+        {
+            return;
+        }
+        
+        
         HandleRotation();
         HandleMovement();
     }
@@ -245,6 +256,13 @@ public class Player : MonoBehaviour
 
     private void Interact()
     {
+        // Prevent interaction while dialogue is playing
+                if (GameManager.Instance != null && GameManager.Instance.IsInteractionBlocked)
+        {
+            Debug.Log("Cannot interact: Dialogue is currently playing.");
+            return;
+        }
+
         Debug.Log("Interaction triggered!");
 
         // Draw a debug ray to visualize the interaction raycast

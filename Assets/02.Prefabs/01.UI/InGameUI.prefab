@@ -358,7 +358,7 @@ MonoBehaviour:
   fadeInDuration: 0.1
   stayDuration: 1
   fadeOutDuration: 0.5
-  arcFillAmount: 0.1
+  arcFillAmount: 0.08333334
   poolSize: 10
   maxDistance: 0
   minDistance: 20
