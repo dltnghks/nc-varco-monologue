@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf5c2d365143fa4fb1ddfe49a80e0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialEventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
-  OnTrap_E: 0
+  gameEventChannel: {fileID: 0}
   noiseSound: {fileID: 11400000, guid: d6e800e205dcd0e40b66332fe9c40850, type: 2}
 --- !u!135 &566996140827436478
 SphereCollider:
@@ -791,9 +790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requirementItem: {fileID: 11400000, guid: aef63b3664fc10746bd919e4841475b6, type: 2}
   playerInventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
-  tutorialChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
-  OnInteract_E: 5
-  OnOpen_E: 9
+  gameEventChannel: {fileID: 0}
 --- !u!1 &7778472967535947702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,10 +1048,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 478258185270734516}
     m_Modifications:
-    - target: {fileID: 1557894199362617390, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
-      propertyPath: ambientLoopSound
-      value: 
-      objectReference: {fileID: 11400000, guid: 43a2ea87ec773a74c8fdc4a816ac8f35, type: 2}
     - target: {fileID: 3015529160026156961, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -297,7 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cd8f0165c1ed1438bdcfb2779cf184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerActionChannel: {fileID: 0}
   moveSpeed: {fileID: 11400000, guid: 42a4ed401c13259468a7e5fb1fd8db93, type: 2}
   playerHP: {fileID: 11400000, guid: 2bc085d94d7da0d4ca77d328f0946671, type: 2}
   inventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}

@@ -123,7 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: aef63b3664fc10746bd919e4841475b6, type: 2}
   playerInventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
-  tutorialEventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
-  OnPickUp_E: 7
+  gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   pickupSound: {fileID: 11400000, guid: 07804761404839a4ca3d098c6a6512cd, type: 2}
-  ambientLoopSound: {fileID: 11400000, guid: d6e800e205dcd0e40b66332fe9c40850, type: 2}
+  ambientLoopSound: {fileID: 11400000, guid: 43a2ea87ec773a74c8fdc4a816ac8f35, type: 2}

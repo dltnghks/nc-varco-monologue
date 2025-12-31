@@ -8,8 +8,8 @@ public class ItemPickup : MonoBehaviour, IInteractObject
     public InventoryObject playerInventory; // 'PlayerInventory' SO를 여기에 드래그
 
     [Header("이벤트 채널")]
-    public TutorialEventChannel tutorialEventChannel;
-    public ETutorialEvent OnPickUp_E;
+    public GameEventChannel gameEventChannel;
+    [SerializeField] private EGameEvent pickupEvent;
 
     [Header("Audio Data")]
     [SerializeField] private WwiseAudioData pickupSound; // 아이템 획득 시 재생할 사운드
@@ -70,9 +70,9 @@ public class ItemPickup : MonoBehaviour, IInteractObject
 
         playerInventory.AddItem(itemData, 1);
 
-        if (tutorialEventChannel != null)
+        if (gameEventChannel != null)
         {
-            tutorialEventChannel.RaiseEvent(OnPickUp_E);
+            gameEventChannel.RaiseEvent(pickupEvent);
         }
         
         // 아이템 획득 사운드를 재생합니다.

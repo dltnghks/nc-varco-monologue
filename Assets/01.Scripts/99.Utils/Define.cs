@@ -1,23 +1,15 @@
-public enum ETutorialEvent
+public enum EGameEvent
 {
-    // 튜토리얼
-    GameStart_S,
-    GameStart_E,
-    AimToDrone_S,
-    AimToDrone_E,
-    InteractToDoor_S,
-    InteractToDoor_E,
-    PickupKey_S,
-    PickupKey_E,
-    OpenDoor_S,
-    OpenDoor_E,
-    End,
-}
-
-// 게임 내 사운드 발생 이벤트
-public enum ESoundEvent
-{
-    
+    GameStarted,
+    GameOver, 
+    DoorInteracted,
+    DoorOpened,
+    // 사용자 요청 이벤트
+    StepOnGlass,          // 유리 밟기
+    DangerDetected,       // 위험 감지
+    SecurityModuleAcquired, // 보안 모듈 획득
+    EscapeRouteOpen,      // 탈출구 오픈
+    GameEnd,              // 게임 종료
 }
 
 // 사운드 종류

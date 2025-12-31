@@ -8,9 +8,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    [Header("Game Play Event Channel")]
-    [SerializeField] private TutorialEventChannel playerActionChannel;
-
     [Header("General Settings")]
     [Tooltip("Movement speed in meters per second.")]
     [SerializeField] private FloatVariable moveSpeed;

@@ -3,9 +3,8 @@ using UnityEngine;
 //[RequireComponent(typeof(Rigidbody))]
 public class Drone : MonoBehaviour
 {
-    [Header("Tutorial Event Channel")]
-    [SerializeField] private TutorialEventChannel tutorialEventChannel;
-    [SerializeField] private ETutorialEvent OnPlayerAimingAtDrone_E;
+    [Header("Game Event Channel")]
+    [SerializeField] private GameEventChannel gameEventChannel;
     private Rigidbody rb;
 
     [Header("Position Offset")]
@@ -85,7 +84,7 @@ public class Drone : MonoBehaviour
         // 각도가 5도 미만이면 플레이어가 드론을 바라보는 것으로 간주합니다.
         if(angle < 5f)
         {
-            tutorialEventChannel.RaiseEvent(OnPlayerAimingAtDrone_E);
+            // gameEventChannel.RaiseEvent(OnPlayerAimingAtDrone_E); // Refactored: Removed tutorial-specific event.
             return true;
         }
 
