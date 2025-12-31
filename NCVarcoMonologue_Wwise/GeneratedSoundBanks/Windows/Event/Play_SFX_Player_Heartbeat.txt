@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2207594012	Play_SFX_Player_Heartbeat			\Default Work Unit\SFX\Play_SFX_Player_Heartbeat	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1316067302	DangerLevel			\Default Work Unit\DangerLevel	
+

@@ -1,0 +1,114 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3383170544",
+    "Type": "Event",
+    "GUID": "{4E0D3CEC-C71B-41C0-B936-6EC00C1F59D9}",
+    "Language": "SFX",
+    "Hash": "{8AA638D4-A9DE-1C1A-EC47-69B95F8424F2}",
+    "ObjectPath": "Play_Warning_Random_Container",
+    "ShortName": "Play_Warning_Random_Container",
+    "Path": "Event/Play_Warning_Random_Container.bnk",
+    "Media": [
+     {
+      "Id": "82644145",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "W00_1.wav",
+      "Path": "Media/82644145.wem",
+      "CachePath": "13/{131D5D93-FF9A-02BB-1DD9-FC67670228B4}.wem"
+     },
+     {
+      "Id": "320264808",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "W00_0.wav",
+      "Path": "Media/320264808.wem",
+      "CachePath": "4A/{4A825F78-8FE8-3EA3-57B3-4CBF16C17095}.wem"
+     },
+     {
+      "Id": "610186053",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "W01_0.wav",
+      "Path": "Media/610186053.wem",
+      "CachePath": "54/{54F64420-5E34-D37E-2864-DFE45854FFCD}.wem"
+     },
+     {
+      "Id": "794050699",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "W01_1.wav",
+      "Path": "Media/794050699.wem",
+      "CachePath": "11/{11AB6969-7E88-2E1C-1716-4046792866FF}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "165333937",
+       "Name": "Time Stretch (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [1]: (Time Stretch)]\\Time Stretch (Custom)",
+       "GUID": "{8C64B8EE-DD65-4727-8A20-7C2890F2317E}",
+       "LibName": "Wwise Time Stretch",
+       "LibId": "8519683"
+      },
+      {
+       "Id": "838641098",
+       "Name": "Dual_Filters_Radio_Comm (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [0]: (Parametric EQ)]\\Dual_Filters_Radio_Comm (Custom)",
+       "GUID": "{30056662-5889-42B2-A0B5-386B13C51AC0}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "3383170544",
+      "Name": "Play_Warning_Random_Container",
+      "ObjectPath": "\\Events\\Default Work Unit\\Voice\\Play_Warning_Random_Container",
+      "GUID": "{4E0D3CEC-C71B-41C0-B936-6EC00C1F59D9}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.3970912",
+      "DurationMax": "6.5202236",
+      "MediaRefs": [
+       {
+        "Id": "82644145"
+       },
+       {
+        "Id": "320264808"
+       },
+       {
+        "Id": "610186053"
+       },
+       {
+        "Id": "794050699"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "165333937"
+        },
+        {
+         "Id": "838641098"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{4BBC733C-C708-7DA6-6B32-94CBB3CCAF57}"
+ }
+}

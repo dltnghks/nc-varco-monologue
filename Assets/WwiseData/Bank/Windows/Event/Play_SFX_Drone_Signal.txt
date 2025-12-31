@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1336410719	Play_SFX_Drone_Signal			\Default Work Unit\Play_SFX_Drone_Signal	
+

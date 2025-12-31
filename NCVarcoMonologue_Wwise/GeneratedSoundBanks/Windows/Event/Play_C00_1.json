@@ -1,0 +1,78 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3731095897",
+    "Type": "Event",
+    "GUID": "{96DD316E-67BF-4C96-B2C5-8EDDE046B3CA}",
+    "Language": "SFX",
+    "Hash": "{B5A4F977-B8D2-D814-1B8B-0F16A20A8315}",
+    "ObjectPath": "Play_C00_1",
+    "ShortName": "Play_C00_1",
+    "Path": "Event/Play_C00_1.bnk",
+    "Media": [
+     {
+      "Id": "271283657",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "C00_1.wav",
+      "Path": "Media/271283657.wem",
+      "CachePath": "46/{46B54803-061F-9C2E-702E-6D1BE3A57E18}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "165333937",
+       "Name": "Time Stretch (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [1]: (Time Stretch)]\\Time Stretch (Custom)",
+       "GUID": "{8C64B8EE-DD65-4727-8A20-7C2890F2317E}",
+       "LibName": "Wwise Time Stretch",
+       "LibId": "8519683"
+      },
+      {
+       "Id": "838641098",
+       "Name": "Dual_Filters_Radio_Comm (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [0]: (Parametric EQ)]\\Dual_Filters_Radio_Comm (Custom)",
+       "GUID": "{30056662-5889-42B2-A0B5-386B13C51AC0}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "3731095897",
+      "Name": "Play_C00_1",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_C00_1",
+      "GUID": "{96DD316E-67BF-4C96-B2C5-8EDDE046B3CA}",
+      "DurationType": "OneShot",
+      "DurationMin": "7.3201838",
+      "DurationMax": "7.3201838",
+      "MediaRefs": [
+       {
+        "Id": "271283657"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "165333937"
+        },
+        {
+         "Id": "838641098"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{28601888-B812-738B-7314-E854911D5042}"
+ }
+}

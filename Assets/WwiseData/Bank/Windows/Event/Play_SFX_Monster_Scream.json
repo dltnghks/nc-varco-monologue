@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4270445848",
+    "Type": "Event",
+    "GUID": "{CCF0154A-08D8-4868-87C4-DDE9485D6C34}",
+    "Language": "SFX",
+    "Hash": "{1BB179DE-14B4-C897-FA2E-6F5568E646B2}",
+    "ObjectPath": "Play_SFX_Monster_Scream",
+    "ShortName": "Play_SFX_Monster_Scream",
+    "Path": "Event/Play_SFX_Monster_Scream.bnk",
+    "Media": [
+     {
+      "Id": "705431635",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Monster_Scream.wav",
+      "Path": "Media/705431635.wem",
+      "CachePath": "98/{98BA0FC5-63BD-D34F-96F1-1CA8322882CC}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4270445848",
+      "Name": "Play_SFX_Monster_Scream",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Scream",
+      "GUID": "{CCF0154A-08D8-4868-87C4-DDE9485D6C34}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.72",
+      "DurationMax": "1.72",
+      "MediaRefs": [
+       {
+        "Id": "705431635"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{CD295FBF-6D1E-129D-ACDD-AD1B5241EDF6}"
+ }
+}

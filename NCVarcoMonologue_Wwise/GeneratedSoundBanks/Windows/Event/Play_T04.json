@@ -1,0 +1,78 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1597147542",
+    "Type": "Event",
+    "GUID": "{E6F798E4-E73E-4129-AF5A-744616B280F5}",
+    "Language": "SFX",
+    "Hash": "{D194AFB2-B07A-6754-BEF5-F2AE91C88EE7}",
+    "ObjectPath": "Play_T04",
+    "ShortName": "Play_T04",
+    "Path": "Event/Play_T04.bnk",
+    "Media": [
+     {
+      "Id": "244741259",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "T04.wav",
+      "Path": "Media/244741259.wem",
+      "CachePath": "0C/{0CE22A1F-EBD6-68FD-B10B-35843316EBD0}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "165333937",
+       "Name": "Time Stretch (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [1]: (Time Stretch)]\\Time Stretch (Custom)",
+       "GUID": "{8C64B8EE-DD65-4727-8A20-7C2890F2317E}",
+       "LibName": "Wwise Time Stretch",
+       "LibId": "8519683"
+      },
+      {
+       "Id": "838641098",
+       "Name": "Dual_Filters_Radio_Comm (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [0]: (Parametric EQ)]\\Dual_Filters_Radio_Comm (Custom)",
+       "GUID": "{30056662-5889-42B2-A0B5-386B13C51AC0}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "1597147542",
+      "Name": "Play_T04",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_T04",
+      "GUID": "{E6F798E4-E73E-4129-AF5A-744616B280F5}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.5530987",
+      "DurationMax": "6.5530987",
+      "MediaRefs": [
+       {
+        "Id": "244741259"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "165333937"
+        },
+        {
+         "Id": "838641098"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F7ED8235-B064-C395-F1BF-F6A61C6EA174}"
+ }
+}

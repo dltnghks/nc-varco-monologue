@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4102901186",
+    "Type": "Event",
+    "GUID": "{D2B9B44A-D538-4F4B-82D9-E10987658FC4}",
+    "Language": "SFX",
+    "Hash": "{9DB5A026-423C-14C7-1A9C-7B5AB3609D7C}",
+    "ObjectPath": "Play_SFX_Door_Slam",
+    "ShortName": "Play_SFX_Door_Slam",
+    "Path": "Event/Play_SFX_Door_Slam.bnk",
+    "Media": [
+     {
+      "Id": "476860103",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Door_Slam.wav",
+      "Path": "Media/476860103.wem",
+      "CachePath": "FC/{FCE0282A-FE3A-81E8-D0AE-84FE3FD77072}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4102901186",
+      "Name": "Play_SFX_Door_Slam",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Slam",
+      "GUID": "{D2B9B44A-D538-4F4B-82D9-E10987658FC4}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "14.793032",
+      "DurationMax": "14.793032",
+      "MediaRefs": [
+       {
+        "Id": "476860103"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{5CBA54AF-8F1E-ED07-4FE3-B5838FDD092E}"
+ }
+}

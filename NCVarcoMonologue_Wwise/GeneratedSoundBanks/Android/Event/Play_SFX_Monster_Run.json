@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2528789258",
+    "Type": "Event",
+    "GUID": "{A411FC72-E9A2-4CB6-93E8-D7ADE30861F4}",
+    "Language": "SFX",
+    "Hash": "{23D4AC91-9844-A2B5-AC75-73531F69D32F}",
+    "ObjectPath": "Play_SFX_Monster_Run",
+    "ShortName": "Play_SFX_Monster_Run",
+    "Path": "Event/Play_SFX_Monster_Run.bnk",
+    "Media": [
+     {
+      "Id": "963425529",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Monster_Run.wav",
+      "Path": "Media/963425529.wem",
+      "CachePath": "25/{256579A4-7020-454B-5743-3F954B8462AC}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2528789258",
+      "Name": "Play_SFX_Monster_Run",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Monster_Run",
+      "GUID": "{A411FC72-E9A2-4CB6-93E8-D7ADE30861F4}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2816426",
+      "DurationMax": "1.3115996",
+      "MediaRefs": [
+       {
+        "Id": "963425529"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{4144BA3E-528F-8181-7B6E-AA1CED0AB214}"
+ }
+}

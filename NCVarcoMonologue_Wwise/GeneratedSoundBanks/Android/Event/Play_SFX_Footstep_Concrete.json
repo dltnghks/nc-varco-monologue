@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4169252818",
+    "Type": "Event",
+    "GUID": "{4C384975-2F1F-4EF3-A68C-184AB319F7C3}",
+    "Language": "SFX",
+    "Hash": "{099D871A-2E68-2B17-5700-3B2DE7DE60BA}",
+    "ObjectPath": "Play_SFX_Footstep_Concrete",
+    "ShortName": "Play_SFX_Footstep_Concrete",
+    "Path": "Event/Play_SFX_Footstep_Concrete.bnk",
+    "Media": [
+     {
+      "Id": "267565705",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footstep_Concrete.wav",
+      "Path": "Media/267565705.wem",
+      "CachePath": "99/{99F6FF86-B0E6-267D-A53A-537400F372B9}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4169252818",
+      "Name": "Play_SFX_Footstep_Concrete",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Footstep_Concrete",
+      "GUID": "{4C384975-2F1F-4EF3-A68C-184AB319F7C3}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "267565705"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{E48B5AE4-EA8F-C0F2-1073-744001DC831E}"
+ }
+}

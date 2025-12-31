@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3526221634",
+    "Type": "Event",
+    "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
+    "Language": "SFX",
+    "Hash": "{FB14C280-7D8E-3BF2-38D3-5E6F5257D53E}",
+    "ObjectPath": "Play_SFX_Item_Pickup",
+    "ShortName": "Play_SFX_Item_Pickup",
+    "Path": "Event/Play_SFX_Item_Pickup.bnk",
+    "Media": [
+     {
+      "Id": "360225617",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Drone_Signal.wav",
+      "Path": "Media/360225617.wem",
+      "CachePath": "AA/{AAC0E595-19FC-9225-CE56-EE118791E9C2}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3526221634",
+      "Name": "Play_SFX_Item_Pickup",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Item_Pickup",
+      "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.04522002",
+      "DurationMax": "0.04522002",
+      "MediaRefs": [
+       {
+        "Id": "360225617"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{6F5C3E4E-5CAF-AF91-D191-7FB3664A5FE7}"
+ }
+}

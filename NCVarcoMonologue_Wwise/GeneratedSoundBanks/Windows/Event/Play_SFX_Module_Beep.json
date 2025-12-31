@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1114635637",
+    "Type": "Event",
+    "GUID": "{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}",
+    "Language": "SFX",
+    "Hash": "{F6818284-6CA8-463A-E38F-A7AA8EC709C8}",
+    "ObjectPath": "Play_SFX_Module_Beep",
+    "ShortName": "Play_SFX_Module_Beep",
+    "Path": "Event/Play_SFX_Module_Beep.bnk",
+    "Media": [
+     {
+      "Id": "141226847",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Card_Beep.wav",
+      "Path": "Media/141226847.wem",
+      "CachePath": "3B/{3BBA6F1C-C75D-8117-33AA-F749A13D4921}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1114635637",
+      "Name": "Play_SFX_Module_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Module_Beep",
+      "GUID": "{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.87733525",
+      "DurationMax": "0.87733525",
+      "MediaRefs": [
+       {
+        "Id": "141226847"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{34301ABF-DFEE-160E-42A2-FA0911A54F50}"
+ }
+}

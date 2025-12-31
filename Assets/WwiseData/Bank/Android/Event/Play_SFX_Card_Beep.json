@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1641089727",
+    "Type": "Event",
+    "GUID": "{6D70384D-0ED4-46B1-AE8D-4D4FB66ECBCD}",
+    "Language": "SFX",
+    "Hash": "{6A3DBD86-9955-5F2D-D242-BAB906C94CAF}",
+    "ObjectPath": "Play_SFX_Card_Beep",
+    "ShortName": "Play_SFX_Card_Beep",
+    "Path": "Event/Play_SFX_Card_Beep.bnk",
+    "Media": [
+     {
+      "Id": "141226847",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Card_Beep.wav",
+      "Path": "Media/141226847.wem",
+      "CachePath": "63/{637705BF-EC06-C764-8273-A973807F8359}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1641089727",
+      "Name": "Play_SFX_Card_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Card_Beep",
+      "GUID": "{6D70384D-0ED4-46B1-AE8D-4D4FB66ECBCD}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0433333",
+      "DurationMax": "1.0433333",
+      "MediaRefs": [
+       {
+        "Id": "141226847"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{FEE5DB91-59BF-A7D6-F1C7-FE6E4B801347}"
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3126765036",
+    "Type": "Event",
+    "GUID": "{5259C64E-A153-44CE-BB1B-A70E82618E39}",
+    "Language": "SFX",
+    "Hash": "{D3528A9A-C309-36B4-EFE9-A0DD93162D16}",
+    "ObjectPath": "Play_BGM",
+    "ShortName": "Play_BGM",
+    "Path": "Event/Play_BGM.bnk",
+    "Media": [
+     {
+      "Id": "409695731",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "BGM.wav",
+      "Path": "Media/409695731.wem",
+      "CachePath": "12/{12B418CB-331D-A931-D599-406DD130DBAD}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3126765036",
+      "Name": "Play_BGM",
+      "ObjectPath": "\\Events\\Default Work Unit\\BGM\\Play_BGM",
+      "GUID": "{5259C64E-A153-44CE-BB1B-A70E82618E39}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "409695731"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{01303068-C438-2015-8E95-3C4B5D193E91}"
+ }
+}

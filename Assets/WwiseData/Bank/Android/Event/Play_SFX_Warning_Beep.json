@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1560004293",
+    "Type": "Event",
+    "GUID": "{049CFC2B-4578-414D-85B5-6EAE12234F32}",
+    "Language": "SFX",
+    "Hash": "{85F1844B-FE27-7FA2-6312-4BE5FBE23CAA}",
+    "ObjectPath": "Play_SFX_Warning_Beep",
+    "ShortName": "Play_SFX_Warning_Beep",
+    "Path": "Event/Play_SFX_Warning_Beep.bnk",
+    "Media": [
+     {
+      "Id": "739721429",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Warning_Beep.wav",
+      "Path": "Media/739721429.wem",
+      "CachePath": "BA/{BA81684A-0EAC-0726-584A-2AB564E67EF3}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1560004293",
+      "Name": "Play_SFX_Warning_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Warning_Beep",
+      "GUID": "{049CFC2B-4578-414D-85B5-6EAE12234F32}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0625",
+      "DurationMax": "2.0625",
+      "MediaRefs": [
+       {
+        "Id": "739721429"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C5664CA8-70D5-A132-609F-350547CB1CDB}"
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3898458046",
+    "Type": "Event",
+    "GUID": "{C3092BEE-9352-4207-81CC-E3FD2CA6D88B}",
+    "Language": "SFX",
+    "Hash": "{855FC665-91C8-DA19-47BE-5B1128A9DE62}",
+    "ObjectPath": "Play_AMB_System",
+    "ShortName": "Play_AMB_System",
+    "Path": "Event/Play_AMB_System.bnk",
+    "Media": [
+     {
+      "Id": "328576955",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "AMB_Dsgn_Factory Hall with Large Steam Mashines 02_JSE_SG.wav",
+      "Path": "Media/328576955.wem",
+      "CachePath": "38/{3827993C-4C72-42F2-604E-9A4983E63D66}.wem"
+     },
+     {
+      "Id": "881228485",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "AMB_Horror_Tension.wav",
+      "Path": "Media/881228485.wem",
+      "CachePath": "46/{4657B604-F7A9-6FAB-3590-B23F5BB1F9FC}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3898458046",
+      "Name": "Play_AMB_System",
+      "ObjectPath": "\\Events\\Default Work Unit\\AMB\\Play_AMB_System",
+      "GUID": "{C3092BEE-9352-4207-81CC-E3FD2CA6D88B}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "328576955"
+       },
+       {
+        "Id": "881228485"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1316067302",
+      "Name": "DangerLevel",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\DangerLevel",
+      "GUID": "{59EB514B-D374-4AE4-AD4D-23C520C93AA6}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{EF73B4BC-D30A-1C38-3954-86B8E0AD9431}"
+ }
+}

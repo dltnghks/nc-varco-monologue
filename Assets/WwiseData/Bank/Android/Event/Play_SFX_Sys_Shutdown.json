@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1729752934",
+    "Type": "Event",
+    "GUID": "{31121CBF-04F0-44B6-BEFC-85A98997C07D}",
+    "Language": "SFX",
+    "Hash": "{5D53611A-CA06-6F3A-7784-D5A88ACC8DC9}",
+    "ObjectPath": "Play_SFX_Sys_Shutdown",
+    "ShortName": "Play_SFX_Sys_Shutdown",
+    "Path": "Event/Play_SFX_Sys_Shutdown.bnk",
+    "Media": [
+     {
+      "Id": "65625335",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Sys_Shutdown.wav",
+      "Path": "Media/65625335.wem",
+      "CachePath": "BF/{BF9E94DD-E2C9-BC4C-30B5-87DE1CBE9D5F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1729752934",
+      "Name": "Play_SFX_Sys_Shutdown",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Sys_Shutdown",
+      "GUID": "{31121CBF-04F0-44B6-BEFC-85A98997C07D}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3573542",
+      "DurationMax": "1.3573542",
+      "MediaRefs": [
+       {
+        "Id": "65625335"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{58069960-60D6-C700-64AA-B0DE891EE56A}"
+ }
+}

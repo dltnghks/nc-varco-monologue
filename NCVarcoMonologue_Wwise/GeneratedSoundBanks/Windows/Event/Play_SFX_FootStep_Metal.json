@@ -1,0 +1,73 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4156180716",
+    "Type": "Event",
+    "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
+    "Language": "SFX",
+    "Hash": "{D366C80F-5279-8C45-8761-72730C19E3E7}",
+    "ObjectPath": "Play_SFX_FootStep_Metal",
+    "ShortName": "Play_SFX_FootStep_Metal",
+    "Path": "Event/Play_SFX_FootStep_Metal.bnk",
+    "Media": [
+     {
+      "Id": "293786288",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footsteps_Metal.wav",
+      "Path": "Media/293786288.wem",
+      "CachePath": "FC/{FCD21B97-8922-2509-2F90-B7603071C93D}.wem"
+     },
+     {
+      "Id": "425573192",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footsteps_Metal.wav",
+      "Path": "Media/425573192.wem",
+      "CachePath": "5F/{5FBACCF0-38FD-89ED-0AD6-89B1DBFB5253}.wem"
+     },
+     {
+      "Id": "873169443",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footsteps_Metal.wav",
+      "Path": "Media/873169443.wem",
+      "CachePath": "86/{861695DA-8F4D-D83C-A07D-424B1B89724B}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4156180716",
+      "Name": "Play_SFX_FootStep_Metal",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_FootStep_Metal",
+      "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.17178562",
+      "DurationMax": "0.24933533",
+      "MediaRefs": [
+       {
+        "Id": "293786288"
+       },
+       {
+        "Id": "425573192"
+       },
+       {
+        "Id": "873169443"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{6FE66B97-4120-AC24-E413-6448A9B882B6}"
+ }
+}

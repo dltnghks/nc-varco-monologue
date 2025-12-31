@@ -1,0 +1,78 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1597147539",
+    "Type": "Event",
+    "GUID": "{DB969F20-801E-4093-B49D-6E2E7AE25F12}",
+    "Language": "SFX",
+    "Hash": "{AE964612-272C-AE8F-4399-304E24BADBEC}",
+    "ObjectPath": "Play_T01",
+    "ShortName": "Play_T01",
+    "Path": "Event/Play_T01.bnk",
+    "Media": [
+     {
+      "Id": "280247044",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "T01.wav",
+      "Path": "Media/280247044.wem",
+      "CachePath": "2B/{2BC1BE62-279B-BA07-B409-59526906CAC6}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "165333937",
+       "Name": "Time Stretch (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [1]: (Time Stretch)]\\Time Stretch (Custom)",
+       "GUID": "{8C64B8EE-DD65-4727-8A20-7C2890F2317E}",
+       "LibName": "Wwise Time Stretch",
+       "LibId": "8519683"
+      },
+      {
+       "Id": "838641098",
+       "Name": "Dual_Filters_Radio_Comm (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [0]: (Parametric EQ)]\\Dual_Filters_Radio_Comm (Custom)",
+       "GUID": "{30056662-5889-42B2-A0B5-386B13C51AC0}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "1597147539",
+      "Name": "Play_T01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_T01",
+      "GUID": "{DB969F20-801E-4093-B49D-6E2E7AE25F12}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.630006",
+      "DurationMax": "2.630006",
+      "MediaRefs": [
+       {
+        "Id": "280247044"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "165333937"
+        },
+        {
+         "Id": "838641098"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{723750B3-AF38-EB32-F1AA-350B4B681038}"
+ }
+}

@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3174629258	Play_GameOver			\Default Work Unit\Play_GameOver	
+
+Effect plug-ins	ID	Name	Type				Notes
+	165333937	Time Stretch (Custom)	Wwise Time Stretch			
+	838641098	Dual_Filters_Radio_Comm (Custom)	Wwise Parametric EQ			
+

@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2199223429	Play_SFX_Door_Open_Heavy			\Default Work Unit\Play_SFX_Door_Open_Heavy	
+

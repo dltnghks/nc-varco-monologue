@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4169252818",
+    "Type": "Event",
+    "GUID": "{7472A722-3083-4FB5-A59D-AE1BA69573E6}",
+    "Language": "SFX",
+    "Hash": "{B548366C-C978-97F9-61A5-5A670E05C6FC}",
+    "ObjectPath": "Play_SFX_Footstep_Concrete",
+    "ShortName": "Play_SFX_Footstep_Concrete",
+    "Path": "Event/Play_SFX_Footstep_Concrete.bnk",
+    "Media": [
+     {
+      "Id": "267565705",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footstep_Concrete.wav",
+      "Path": "Media/267565705.wem",
+      "CachePath": "99/{99F6FF86-B0E6-267D-A53A-537400F372B9}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4169252818",
+      "Name": "Play_SFX_Footstep_Concrete",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footstep_Concrete",
+      "GUID": "{7472A722-3083-4FB5-A59D-AE1BA69573E6}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "267565705"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D823CBAD-55F3-95B2-0203-4E5DE21F6861}"
+ }
+}

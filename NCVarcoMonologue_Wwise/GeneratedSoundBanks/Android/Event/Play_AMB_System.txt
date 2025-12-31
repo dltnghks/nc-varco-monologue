@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3898458046	Play_AMB_System			\Default Work Unit\AMB\Play_AMB_System	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1316067302	DangerLevel			\Default Work Unit\DangerLevel	
+

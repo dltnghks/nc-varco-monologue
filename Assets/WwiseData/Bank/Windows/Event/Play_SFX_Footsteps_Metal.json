@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2186204307",
+    "Type": "Event",
+    "GUID": "{C990B005-D4AB-48B8-9138-16590D9018B2}",
+    "Language": "SFX",
+    "Hash": "{2CAC1B32-159D-F849-A112-7243895FA29F}",
+    "ObjectPath": "Play_SFX_Footsteps_Metal",
+    "ShortName": "Play_SFX_Footsteps_Metal",
+    "Path": "Event/Play_SFX_Footsteps_Metal.bnk",
+    "Media": [
+     {
+      "Id": "158445142",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footsteps_Metal.wav",
+      "Path": "Media/158445142.wem",
+      "CachePath": "AD/{ADE21630-32B1-6D49-CD18-4C60E12B753D}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2186204307",
+      "Name": "Play_SFX_Footsteps_Metal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footsteps_Metal",
+      "GUID": "{C990B005-D4AB-48B8-9138-16590D9018B2}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "18.096",
+      "DurationMax": "18.096",
+      "MediaRefs": [
+       {
+        "Id": "158445142"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{09D1F365-D5B3-EBB8-62E4-2ABD7977DD99}"
+ }
+}

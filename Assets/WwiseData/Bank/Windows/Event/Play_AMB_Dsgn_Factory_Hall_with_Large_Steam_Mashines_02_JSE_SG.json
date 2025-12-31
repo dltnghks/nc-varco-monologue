@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1931373960",
+    "Type": "Event",
+    "GUID": "{893EBDD8-3F95-4AB0-86AA-A03B45285E87}",
+    "Language": "SFX",
+    "Hash": "{03AF968C-26FA-EFA8-1E63-4A04FE4419E9}",
+    "ObjectPath": "Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG",
+    "ShortName": "Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG",
+    "Path": "Event/Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG.bnk",
+    "Media": [
+     {
+      "Id": "128486717",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "AMB_Dsgn_Factory Hall with Large Steam Mashines 02_JSE_SG.wav",
+      "Path": "Media/128486717.wem",
+      "CachePath": "CB/{CB12C5F3-BB66-D50E-7FE2-628BBEAF1B56}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1931373960",
+      "Name": "Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG",
+      "GUID": "{893EBDD8-3F95-4AB0-86AA-A03B45285E87}",
+      "DurationType": "OneShot",
+      "DurationMin": "94.4",
+      "DurationMax": "94.4",
+      "MediaRefs": [
+       {
+        "Id": "128486717"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D9B747ED-8907-C329-04E2-972FAAD97ACF}"
+ }
+}

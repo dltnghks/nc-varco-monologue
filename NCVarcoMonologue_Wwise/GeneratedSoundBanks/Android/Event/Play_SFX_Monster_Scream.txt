@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	4270445848	Play_SFX_Monster_Scream			\Default Work Unit\SFX\Play_SFX_Monster_Scream	
+

@@ -4,9 +4,13 @@ using UnityEngine;
 // - Gyroscope for rotation.
 // - Touch to move forward.
 // - Double-tap to interact.
+// - Second finger touch to run.
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
+    [Header("Event Channels")]
+    [SerializeField] private PlayerEventChannel playerEventChannel;
+
     [Header("General Settings")]
     [Tooltip("Movement speed in meters per second.")]
     [SerializeField] private FloatVariable moveSpeed;
@@ -24,6 +28,16 @@ public class Player : MonoBehaviour
     [Header("Mobile Touch Controls")]
     [Tooltip("Time in seconds to hold a touch before it counts as movement.")]
     [SerializeField] private float holdToMoveTime = 0.2f;
+    [Tooltip("Multiplier for the movement speed when running.")]
+    [SerializeField] private float runSpeedMultiplier = 2.0f;
+
+    [Header("Sound Settings")]
+    private WwiseSoundEmitter soundEmitter;
+    [SerializeField] private WwiseAudioData footstepAudioData;
+    [Tooltip("Interval between footstep sounds when walking.")]
+    [SerializeField] private float walkFootstepInterval = 0.5f;
+    [Tooltip("Interval between footstep sounds when running.")]
+    [SerializeField] private float runFootstepInterval = 0.3f;
 
     private Rigidbody rb;
     private bool gyroSupported;
@@ -34,14 +48,21 @@ public class Player : MonoBehaviour
     private float mouseRotationInput = 0f;
     private float gyroRotationInput = 0f;
     private bool moveForwardInput = false;
+    public bool IsRunning { get; private set; } = false;
+    private bool wasRunning = false;
 
     // Touch hold state
     private float touchStartTime = 0f;
     private bool isHolding = false;
 
+    // Footstep timing
+    private float lastFootstepTime = 0f;
+
     void Awake()
     {
+        soundEmitter = GetComponent<WwiseSoundEmitter>();
         rb = GetComponent<Rigidbody>();
+        inventory.Container.Clear();
     }
 
     void Start()
@@ -63,17 +84,51 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        HandleInputs();
+        if (GameManager.Instance.IsInteractionBlocked)
+        {
+            // Force stop movement and running if interaction is blocked.
+            moveForwardInput = false;
+            IsRunning = false;
+        }
+        else
+        {
+            // Otherwise, get state from user input.
+            HandleInputs();
+        }
+
+        // After the final state for this frame is determined, check for changes and raise events.
+        if (playerEventChannel != null && IsRunning != wasRunning)
+        {
+            if (IsRunning)
+            {
+                Debug.Log("Player started running, raising event.");
+                playerEventChannel.RaiseEvent(EPlayerEvent.StartedRunning);
+            }
+            else
+            {
+                Debug.Log("Player stopped running, raising event.");
+                playerEventChannel.RaiseEvent(EPlayerEvent.StoppedRunning);
+            }
+        }
+
+        // Update the state for the next frame.
+        wasRunning = IsRunning;
     }
 
     void FixedUpdate()
     {
+        // Movement logic is now independent of input polling, it just uses the state variables.
         HandleRotation();
         HandleMovement();
     }
 
     private void HandleInputs()
     {
+        // Assume not moving or running until proven otherwise by input.
+        moveForwardInput = false;
+        IsRunning = false;
+        gyroRotationInput = 0f;
+
 #if UNITY_IOS || UNITY_ANDROID
         // Gyro rotation
         if (gyroSupported)
@@ -83,63 +138,68 @@ public class Player : MonoBehaviour
             {
                 gyroRotationInput = tilt * tiltRotationSpeed;
             }
-            else
-            {
-                gyroRotationInput = 0f;
-            }
         }
         
-        // Touch movement and interaction
+        // Touch movement, interaction, and running
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
+            // Handle double-tap for interaction separately
+            if (touch.phase == TouchPhase.Began && touch.tapCount == 2)
+            {
+                Interact();
+                isHolding = false; // Reset hold state to prevent movement
+                return; // Exit to avoid processing movement on a double-tap
+            }
+
+            // Handle holding for movement
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    if (touch.tapCount == 2)
-                    {
-                        // This is a double-tap for interaction.
-                        Interact();
-                        isHolding = false;
-                        moveForwardInput = false;
-                    }
-                    else
-                    {
-                        // This is a single tap, which could be the start of a hold.
-                        touchStartTime = Time.time;
-                        isHolding = false;
-                        moveForwardInput = false;
-                    }
+                    touchStartTime = Time.time;
+                    isHolding = false;
                     break;
-
+                
                 case TouchPhase.Stationary:
                 case TouchPhase.Moved:
-                    // The touch is being held down. Check if the hold time has passed.
                     if (!isHolding && (Time.time - touchStartTime) > holdToMoveTime)
                     {
                         isHolding = true;
                     }
-                    
-                    // If we are in a recognized "hold" state, then we should move.
-                    moveForwardInput = isHolding;
                     break;
-
+                
                 case TouchPhase.Ended:
                 case TouchPhase.Canceled:
-                    // The touch has been released. Stop holding and moving.
                     isHolding = false;
-                    moveForwardInput = false;
                     break;
+            }
+
+            // If we are in a recognized "hold" state, we should move.
+            if (isHolding)
+            {
+                moveForwardInput = true;
+                // If moving and a second finger is down, we are running.
+                if (Input.touchCount > 1)
+                {
+                    //Debug.Log("RUN");
+                    IsRunning = true;
+                }
+                else
+                {
+                    //Debug.Log("Walk");
+                    IsRunning = false;
+                }
             }
         }
         else
         {
-            // No touches on the screen.
+            // No touches on the screen, so not holding.
             isHolding = false;
-            moveForwardInput = false;
         }
-#else
+#endif
+
+#if UNITY_EDITOR
         // PC keyboard and mouse input
         
         // Mouse rotation
@@ -155,9 +215,10 @@ public class Player : MonoBehaviour
         // Keyboard rotation
         keyboardRotationInput = Input.GetAxis("Horizontal") * 50f;
         
-        // Movement
+        // Movement and Running
         moveForwardInput = Input.GetMouseButton(0);
-        
+        //runInput = Input.GetKey(KeyCode.LeftControl);
+
         // Interaction
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -174,7 +235,9 @@ public class Player : MonoBehaviour
             Quaternion deltaRotation = Quaternion.Euler(0, gyroRotationInput * Time.fixedDeltaTime, 0);
             rb.MoveRotation(rb.rotation * deltaRotation);
         }
-#else
+#endif
+
+#if UNITY_EDITOR
         // PC Rotation
         Quaternion keyboardDeltaRotation = Quaternion.Euler(0, keyboardRotationInput * Time.fixedDeltaTime, 0);
         rb.MoveRotation(rb.rotation * keyboardDeltaRotation);
@@ -191,12 +254,37 @@ public class Player : MonoBehaviour
     {
         if (moveForwardInput)
         {
-            rb.MovePosition(rb.position + transform.forward * moveSpeed.Value * Time.fixedDeltaTime);
+            // Apply run speed multiplier if run input is active
+            float currentSpeed = IsRunning ? moveSpeed.Value * runSpeedMultiplier : moveSpeed.Value;
+            //Debug.Log(IsRunning + " : " + currentSpeed);
+            rb.MovePosition(rb.position + transform.forward * currentSpeed * Time.fixedDeltaTime);
+
+            // Determine current footstep interval based on movement state
+            float currentFootstepInterval = IsRunning ? runFootstepInterval : walkFootstepInterval;
+
+            // Play footstep sound at intervals
+            if (footstepAudioData != null && Time.time >= lastFootstepTime + currentFootstepInterval)
+            {
+                soundEmitter.PlaySequence(footstepAudioData);
+                lastFootstepTime = Time.time;
+            }
+        }
+        else
+        {
+            // Reset lastFootstepTime when not moving, so a footstep plays immediately upon starting movement
+            lastFootstepTime = 0f;
         }
     }
 
     private void Interact()
     {
+        // Prevent interaction while dialogue is playing
+                if (GameManager.Instance != null && GameManager.Instance.IsInteractionBlocked)
+        {
+            Debug.Log("Cannot interact: Dialogue is currently playing.");
+            return;
+        }
+
         Debug.Log("Interaction triggered!");
 
         // Draw a debug ray to visualize the interaction raycast

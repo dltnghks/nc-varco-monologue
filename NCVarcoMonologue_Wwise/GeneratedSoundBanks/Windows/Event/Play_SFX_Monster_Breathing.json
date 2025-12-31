@@ -1,0 +1,73 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3480194615",
+    "Type": "Event",
+    "GUID": "{3C7009C3-CFDC-4B8B-B008-30467D4326AB}",
+    "Language": "SFX",
+    "Hash": "{7F2168B5-0C31-4551-37A8-2F80647158B7}",
+    "ObjectPath": "Play_SFX_Monster_Breathing",
+    "ShortName": "Play_SFX_Monster_Breathing",
+    "Path": "Event/Play_SFX_Monster_Breathing.bnk",
+    "Media": [
+     {
+      "Id": "346348938",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Enemy_Breathing.wav",
+      "Path": "Media/346348938.wem",
+      "CachePath": "DB/{DB09693B-5DA2-391E-0004-C0CD14E6D2C2}.wem"
+     },
+     {
+      "Id": "450627488",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Enemy_Breathing.wav",
+      "Path": "Media/450627488.wem",
+      "CachePath": "92/{9235FB35-FB89-7C77-333B-57763BE83CFA}.wem"
+     },
+     {
+      "Id": "488983395",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Enemy_Breathing.wav",
+      "Path": "Media/488983395.wem",
+      "CachePath": "B9/{B9FA6A3F-F22D-6B8B-2860-6A35040ABA9F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3480194615",
+      "Name": "Play_SFX_Monster_Breathing",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Monster_Breathing",
+      "GUID": "{3C7009C3-CFDC-4B8B-B008-30467D4326AB}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2491069",
+      "DurationMax": "1.5474193",
+      "MediaRefs": [
+       {
+        "Id": "346348938"
+       },
+       {
+        "Id": "450627488"
+       },
+       {
+        "Id": "488983395"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{1606DFB3-AD23-0C5F-F279-94C8A539EA19}"
+ }
+}

@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1560004293	Play_SFX_Warning_Beep			\Default Work Unit\Play_SFX_Warning_Beep	
+
