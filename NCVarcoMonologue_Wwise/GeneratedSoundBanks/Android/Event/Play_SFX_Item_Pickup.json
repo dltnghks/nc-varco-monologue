@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
     "Language": "SFX",
-    "Hash": "{20D9D8E3-F1F9-3C25-C09A-C5203E6387E6}",
+    "Hash": "{3B6CA7C1-C73E-DA43-0B1C-435C99BAB4A8}",
     "ObjectPath": "Play_SFX_Item_Pickup",
     "ShortName": "Play_SFX_Item_Pickup",
     "Path": "Event/Play_SFX_Item_Pickup.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Drone_Signal.wav",
       "Path": "Media/360225617.wem",
-      "CachePath": "13/{1360E420-64D4-B7AE-CB63-46889F4BE057}.wem"
+      "CachePath": "9A/{9A4BB9CA-E4F2-3399-45DA-E802B2FBE73A}.wem"
      }
     ],
     "Events": [
@@ -33,8 +33,8 @@
       "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
-      "DurationMin": "0.08057292",
-      "DurationMax": "0.08057292",
+      "DurationMin": "0.04522002",
+      "DurationMax": "0.04522002",
       "MediaRefs": [
        {
         "Id": "360225617"
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{EA82D76D-78D9-E486-BDE0-53BD7CB25F4E}"
+  "FileHash": "{E703DE72-3D74-6A85-023C-900F26CB9D84}"
  }
 }

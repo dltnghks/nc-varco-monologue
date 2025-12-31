@@ -834,6 +834,7 @@ MonoBehaviour:
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   onFailOpenEvent: 5
   onOpenEvent: 6
+  openSound: {fileID: 11400000, guid: 0ea9113553f5df5449a13a3b692101b8, type: 2}
 --- !u!1 &7778472967535947702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6231971836705961288, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1263,6 +1268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6231971836705961288, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1283,12 +1292,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1557894199362617390, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: pickupEvent
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1557894199362617390, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: pickupSound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 20853d159a71a3140be6ed7c88510a67, type: 2}
     - target: {fileID: 3015529160026156961, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1395,6 +1404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6231971836705961288, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1456,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 6076634372025708316, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
       propertyPath: m_Name
       value: Glass (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231971836705961288, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1519,6 +1536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass
       objectReference: {fileID: 0}
+    - target: {fileID: 6231971836705961288, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1581,6 +1602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6231971836705961288, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1642,6 +1667,10 @@ PrefabInstance:
     - target: {fileID: 6076634372025708316, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
       propertyPath: m_Name
       value: Glass (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231971836705961288, guid: 41d818adb53f9a84181e7ad5c6b8969b, type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

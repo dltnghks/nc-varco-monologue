@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartingRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 6718521661579460967, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 20853d159a71a3140be6ed7c88510a67, type: 2}
     - target: {fileID: 8795820650437675523, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -446,6 +450,20 @@ MonoBehaviour:
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   playerEventChannel: {fileID: 11400000, guid: 4f784510c29c90444b8c3a2bef609fa5, type: 2}
   onStartGameEvent: 0
+  ambEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3e6ac3e536783af4ebf86046d9950f1c, type: 2}
+  heartbeatEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6e6b521d8de01994fbea580156923b1c, type: 2}
+  dangerLevelRtpc:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 414bea284326caa4e831bb78a86ad6ee, type: 2}
+  rtpcTweenDuration: 2
+  rtpcEaseType: 7
   dangerStateDuration: 10
   dangerGracePeriod: 1
   eventToVoiceData:
@@ -482,7 +500,7 @@ Transform:
   m_GameObject: {fileID: 998472404}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.6924253, y: 2.5032997, z: 13.436691}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

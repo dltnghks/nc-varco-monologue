@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{0ADA07FE-F6A0-4CD3-9B59-6859A3E32D5D}",
     "Language": "SFX",
-    "Hash": "{F2004E66-7C40-99C5-21EE-8829980A0B8B}",
+    "Hash": "{7F33C5D9-562C-0571-4309-403D2B84C8C1}",
     "ObjectPath": "Play_SFX_Player_Heartbeat",
     "ShortName": "Play_SFX_Player_Heartbeat",
     "Path": "Event/Play_SFX_Player_Heartbeat.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Player_Heartbeat.wav",
       "Path": "Media/1069880761.wem",
-      "CachePath": "B2/{B23EF10C-49D6-7438-0877-85B265FEF335}.wem"
+      "CachePath": "F2/{F2D46E4F-DB61-9689-618C-C34241C5D0DD}.wem"
      }
     ],
     "Events": [
@@ -51,6 +51,6 @@
     ]
    }
   ],
-  "FileHash": "{1A61E737-6220-91C1-6853-5F2DB2BD6FBE}"
+  "FileHash": "{6077E035-04CE-6124-1E83-60BBFC54A829}"
  }
 }

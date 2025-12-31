@@ -213,6 +213,18 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="SFX_Drone_Signal" ID="{E80C0DA9-F542-43BF-91DD-D1D0BEF0443A}" ShortID="500878385">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>1000</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-20</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
@@ -223,6 +235,11 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="SFX_Drone_Signal" ID="{909F75F6-A8E4-4EC7-A183-A5D9826D1A58}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0233801184189802"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0627816725673014"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>SFX_Drone_Signal.wav</AudioFile>
 											<MediaIDList>
