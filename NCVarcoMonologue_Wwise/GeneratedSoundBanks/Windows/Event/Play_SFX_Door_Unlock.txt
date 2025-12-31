@@ -1,3 +1,3 @@
 Event	ID	Name			Wwise Object Path	Notes
-	3448000873	Play_SFX_Door_Unlock			\Default Work Unit\Play_SFX_Door_Unlock	
+	3448000873	Play_SFX_Door_Unlock			\Default Work Unit\SFX\Play_SFX_Door_Unlock	
 

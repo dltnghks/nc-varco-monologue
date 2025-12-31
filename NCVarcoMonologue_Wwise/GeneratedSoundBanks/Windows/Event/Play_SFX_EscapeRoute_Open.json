@@ -1,0 +1,61 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "243646373",
+    "Type": "Event",
+    "GUID": "{82E3C2F6-5044-4614-89B3-0FFC20C09073}",
+    "Language": "SFX",
+    "Hash": "{65532972-BE00-BC4D-81CE-D668BF122C74}",
+    "ObjectPath": "Play_SFX_EscapeRoute_Open",
+    "ShortName": "Play_SFX_EscapeRoute_Open",
+    "Path": "Event/Play_SFX_EscapeRoute_Open.bnk",
+    "Media": [
+     {
+      "Id": "271290716",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Door_Unlock.wav",
+      "Path": "Media/271290716.wem",
+      "CachePath": "CD/{CD1B4C35-227F-7ECD-BE80-8E46E5DA6008}.wem"
+     },
+     {
+      "Id": "476860103",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Door_Slam.wav",
+      "Path": "Media/476860103.wem",
+      "CachePath": "84/{8463CCD8-143B-DACF-F628-B7930963C99E}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "243646373",
+      "Name": "Play_SFX_EscapeRoute_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_EscapeRoute_Open",
+      "GUID": "{82E3C2F6-5044-4614-89B3-0FFC20C09073}",
+      "MaxAttenuation": "20",
+      "DurationType": "OneShot",
+      "DurationMin": "3.7208948",
+      "DurationMax": "3.7208948",
+      "MediaRefs": [
+       {
+        "Id": "271290716"
+       },
+       {
+        "Id": "476860103"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{91769826-924C-0B85-C8D6-91CD4AB7D584}"
+ }
+}

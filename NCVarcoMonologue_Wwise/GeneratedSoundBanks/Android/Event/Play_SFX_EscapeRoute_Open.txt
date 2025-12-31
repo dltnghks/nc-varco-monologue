@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	243646373	Play_SFX_EscapeRoute_Open			\Default Work Unit\SFX\Play_SFX_EscapeRoute_Open	
+

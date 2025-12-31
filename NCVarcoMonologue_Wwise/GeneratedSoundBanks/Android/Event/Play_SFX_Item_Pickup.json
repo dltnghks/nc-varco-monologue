@@ -6,14 +6,14 @@
   "SoundBankVersion": "172",
   "SoundBanks": [
    {
-    "Id": "1336410719",
+    "Id": "3526221634",
     "Type": "Event",
     "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
     "Language": "SFX",
-    "Hash": "{E671DE4B-8234-3582-BAD7-6F0A51A82AB2}",
-    "ObjectPath": "Play_SFX_Drone_Signal",
-    "ShortName": "Play_SFX_Drone_Signal",
-    "Path": "Event/Play_SFX_Drone_Signal.bnk",
+    "Hash": "{20D9D8E3-F1F9-3C25-C09A-C5203E6387E6}",
+    "ObjectPath": "Play_SFX_Item_Pickup",
+    "ShortName": "Play_SFX_Item_Pickup",
+    "Path": "Event/Play_SFX_Item_Pickup.bnk",
     "Media": [
      {
       "Id": "360225617",
@@ -27,9 +27,9 @@
     ],
     "Events": [
      {
-      "Id": "1336410719",
-      "Name": "Play_SFX_Drone_Signal",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Drone_Signal",
+      "Id": "3526221634",
+      "Name": "Play_SFX_Item_Pickup",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Item_Pickup",
       "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{7CD15858-6A72-69D1-0211-9AE35B2B56EB}"
+  "FileHash": "{EA82D76D-78D9-E486-BDE0-53BD7CB25F4E}"
  }
 }

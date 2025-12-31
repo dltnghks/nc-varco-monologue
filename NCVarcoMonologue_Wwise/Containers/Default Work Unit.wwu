@@ -1201,6 +1201,10 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="SFX_Door_Slam" ID="{963854C5-FFCB-4AAF-A864-E979A6518842}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.09589485532601"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>SFX_Door_Slam.wav</AudioFile>
 													<MediaIDList>

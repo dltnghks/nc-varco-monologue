@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{E7F5DA0D-59FF-4E2B-A89F-2312A932A26F}",
     "Language": "SFX",
-    "Hash": "{35DC2BFC-BBD9-E0CD-5EF6-A3828ADD0C05}",
+    "Hash": "{8F366A64-0EE9-7185-206D-0F426ADD1E8A}",
     "ObjectPath": "Play_SFX_Door_Unlock",
     "ShortName": "Play_SFX_Door_Unlock",
     "Path": "Event/Play_SFX_Door_Unlock.bnk",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{427A403B-9228-331B-0F96-0A5B3164763F}"
+  "FileHash": "{D58739E3-BD1C-4347-E208-9F49CF09AC3F}"
  }
 }
