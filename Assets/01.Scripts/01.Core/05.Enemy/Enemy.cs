@@ -190,11 +190,11 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitForSeconds(2f);
             if (!isAmbientSoundMuted && !GameManager.Instance.IsInteractionBlocked)
             {
                 AudioManager.Instance.PlayOneShot(ambientAudioData, transform.position);
             }
-            yield return new WaitForSeconds(2f);
         }
     }
 }

@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameEventChannel gameEventChannel;
     [Tooltip("The channel for receiving player-specific events.")]
     [SerializeField] private PlayerEventChannel playerEventChannel;
-    [SerializeField] private EGameEvent onStartGameEvent; 
 
     [Header("Wwise")]
     [Tooltip("The ambient sound to play at the start of the game.")]
@@ -70,11 +69,6 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject); // Make the GameManager persist across scene loads
-    }
-
-    private void Start()
-    {
-        gameEventChannel.RaiseEvent(onStartGameEvent);
     }
 
     private void OnEnable()

@@ -70,8 +70,8 @@ public class Enterence : MonoBehaviour, IInteractObject
     private IEnumerator SoundLoop()
     {
         while(true){
-            AudioManager.Instance.PlayOneShot(beaconSound, transform.position);
             yield return new WaitForSeconds(2f);
+            AudioManager.Instance.PlayOneShot(beaconSound, transform.position);
         }
 
     }

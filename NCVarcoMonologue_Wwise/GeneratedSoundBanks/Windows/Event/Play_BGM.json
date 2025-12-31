@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3126765036",
+    "Type": "Event",
+    "GUID": "{5259C64E-A153-44CE-BB1B-A70E82618E39}",
+    "Language": "SFX",
+    "Hash": "{B3FD5356-29B1-781B-5AF7-05680F33467B}",
+    "ObjectPath": "Play_BGM",
+    "ShortName": "Play_BGM",
+    "Path": "Event/Play_BGM.bnk",
+    "Media": [
+     {
+      "Id": "409695731",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "BGM.wav",
+      "Path": "Media/409695731.wem",
+      "CachePath": "D0/{D0EFF3B4-0AEF-0972-3F03-F1CE5D0ACF35}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3126765036",
+      "Name": "Play_BGM",
+      "ObjectPath": "\\Events\\Default Work Unit\\BGM\\Play_BGM",
+      "GUID": "{5259C64E-A153-44CE-BB1B-A70E82618E39}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "409695731"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{6A77618D-6EFE-F775-6C14-635C1D8BDFFE}"
+ }
+}

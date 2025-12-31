@@ -184,10 +184,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1501671656009693984, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2348532308282356028, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
       propertyPath: m_Name
       value: StartingRoom

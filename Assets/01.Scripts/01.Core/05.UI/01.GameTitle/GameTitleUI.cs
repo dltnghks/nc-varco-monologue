@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI; // Added for Image component
+using AK.Wwise; // Added for Wwise Events
 
 public class GameTitleUI : MonoBehaviour
 {
@@ -21,7 +22,6 @@ public class GameTitleUI : MonoBehaviour
     [SerializeField]
     private float flickerMinAlpha = 0.3f;
 
-    // New fields for background effect
     [Header("Background Effect Settings")]
     [SerializeField]
     private Image backgroundImage; // Reference to the background Image component
@@ -32,8 +32,18 @@ public class GameTitleUI : MonoBehaviour
     [SerializeField]
     private LoopType backgroundColorLoopType = LoopType.Yoyo; // Loop type for color change
 
+    [Header("Wwise Settings")]
+    [Tooltip("The background music to play on the title screen.")]
+    [SerializeField] private AK.Wwise.Event backgroundMusicEvent;
+
     void Start()
     {
+        // Play background music
+        if (backgroundMusicEvent != null)
+        {
+            backgroundMusicEvent.Post(gameObject);
+        }
+
         if (gameTitleText != null)
         {
             // Continuous shake effect. A duration of -1 makes it indefinite.
@@ -71,6 +81,27 @@ public class GameTitleUI : MonoBehaviour
         {
             Debug.Log("Screen clicked! Loading GameScene with fade...");
             SceneTransitionManager.Instance.LoadScene("GameScene");
+        }
+    }
+
+    void OnDestroy()
+    {
+        // Stop the background music
+        if (backgroundMusicEvent != null)
+        {
+            backgroundMusicEvent.Stop(gameObject);
+        }
+
+        // Kill all tweens associated with the UI elements to prevent memory leaks/errors when the scene changes.
+        // This is important for infinitely looping tweens.
+        if (gameTitleText != null)
+        {
+            DOTween.Kill(gameTitleText.transform);
+            DOTween.Kill(gameTitleText);
+        }
+        if (backgroundImage != null)
+        {
+            DOTween.Kill(backgroundImage);
         }
     }
 }

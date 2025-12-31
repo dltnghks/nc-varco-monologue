@@ -185,17 +185,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFX_Monster_Breath" ID="{A08BF425-58E7-4BBF-B17D-0AD550CF82CF}">
-							<ChildrenList>
-								<Action Name="" ID="{829CA621-CC97-427C-8F5F-6DA89D64C4D0}" ShortID="1052792770">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_Monster_Breath" ID="{7EE24791-93DC-45AC-89A5-1AD454A57027}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_SFX_Door_Slam" ID="{8D078E8E-D710-44C5-AD6C-ADBF757BD3F5}">
 							<ChildrenList>
 								<Action Name="" ID="{0553F7CF-B049-41F4-9987-A58C2E53E98F}" ShortID="1032888898">
@@ -328,6 +317,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_SFX_Monster_Breathing" ID="{3C7009C3-CFDC-4B8B-B008-30467D4326AB}">
+							<ChildrenList>
+								<Action Name="" ID="{9C6D798C-C5D5-4C04-B8E1-4277BD8231F8}" ShortID="2707600">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Monster_Breathing" ID="{1F912E61-391D-4D60-814A-AC30FA6FABA3}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMB" ID="{6B8867B3-9724-4A02-B7AA-1FD1D1FF21F5}" ShortID="586652639">
@@ -345,6 +345,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_BGM" ID="{5259C64E-A153-44CE-BB1B-A70E82618E39}">
+					<ChildrenList>
+						<Action Name="" ID="{1578E063-A42C-4144-84C1-A4DA3E3A8651}" ShortID="77777414">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM" ID="{CEF5B923-7510-4C02-BEF7-35AB8CB35FD4}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

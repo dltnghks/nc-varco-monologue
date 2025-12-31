@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7354939154447068941, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
+      propertyPath: backgroundMusicEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: b51a38c3c38bff648b30a83b36e4cb3c, type: 2}
     - target: {fileID: 8057300663617286618, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
       propertyPath: m_fontSize
       value: 120

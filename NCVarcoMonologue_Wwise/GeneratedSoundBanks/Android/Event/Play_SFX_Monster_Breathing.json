@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{3C7009C3-CFDC-4B8B-B008-30467D4326AB}",
     "Language": "SFX",
-    "Hash": "{A78C0802-CFD6-AB81-A306-080A33526972}",
+    "Hash": "{7F2168B5-0C31-4551-37A8-2F80647158B7}",
     "ObjectPath": "Play_SFX_Monster_Breathing",
     "ShortName": "Play_SFX_Monster_Breathing",
     "Path": "Event/Play_SFX_Monster_Breathing.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Enemy_Breathing.wav",
       "Path": "Media/346348938.wem",
-      "CachePath": "7D/{7D366116-A386-D833-B456-43EE64B4F3BF}.wem"
+      "CachePath": "DB/{DB09693B-5DA2-391E-0004-C0CD14E6D2C2}.wem"
      },
      {
       "Id": "450627488",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Enemy_Breathing.wav",
       "Path": "Media/450627488.wem",
-      "CachePath": "94/{94D025B9-7324-C84C-CF3E-0F3480184B64}.wem"
+      "CachePath": "92/{9235FB35-FB89-7C77-333B-57763BE83CFA}.wem"
      },
      {
       "Id": "488983395",
@@ -40,7 +40,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Enemy_Breathing.wav",
       "Path": "Media/488983395.wem",
-      "CachePath": "65/{6516C8F1-A1CC-80BE-9546-6681932E1E51}.wem"
+      "CachePath": "B9/{B9FA6A3F-F22D-6B8B-2860-6A35040ABA9F}.wem"
      }
     ],
     "Events": [
@@ -68,6 +68,6 @@
     ]
    }
   ],
-  "FileHash": "{826DF9AB-6133-01DB-F282-98AF73979A04}"
+  "FileHash": "{C3A54142-1D20-32F3-9601-C31EF5778AC1}"
  }
 }
