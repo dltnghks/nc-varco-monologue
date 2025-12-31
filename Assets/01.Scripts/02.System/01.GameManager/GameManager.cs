@@ -3,6 +3,7 @@ using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using System;
 using System.Collections;
+// using UnityEngine.SceneManagement; // Now handled by SceneTransitionManager
 
 /// <summary>
 /// Manages the overall game flow, state, and transitions.
@@ -20,7 +21,6 @@ public class GameManager : MonoBehaviour
     [Tooltip("The channel for receiving player-specific events.")]
     [SerializeField] private PlayerEventChannel playerEventChannel;
     [SerializeField] private EGameEvent onStartGameEvent; 
-    [SerializeField] private EGameEvent onGameOverEvnet; 
 
     /// <summary>
     /// Returns true if player interaction should be blocked (e.g., during a specific dialogue).
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SerializedDictionary<EGameEvent, List<WwiseAudioData>> eventToVoiceData = new SerializedDictionary<EGameEvent, List<WwiseAudioData>>();
     
     // State machine fields
+    private bool isGameOverInProgress = false;
     private bool isEnteringDangerState = false;
     private bool isInDangerState = false;
     private Coroutine dangerStateCoroutine;
@@ -92,7 +93,7 @@ public class GameManager : MonoBehaviour
         if (playerEvent == EPlayerEvent.StartedRunning && isInDangerState)
         {
             Debug.LogWarning("[GameManager] Game Over: Player started running during Danger State!");
-            TriggerGameOver("Running makes too much noise when you're in danger.");
+            StartGameOverSequence("Running makes too much noise when you're in danger.");
         }
     }
 
@@ -111,11 +112,10 @@ public class GameManager : MonoBehaviour
                 break;
 
             case EGameEvent.DangerDetected:
-                // If we are in the grace period or already in danger, it's game over.
                 if (isEnteringDangerState || isInDangerState)
                 {
                     Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
-                    TriggerGameOver("One noise is a warning, two is a death sentence.");
+                    StartGameOverSequence("One noise is a warning, two is a death sentence.");
                 }
                 else
                 {
@@ -126,23 +126,17 @@ public class GameManager : MonoBehaviour
                 }
                 break;
 
-            case EGameEvent.GameOver:
-                // The TriggerGameOver helper handles the dialogue. This case is for the final logic.
-                Debug.Log("GAME OVER LOGIC: Quitting application.");
-                isInDangerState = false; 
-                isEnteringDangerState = false;
-                if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
-
-                // Quit the application
-                #if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
-                #else
-                    Application.Quit();
-                #endif
-                break;
-
             case EGameEvent.GameStarted:
                 HandleDefaultEvent(eventKey, () => HandleGameStart());
+                break;
+
+            case EGameEvent.GameEnd:
+                // For GameEnd (Game Clear), play a final dialogue, then load the clear scene.
+                Action onGameEndDialogueFinished = () => {
+                    Debug.Log("GAME CLEAR: Loading GameClearScene with fade.");
+                    SceneTransitionManager.Instance.LoadScene("GameClearScene");
+                };
+                HandleDefaultEvent(eventKey, onGameEndDialogueFinished);
                 break;
 
             default:
@@ -155,17 +149,17 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// A helper method to centralize the process of triggering a game over.
     /// </summary>
-    private void TriggerGameOver(string reason)
+    private void StartGameOverSequence(string reason)
     {
-        if (!this.enabled) return; // Prevent multiple game over triggers
+        if (isGameOverInProgress) return;
+        isGameOverInProgress = true;
 
-        // Stop checking for more game over conditions.
-        this.enabled = false; 
+        Debug.LogWarning($"Starting GameOver Sequence. Reason: {reason}");
 
-        Debug.LogWarning($"Triggering GameOver Sequence. Reason: {reason}");
-
+        // Define the final action: load the GameOver scene.
         Action onDialogueFinished = () => {
-            gameEventChannel.RaiseEvent(onGameOverEvnet);
+            Debug.Log("GAME OVER: Loading GameOverScene with fade.");
+            SceneTransitionManager.Instance.LoadScene("GameOverScene");
         };
         
         // Play the generic GameOver dialogue, then execute the action.

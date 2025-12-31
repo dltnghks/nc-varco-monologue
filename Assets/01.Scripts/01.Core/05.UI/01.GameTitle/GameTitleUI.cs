@@ -63,4 +63,14 @@ public class GameTitleUI : MonoBehaviour
             .Append(gameTitleText.DOFade(1.0f, flickerDuration))
             .OnComplete(RandomFlicker);
     }
+
+    void Update()
+    {
+        // Detect any mouse click or touch input
+        if (Input.GetMouseButtonDown(0)) // Left mouse button click
+        {
+            Debug.Log("Screen clicked! Loading GameScene with fade...");
+            SceneTransitionManager.Instance.LoadScene("GameScene");
+        }
+    }
 }

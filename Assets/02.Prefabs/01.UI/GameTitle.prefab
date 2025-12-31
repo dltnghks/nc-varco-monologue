@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6618601046593969773}
   - component: {fileID: 9100722377169055255}
   m_Layer: 5
-  m_Name: GameTitleBackground
+  m_Name: GameTitleBackground_Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 3442903411717537430}
   - component: {fileID: 7635031763890470899}
   m_Layer: 5
-  m_Name: GameTitleBackground_Effect
+  m_Name: GameTitleBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,8 +315,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7078270877277392657}
   - {fileID: 5992925971778236076}
+  - {fileID: 7078270877277392657}
   - {fileID: 2202200686136438923}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -346,5 +346,5 @@ MonoBehaviour:
   flickerMinAlpha: 0.3
   backgroundImage: {fileID: 9100722377169055255}
   backgroundTargetColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.08627451}
-  backgroundColorChangeDuration: 2
+  backgroundColorChangeDuration: 1.3
   backgroundColorLoopType: 1
