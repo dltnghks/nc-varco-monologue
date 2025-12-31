@@ -24,3 +24,9 @@ public enum ESoundType
     Warning,
     Special,
 }
+
+public enum EPlayerEvent
+{
+    StartedRunning,
+    StoppedRunning,
+}

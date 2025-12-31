@@ -72,6 +72,29 @@ public class Enemy : MonoBehaviour
         }
 
         StartPatrol();
+        //StartCoroutine(DangerEventRoutine());
+    }
+
+    private void Update()
+    {
+        // Pause and resume the enemy's movement and actions based on the global interaction block state.
+        if (GameManager.Instance != null && patrolSequence != null && patrolSequence.IsActive())
+        {
+            if (GameManager.Instance.IsInteractionBlocked)
+            {
+                if (patrolSequence.IsPlaying())
+                {
+                    patrolSequence.Pause();
+                }
+            }
+            else
+            {
+                if (!patrolSequence.IsPlaying())
+                {
+                    patrolSequence.Play();
+                }
+            }
+        }
     }
 
     private void OnDestroy()
@@ -120,5 +143,26 @@ public class Enemy : MonoBehaviour
             .AppendInterval(waitAtCenterTime)
             .Append(transform.DOMove(pointA.position, travelTime).SetEase(Ease.Linear))
             .SetLoops(-1);
+    }
+    
+    /// <summary>
+    /// Coroutine to periodically raise the DangerDetected event, but only when player interaction is not blocked.
+    /// </summary>
+    private IEnumerator DangerEventRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(dangerEventInterval);
+
+            // Only raise event if interaction is not blocked
+            if (GameManager.Instance != null && !GameManager.Instance.IsInteractionBlocked)
+            {
+                if (gameEventChannel != null)
+                {
+                    Debug.Log("[Enemy] Raising DangerDetected event.");
+                    gameEventChannel.RaiseEvent(EGameEvent.DangerDetected);
+                }
+            }
+        }
     }
 }

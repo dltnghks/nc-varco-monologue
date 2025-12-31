@@ -1095,6 +1095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnenyEnvironment
       objectReference: {fileID: 0}
+    - target: {fileID: 5164033079310053666, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
+      propertyPath: travelTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8090780093712793286, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

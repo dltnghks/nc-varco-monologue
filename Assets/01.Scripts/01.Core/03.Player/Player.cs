@@ -8,6 +8,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
+    [Header("Event Channels")]
+    [SerializeField] private PlayerEventChannel playerEventChannel;
+
     [Header("General Settings")]
     [Tooltip("Movement speed in meters per second.")]
     [SerializeField] private FloatVariable moveSpeed;
@@ -45,7 +48,8 @@ public class Player : MonoBehaviour
     private float mouseRotationInput = 0f;
     private float gyroRotationInput = 0f;
     private bool moveForwardInput = false;
-    private bool runInput = false;
+    public bool IsRunning { get; private set; } = false;
+    private bool wasRunning = false;
 
     // Touch hold state
     private float touchStartTime = 0f;
@@ -82,29 +86,47 @@ public class Player : MonoBehaviour
     {
         if (GameManager.Instance.IsInteractionBlocked)
         {
-            return;
+            // Force stop movement and running if interaction is blocked.
+            moveForwardInput = false;
+            IsRunning = false;
+        }
+        else
+        {
+            // Otherwise, get state from user input.
+            HandleInputs();
         }
 
-        HandleInputs();
+        // After the final state for this frame is determined, check for changes and raise events.
+        if (playerEventChannel != null && IsRunning != wasRunning)
+        {
+            if (IsRunning)
+            {
+                Debug.Log("Player started running, raising event.");
+                playerEventChannel.RaiseEvent(EPlayerEvent.StartedRunning);
+            }
+            else
+            {
+                Debug.Log("Player stopped running, raising event.");
+                playerEventChannel.RaiseEvent(EPlayerEvent.StoppedRunning);
+            }
+        }
+
+        // Update the state for the next frame.
+        wasRunning = IsRunning;
     }
 
     void FixedUpdate()
     {
-        if (GameManager.Instance.IsInteractionBlocked)
-        {
-            return;
-        }
-        
-        
+        // Movement logic is now independent of input polling, it just uses the state variables.
         HandleRotation();
         HandleMovement();
     }
 
     private void HandleInputs()
     {
-        // Reset per-frame input state
+        // Assume not moving or running until proven otherwise by input.
         moveForwardInput = false;
-        //runInput = false;
+        IsRunning = false;
         gyroRotationInput = 0f;
 
 #if UNITY_IOS || UNITY_ANDROID
@@ -161,12 +183,12 @@ public class Player : MonoBehaviour
                 if (Input.touchCount > 1)
                 {
                     //Debug.Log("RUN");
-                    runInput = true;
+                    IsRunning = true;
                 }
                 else
                 {
                     //Debug.Log("Walk");
-                    runInput = false;
+                    IsRunning = false;
                 }
             }
         }
@@ -233,12 +255,12 @@ public class Player : MonoBehaviour
         if (moveForwardInput)
         {
             // Apply run speed multiplier if run input is active
-            float currentSpeed = runInput ? moveSpeed.Value * runSpeedMultiplier : moveSpeed.Value;
-            //Debug.Log(runInput + " : " + currentSpeed);
+            float currentSpeed = IsRunning ? moveSpeed.Value * runSpeedMultiplier : moveSpeed.Value;
+            //Debug.Log(IsRunning + " : " + currentSpeed);
             rb.MovePosition(rb.position + transform.forward * currentSpeed * Time.fixedDeltaTime);
 
             // Determine current footstep interval based on movement state
-            float currentFootstepInterval = runInput ? runFootstepInterval : walkFootstepInterval;
+            float currentFootstepInterval = IsRunning ? runFootstepInterval : walkFootstepInterval;
 
             // Play footstep sound at intervals
             if (footstepAudioData != null && Time.time >= lastFootstepTime + currentFootstepInterval)

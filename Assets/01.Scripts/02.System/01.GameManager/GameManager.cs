@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using System;
+using System.Collections;
 
 /// <summary>
 /// Manages the overall game flow, state, and transitions.
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     [Header("Event Channel")]
     [Tooltip("The channel for receiving general game events.")]
     [SerializeField] private GameEventChannel gameEventChannel;
+    [Tooltip("The channel for receiving player-specific events.")]
+    [SerializeField] private PlayerEventChannel playerEventChannel;
     [SerializeField] private EGameEvent onStartGameEvent; 
     [SerializeField] private EGameEvent onGameOverEvnet; 
 
@@ -25,11 +28,20 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public bool IsInteractionBlocked => DialogueManager.Instance != null && DialogueManager.Instance.IsInteractionBlocked;
 
+    [Header("Game Rules")]
+    [Tooltip("How long the 'Danger State' lasts in seconds after a danger event.")]
+    [SerializeField] private float dangerStateDuration = 10.0f;
+    [Tooltip("A grace period after a danger event before it becomes lethal to run or make more noise.")]
+    [SerializeField] private float dangerGracePeriod = 1.0f;
+
     //SerializedDictionary
     [Header("Event to Voice")]
     [SerializeField] private SerializedDictionary<EGameEvent, List<WwiseAudioData>> eventToVoiceData = new SerializedDictionary<EGameEvent, List<WwiseAudioData>>();
     
-    private int consecutiveDangerDetectedCount = 0;
+    // State machine fields
+    private bool isEnteringDangerState = false;
+    private bool isInDangerState = false;
+    private Coroutine dangerStateCoroutine;
 
     private void Awake()
     {
@@ -54,6 +66,10 @@ public class GameManager : MonoBehaviour
         {
             gameEventChannel.OnEventRaised += HandleGameEvent;
         }
+        if (playerEventChannel != null)
+        {
+            playerEventChannel.OnEventRaised += HandlePlayerEvent;
+        }
     }
 
     private void OnDisable()
@@ -62,60 +78,142 @@ public class GameManager : MonoBehaviour
         {
             gameEventChannel.OnEventRaised -= HandleGameEvent;
         }
+        if (playerEventChannel != null)
+        {
+            playerEventChannel.OnEventRaised -= HandlePlayerEvent;
+        }
+    }
+
+    /// <summary>
+    /// Handles events raised by the PlayerEventChannel.
+    /// </summary>
+    private void HandlePlayerEvent(EPlayerEvent playerEvent)
+    {
+        if (playerEvent == EPlayerEvent.StartedRunning && isInDangerState)
+        {
+            Debug.LogWarning("[GameManager] Game Over: Player started running during Danger State!");
+            TriggerGameOver("Running makes too much noise when you're in danger.");
+        }
     }
 
     /// <summary>
     /// Handles events raised by the GameEventChannel.
     /// </summary>
-    /// <param name="eventKey">The key of the event that was raised.</param>
     private void HandleGameEvent(EGameEvent eventKey)
     {
         Debug.Log($"[GameManager] Received Event: <color=green>{eventKey}</color>");
 
-        // --- State Update: Check for consecutive danger events ---
-        if (eventKey == EGameEvent.DangerDetected)
-        {
-            consecutiveDangerDetectedCount++;
-        }
-        else
-        {
-            consecutiveDangerDetectedCount = 0;
-        }
-
-        // --- Rule Logic: If danger count is too high, override the event to GameOver ---
-        if(consecutiveDangerDetectedCount >= 2)
-        {
-            Debug.LogWarning("[GameManager] Two consecutive DangerDetected events! Overriding to GameOver.");
-            eventKey = EGameEvent.GameOver;
-            consecutiveDangerDetectedCount = 0;
-        }
-
-        // --- Logic Definition: Define what to do AFTER dialogue for each event ---
-        Action onDialogueFinished = null;
         switch (eventKey)
         {
+            case EGameEvent.StepOnGlass:
+                // Play the glass sound, then immediately raise a DangerDetected event.
+                HandleDefaultEvent(eventKey, () => gameEventChannel.RaiseEvent(EGameEvent.DangerDetected));
+                break;
+
+            case EGameEvent.DangerDetected:
+                // If we are in the grace period or already in danger, it's game over.
+                if (isEnteringDangerState || isInDangerState)
+                {
+                    Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
+                    TriggerGameOver("One noise is a warning, two is a death sentence.");
+                }
+                else
+                {
+                    // This is the first danger event. Start the process of entering the danger state.
+                    HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
+                    if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
+                    dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence());
+                }
+                break;
+
             case EGameEvent.GameOver:
-                onDialogueFinished = () => {
-                    Debug.Log("GAME OVER LOGIC: Show UI, stop player, etc.");
-                    // gameEventChannel.RaiseEvent(onGameOverEvnet); // Be careful not to create an infinite loop if GameOver has its own dialogue.
-                };
+                // The TriggerGameOver helper handles the dialogue. This case is for the final logic.
+                Debug.Log("GAME OVER LOGIC: Quitting application.");
+                isInDangerState = false; 
+                isEnteringDangerState = false;
+                if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
+
+                // Quit the application
+                #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+                #else
+                    Application.Quit();
+                #endif
                 break;
 
             case EGameEvent.GameStarted:
-                onDialogueFinished = () => HandleGameStart();
+                HandleDefaultEvent(eventKey, () => HandleGameStart());
                 break;
-            
-            // Add other cases here for logic that should run after dialogue.
-            // For events with no follow-up logic, no case is needed.
-        }
 
-        // --- Execution: Play dialogue and pass the defined logic as a callback ---
-        HandleDefaultEvent(eventKey, onDialogueFinished);
+            default:
+                // For all other events, just play their dialogue.
+                HandleDefaultEvent(eventKey);
+                break;
+        }
     }
 
+    /// <summary>
+    /// A helper method to centralize the process of triggering a game over.
+    /// </summary>
+    private void TriggerGameOver(string reason)
+    {
+        if (!this.enabled) return; // Prevent multiple game over triggers
+
+        // Stop checking for more game over conditions.
+        this.enabled = false; 
+
+        Debug.LogWarning($"Triggering GameOver Sequence. Reason: {reason}");
+
+        Action onDialogueFinished = () => {
+            gameEventChannel.RaiseEvent(onGameOverEvnet);
+        };
+        
+        // Play the generic GameOver dialogue, then execute the action.
+        if (eventToVoiceData.TryGetValue(EGameEvent.GameOver, out var gameOverDialogue))
+        {
+            DialogueManager.Instance.PlayDialogueSequence(gameOverDialogue, onDialogueFinished);
+        }
+        else
+        {
+            onDialogueFinished();
+        }
+    }
+
+    /// <summary>
+    /// Coroutine that implements the grace period before entering the full danger state.
+    /// </summary>
+    private IEnumerator EnterDangerStateSequence()
+    {
+        isEnteringDangerState = true;
+        Debug.Log($"[GameManager] Entering danger grace period for {dangerGracePeriod} seconds.");
+
+        yield return new WaitForSeconds(dangerGracePeriod);
+
+        isEnteringDangerState = false;
+        isInDangerState = true;
+        Debug.Log($"[GameManager] Grace period over. Now in Danger State for {dangerStateDuration} seconds.");
+
+        // Start the main timer for how long the danger state lasts.
+        dangerStateCoroutine = StartCoroutine(DangerStateTimer());
+    }
+
+    /// <summary>
+    /// Coroutine to automatically exit the danger state after a duration.
+    /// </summary>
+    private IEnumerator DangerStateTimer()
+    {
+        yield return new WaitForSeconds(dangerStateDuration);
+        Debug.Log("[GameManager] Danger State has expired.");
+        isInDangerState = false;
+    }
+
+    /// <summary>
+    /// Contains the logic to be executed when the game starts (after any intro dialogue).
+    /// </summary>
     private void HandleGameStart()
     {
         Debug.Log("GAME STARTED LOGIC");
+        this.enabled = true; // Ensure the component is active at game start.
     }
 
     /// <summary>
@@ -125,12 +223,10 @@ public class GameManager : MonoBehaviour
     {
         if (eventToVoiceData.TryGetValue(eventKey, out var audioDatas) && audioDatas.Count > 0)
         {
-            // If dialogue exists, play it and pass the callback to the DialogueManager.
             DialogueManager.Instance.PlayDialogueSequence(audioDatas, onFinished);
         }
         else
         {
-            // If no dialogue exists, execute the callback immediately.
             onFinished?.Invoke();
         }
     }
