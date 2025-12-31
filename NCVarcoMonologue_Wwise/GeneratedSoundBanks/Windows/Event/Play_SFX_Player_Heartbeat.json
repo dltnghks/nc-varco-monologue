@@ -1,0 +1,56 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2207594012",
+    "Type": "Event",
+    "GUID": "{0ADA07FE-F6A0-4CD3-9B59-6859A3E32D5D}",
+    "Language": "SFX",
+    "Hash": "{F2004E66-7C40-99C5-21EE-8829980A0B8B}",
+    "ObjectPath": "Play_SFX_Player_Heartbeat",
+    "ShortName": "Play_SFX_Player_Heartbeat",
+    "Path": "Event/Play_SFX_Player_Heartbeat.bnk",
+    "Media": [
+     {
+      "Id": "1069880761",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Heartbeat.wav",
+      "Path": "Media/1069880761.wem",
+      "CachePath": "B2/{B23EF10C-49D6-7438-0877-85B265FEF335}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2207594012",
+      "Name": "Play_SFX_Player_Heartbeat",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Player_Heartbeat",
+      "GUID": "{0ADA07FE-F6A0-4CD3-9B59-6859A3E32D5D}",
+      "DurationType": "OneShot",
+      "DurationMin": "21.394285",
+      "DurationMax": "21.394285",
+      "MediaRefs": [
+       {
+        "Id": "1069880761"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1316067302",
+      "Name": "DangerLevel",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\DangerLevel",
+      "GUID": "{59EB514B-D374-4AE4-AD4D-23C520C93AA6}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{2316EEAA-A33C-350B-4A8E-D2037450F4DF}"
+ }
+}

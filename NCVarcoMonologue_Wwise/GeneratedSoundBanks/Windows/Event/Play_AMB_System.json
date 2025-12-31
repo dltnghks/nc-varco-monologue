@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{C3092BEE-9352-4207-81CC-E3FD2CA6D88B}",
     "Language": "SFX",
-    "Hash": "{A4D02570-539D-BB51-DF7C-415400743951}",
+    "Hash": "{855FC665-91C8-DA19-47BE-5B1128A9DE62}",
     "ObjectPath": "Play_AMB_System",
     "ShortName": "Play_AMB_System",
     "Path": "Event/Play_AMB_System.bnk",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "AMB_Horror_Tension.wav",
       "Path": "Media/881228485.wem",
-      "CachePath": "46/{46BF76E8-730A-C5F1-1B1D-6E31B2CA61AC}.wem"
+      "CachePath": "46/{4657B604-F7A9-6FAB-3590-B23F5BB1F9FC}.wem"
      }
     ],
     "Events": [
@@ -61,6 +61,6 @@
     ]
    }
   ],
-  "FileHash": "{19B38559-95EE-B22B-2F5E-9559B6A5883E}"
+  "FileHash": "{8A7F4086-E6FC-551B-2EA9-6B750F702009}"
  }
 }

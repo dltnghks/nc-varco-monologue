@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{82E3C2F6-5044-4614-89B3-0FFC20C09073}",
     "Language": "SFX",
-    "Hash": "{65532972-BE00-BC4D-81CE-D668BF122C74}",
+    "Hash": "{8502036D-5F10-8FBC-EC54-8CFAF7747E32}",
     "ObjectPath": "Play_SFX_EscapeRoute_Open",
     "ShortName": "Play_SFX_EscapeRoute_Open",
     "Path": "Event/Play_SFX_EscapeRoute_Open.bnk",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Door_Slam.wav",
       "Path": "Media/476860103.wem",
-      "CachePath": "84/{8463CCD8-143B-DACF-F628-B7930963C99E}.wem"
+      "CachePath": "18/{18292713-0902-AB90-892E-4710D3E3033D}.wem"
      }
     ],
     "Events": [
@@ -56,6 +56,6 @@
     ]
    }
   ],
-  "FileHash": "{91769826-924C-0B85-C8D6-91CD4AB7D584}"
+  "FileHash": "{8D4933D9-ABE8-58BD-74B7-C7C24E6B510F}"
  }
 }

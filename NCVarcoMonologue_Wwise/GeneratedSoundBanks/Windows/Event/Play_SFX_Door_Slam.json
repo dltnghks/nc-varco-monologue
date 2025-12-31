@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8D078E8E-D710-44C5-AD6C-ADBF757BD3F5}",
     "Language": "SFX",
-    "Hash": "{2ABC4C2C-34D6-1628-28AA-B5299906ABFB}",
+    "Hash": "{415BF07C-6D26-7058-3A1F-770A64343E90}",
     "ObjectPath": "Play_SFX_Door_Slam",
     "ShortName": "Play_SFX_Door_Slam",
     "Path": "Event/Play_SFX_Door_Slam.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Door_Slam.wav",
       "Path": "Media/476860103.wem",
-      "CachePath": "84/{8463CCD8-143B-DACF-F628-B7930963C99E}.wem"
+      "CachePath": "18/{18292713-0902-AB90-892E-4710D3E3033D}.wem"
      }
     ],
     "Events": [
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{613F00C1-5E87-5944-492D-EC2E3F2751BE}"
+  "FileHash": "{0D8BA9AE-272C-54E5-A483-385EEE2E66FF}"
  }
 }

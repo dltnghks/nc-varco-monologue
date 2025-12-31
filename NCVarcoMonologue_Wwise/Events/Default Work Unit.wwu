@@ -185,17 +185,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFX_Heartbeat" ID="{561107BE-B042-4769-AD43-1F0948F29CC1}">
-							<ChildrenList>
-								<Action Name="" ID="{6CFE0A3D-36DF-4172-8318-8204FCB3F842}" ShortID="697614739">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_Heartbeat" ID="{F1A0A078-7812-4D29-9AF4-A91808D511F0}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_SFX_Monster_Breath" ID="{A08BF425-58E7-4BBF-B17D-0AD550CF82CF}">
 							<ChildrenList>
 								<Action Name="" ID="{829CA621-CC97-427C-8F5F-6DA89D64C4D0}" ShortID="1052792770">
@@ -323,6 +312,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_EscapeRoute_Open" ID="{35D84CEC-9696-405D-987C-E4AF7140A0D5}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFX_Player_Heartbeat" ID="{0ADA07FE-F6A0-4CD3-9B59-6859A3E32D5D}">
+							<ChildrenList>
+								<Action Name="" ID="{A83A1F91-155B-4556-AE86-769BF22F5981}" ShortID="290828125">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Player_Heartbeat" ID="{05B93DD0-95F3-4AFF-9530-8DEA90DF1928}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

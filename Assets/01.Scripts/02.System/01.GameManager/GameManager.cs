@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     [Header("Wwise")]
     [Tooltip("The ambient sound to play at the start of the game.")]
     [SerializeField] private AK.Wwise.Event ambEvent;
+    [SerializeField] private AK.Wwise.Event heartbeatEvent;
     [Tooltip("The RTPC to control the danger level.")]
     [SerializeField] private AK.Wwise.RTPC dangerLevelRtpc;
     [Tooltip("How long the RTPC tween takes in seconds.")]
@@ -241,6 +242,12 @@ public class GameManager : MonoBehaviour
         {
             ambEvent.Post(gameObject);
             Debug.Log("[GameManager] Posted AMB event.");
+        }
+
+        if (heartbeatEvent != null)
+        {
+            heartbeatEvent.Post(gameObject);
+            Debug.Log("[GameManager] Posted heartbeatEvent event.");
         }
         this.enabled = true; // Ensure the component is active at game start.
     }
