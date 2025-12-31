@@ -123,7 +123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1194509516427102890
 Transform:
   m_ObjectHideFlags: 0
@@ -834,6 +834,7 @@ MonoBehaviour:
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   onFailOpenEvent: 5
   onOpenEvent: 6
+  beaconSound: {fileID: 11400000, guid: 775d90d73c6debe4786ca838ce1f2d70, type: 2}
   openSound: {fileID: 11400000, guid: 0ea9113553f5df5449a13a3b692101b8, type: 2}
 --- !u!1 &7778472967535947702
 GameObject:
@@ -1095,6 +1096,10 @@ PrefabInstance:
     - target: {fileID: 3490977411959638036, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
       propertyPath: m_Name
       value: EnenyEnvironment
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490977411959638036, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5164033079310053666, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
       propertyPath: travelTime

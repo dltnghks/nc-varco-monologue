@@ -188,10 +188,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartingRoom
       objectReference: {fileID: 0}
-    - target: {fileID: 6718521661579460967, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
-      propertyPath: pickupSound
-      value: 
-      objectReference: {fileID: 11400000, guid: 20853d159a71a3140be6ed7c88510a67, type: 2}
     - target: {fileID: 8795820650437675523, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -477,7 +473,8 @@ MonoBehaviour:
       Value:
       - {fileID: 11400000, guid: 8a13ace2dc566ca47830720eaa721c13, type: 2}
     - Key: 4
-      Value: []
+      Value:
+      - {fileID: 11400000, guid: fe52204685e68354ab9ff822bbb22127, type: 2}
     - Key: 5
       Value:
       - {fileID: 11400000, guid: 8a13ace2dc566ca47830720eaa721c13, type: 2}

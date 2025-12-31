@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,8 +12,28 @@ public class Enterence : MonoBehaviour, IInteractObject
     [SerializeField] private EGameEvent onFailOpenEvent;
     [SerializeField] private EGameEvent onOpenEvent;
 
-    [Header("이벤트 채널")]
+    [Header("Sound Setting")]
+    [SerializeField] private WwiseAudioData beaconSound;
     [SerializeField] private WwiseAudioData openSound;
+
+    private void OnEnable()
+    {
+        gameEventChannel.OnEventRaised += OnEvent;
+    }
+
+    private void OnDisable()
+    {
+        gameEventChannel.OnEventRaised -= OnEvent;
+    }
+
+    private void OnEvent(EGameEvent gameEvent)
+    {
+        if(gameEvent == EGameEvent.SecurityModuleAcquired)
+        {
+            StartCoroutine(SoundLoop());
+        }
+        
+    }
 
     // 외부(플레이어)에서 호출할 함수
     public void Open()
@@ -44,5 +65,14 @@ public class Enterence : MonoBehaviour, IInteractObject
         }
 
         Open();
+    }
+
+    private IEnumerator SoundLoop()
+    {
+        while(true){
+            AudioManager.Instance.PlayOneShot(beaconSound, transform.position);
+            yield return new WaitForSeconds(2f);
+        }
+
     }
 }
