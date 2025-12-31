@@ -458,7 +458,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -698,6 +698,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3920130697102041504, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882321040195200125, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
+      propertyPath: m_text
+      value: GAME CLEAR...?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882321040195200125, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f19da7449318b444b0c2b3b566d1174, type: 2}
+    - target: {fileID: 5882321040195200125, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882321040195200125, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882321040195200125, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882321040195200125, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1870290628637935603, guid: 2f19da7449318b444b0c2b3b566d1174, type: 2}
+    - target: {fileID: 5882321040195200125, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882321040195200125, guid: a2bf11f0d3a808a41ae39d504ae05341, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

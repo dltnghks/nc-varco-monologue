@@ -102,7 +102,10 @@ public class ItemPickup : MonoBehaviour, IInteractObject
     private IEnumerator SoundLoop()
     {
         while(true){
-            AudioManager.Instance.PlayOneShot(ambientLoopSound, transform.position);
+            if (!GameManager.Instance.IsInteractionBlocked)
+            {
+                AudioManager.Instance.PlayOneShot(ambientLoopSound, transform.position);
+            }
             yield return new WaitForSeconds(2f);
         }
 

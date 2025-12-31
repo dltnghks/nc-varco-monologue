@@ -190,7 +190,7 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            if (!isAmbientSoundMuted)
+            if (!isAmbientSoundMuted && !GameManager.Instance.IsInteractionBlocked)
             {
                 AudioManager.Instance.PlayOneShot(ambientAudioData, transform.position);
             }

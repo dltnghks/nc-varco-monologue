@@ -253,7 +253,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -695,6 +695,22 @@ PrefabInstance:
     - target: {fileID: 2573845777111012653, guid: dc0661f36780d964f9ba1c26e3a4f42c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319903065203585533, guid: dc0661f36780d964f9ba1c26e3a4f42c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319903065203585533, guid: dc0661f36780d964f9ba1c26e3a4f42c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319903065203585533, guid: dc0661f36780d964f9ba1c26e3a4f42c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5319903065203585533, guid: dc0661f36780d964f9ba1c26e3a4f42c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190335
       objectReference: {fileID: 0}
     - target: {fileID: 5756393626518186125, guid: dc0661f36780d964f9ba1c26e3a4f42c, type: 3}
       propertyPath: m_Name
