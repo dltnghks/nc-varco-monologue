@@ -228,7 +228,12 @@ public class InGameUI : MonoBehaviour
             
             float angle = Vector3.SignedAngle(playerTransform.forward, directionToSound.normalized, Vector3.up);
             
-            rt.localRotation = Quaternion.Euler(0, 0, -angle);
+            // Automatically calculate the offset to center the arc on the target direction.
+            // The fill starts at the top (12 o'clock) and goes clockwise.
+            // To center the arc, we need to rotate it counter-clockwise by half of its own width.
+            float arcCenterOffset = (arcFillAmount * 360f) / 2f;
+            
+            rt.localRotation = Quaternion.Euler(0, 0, -angle + arcCenterOffset);
 
             yield return null; // Wait for the next frame
         }
