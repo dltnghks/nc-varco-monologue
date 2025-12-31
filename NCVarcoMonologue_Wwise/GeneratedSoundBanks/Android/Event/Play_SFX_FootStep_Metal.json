@@ -1,0 +1,85 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4156180716",
+    "Type": "Event",
+    "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
+    "Language": "SFX",
+    "Hash": "{C8689354-818C-2828-6BC7-12426278313B}",
+    "ObjectPath": "Play_SFX_FootStep_Metal",
+    "ShortName": "Play_SFX_FootStep_Metal",
+    "Path": "Event/Play_SFX_FootStep_Metal.bnk",
+    "Media": [
+     {
+      "Id": "293786288",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footsteps_Metal.wav",
+      "Path": "Media/293786288.wem",
+      "CachePath": "DF/{DF4571CB-97C2-6C01-D5F1-1F525CEB62B6}.wem"
+     },
+     {
+      "Id": "425573192",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footsteps_Metal.wav",
+      "Path": "Media/425573192.wem",
+      "CachePath": "70/{70E6B3EE-B5BF-524A-54BC-233BC63E1B06}.wem"
+     },
+     {
+      "Id": "632772421",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footsteps_Metal.wav",
+      "Path": "Media/632772421.wem",
+      "CachePath": "44/{444C0B90-7890-8A78-E391-7FE81EC5C2B8}.wem"
+     },
+     {
+      "Id": "873169443",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Footsteps_Metal.wav",
+      "Path": "Media/873169443.wem",
+      "CachePath": "AA/{AA6C86D1-02B2-A63E-D4B1-1BE87610DEEF}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4156180716",
+      "Name": "Play_SFX_FootStep_Metal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_FootStep_Metal",
+      "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
+      "MaxAttenuation": "20",
+      "DurationType": "OneShot",
+      "DurationMin": "0.0672851",
+      "DurationMax": "0.24223724",
+      "MediaRefs": [
+       {
+        "Id": "293786288"
+       },
+       {
+        "Id": "425573192"
+       },
+       {
+        "Id": "632772421"
+       },
+       {
+        "Id": "873169443"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{2386D301-4BAB-110F-213A-79E0917413D4}"
+ }
+}

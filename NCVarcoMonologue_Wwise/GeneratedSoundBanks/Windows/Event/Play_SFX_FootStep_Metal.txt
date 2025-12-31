@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	4156180716	Play_SFX_FootStep_Metal			\Default Work Unit\Play_SFX_FootStep_Metal	
+

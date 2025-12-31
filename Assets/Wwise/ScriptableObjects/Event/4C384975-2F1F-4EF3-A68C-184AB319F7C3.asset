@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e700e63444c144cb49254d236a7712, type: 3}
-  m_Name: PlayerSpeed
+  m_Script: {fileID: 11500000, guid: 43929a8f9f1e3454eb792b87285e8f11, type: 3}
+  m_Name: 4C384975-2F1F-4EF3-A68C-184AB319F7C3
   m_EditorClassIdentifier: 
-  Value: 3
+  objectName: Play_SFX_Footstep_Concrete
+  id: 4169252818
+  guid: 4C384975-2F1F-4EF3-A68C-184AB319F7C3
+  IsInUserDefinedSoundBank: 0

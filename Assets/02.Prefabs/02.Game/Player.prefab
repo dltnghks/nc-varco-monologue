@@ -305,7 +305,9 @@ MonoBehaviour:
   tiltDeadZone: 0.05
   holdToMoveTime: 0.185
   runSpeedMultiplier: 2
-  footstepAudioData: {fileID: 11400000, guid: 067406dd2f92ea34e90bab286aa94838, type: 2}
+  footstepAudioData: {fileID: 11400000, guid: b15f41a6e21e7574a81b7143256459f7, type: 2}
+  walkFootstepInterval: 0.5
+  runFootstepInterval: 0.3
 --- !u!54 &8738953996875363207
 Rigidbody:
   m_ObjectHideFlags: 0

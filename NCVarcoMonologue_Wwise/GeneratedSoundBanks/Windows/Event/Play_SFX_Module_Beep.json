@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}",
     "Language": "SFX",
-    "Hash": "{981D5991-3433-968E-92D2-045BD957B551}",
+    "Hash": "{1DCFAC41-2A69-C2E1-7B78-1511E6B61B99}",
     "ObjectPath": "Play_SFX_Module_Beep",
     "ShortName": "Play_SFX_Module_Beep",
     "Path": "Event/Play_SFX_Module_Beep.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Card_Beep.wav",
       "Path": "Media/141226847.wem",
-      "CachePath": "55/{555601FE-99CE-8689-D312-54607C4948B5}.wem"
+      "CachePath": "3B/{3BBA6F1C-C75D-8117-33AA-F749A13D4921}.wem"
      }
     ],
     "Events": [
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{1599BB69-FAA2-2393-A575-70E7FD1064C1}"
+  "FileHash": "{80F670E9-F846-CF36-A044-49286B640BEA}"
  }
 }

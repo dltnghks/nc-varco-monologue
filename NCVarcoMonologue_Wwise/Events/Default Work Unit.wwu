@@ -201,6 +201,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_SFX_FootStep_Metal" ID="{772DCF7E-089D-45EC-8E09-48CEEE0952B1}">
+					<ChildrenList>
+						<Action Name="" ID="{45B9000A-73A3-4465-AD0B-F96216738F4F}" ShortID="78902370">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_FootStep_Metal" ID="{7F444D60-AE78-4376-934A-478EAA3AC347}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

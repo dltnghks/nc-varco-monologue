@@ -34,6 +34,10 @@ public class Player : MonoBehaviour
     [Header("Sound Settings")]
     private WwiseSoundEmitter soundEmitter;
     [SerializeField] private WwiseAudioData footstepAudioData;
+    [Tooltip("Interval between footstep sounds when walking.")]
+    [SerializeField] private float walkFootstepInterval = 0.5f;
+    [Tooltip("Interval between footstep sounds when running.")]
+    [SerializeField] private float runFootstepInterval = 0.3f;
 
     private Rigidbody rb;
     private bool gyroSupported;
@@ -49,6 +53,9 @@ public class Player : MonoBehaviour
     // Touch hold state
     private float touchStartTime = 0f;
     private bool isHolding = false;
+
+    // Footstep timing
+    private float lastFootstepTime = 0f;
 
     void Awake()
     {
@@ -89,7 +96,7 @@ public class Player : MonoBehaviour
     {
         // Reset per-frame input state
         moveForwardInput = false;
-        runInput = false;
+        //runInput = false;
         gyroRotationInput = 0f;
 
 #if UNITY_IOS || UNITY_ANDROID
@@ -145,7 +152,13 @@ public class Player : MonoBehaviour
                 // If moving and a second finger is down, we are running.
                 if (Input.touchCount > 1)
                 {
+                    //Debug.Log("RUN");
                     runInput = true;
+                }
+                else
+                {
+                    //Debug.Log("Walk");
+                    runInput = false;
                 }
             }
         }
@@ -174,7 +187,7 @@ public class Player : MonoBehaviour
         
         // Movement and Running
         moveForwardInput = Input.GetMouseButton(0);
-        runInput = Input.GetKey(KeyCode.LeftControl);
+        //runInput = Input.GetKey(KeyCode.LeftControl);
 
         // Interaction
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -213,13 +226,23 @@ public class Player : MonoBehaviour
         {
             // Apply run speed multiplier if run input is active
             float currentSpeed = runInput ? moveSpeed.Value * runSpeedMultiplier : moveSpeed.Value;
+            //Debug.Log(runInput + " : " + currentSpeed);
             rb.MovePosition(rb.position + transform.forward * currentSpeed * Time.fixedDeltaTime);
 
-            // Play footstep sound
-            if (footstepAudioData != null)
+            // Determine current footstep interval based on movement state
+            float currentFootstepInterval = runInput ? runFootstepInterval : walkFootstepInterval;
+
+            // Play footstep sound at intervals
+            if (footstepAudioData != null && Time.time >= lastFootstepTime + currentFootstepInterval)
             {
                 soundEmitter.PlaySequence(footstepAudioData);
+                lastFootstepTime = Time.time;
             }
+        }
+        else
+        {
+            // Reset lastFootstepTime when not moving, so a footstep plays immediately upon starting movement
+            lastFootstepTime = 0f;
         }
     }
 

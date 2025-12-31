@@ -30,10 +30,10 @@ public class WwiseSoundEmitter : MonoBehaviour
     public void PlaySequence(WwiseAudioData audioData)
     {
         SetWwiseAudioData(audioData);
-        if (isPlaying) 
-        {
-            Stop(); // If it's already playing, stop the current sequence and start the new one.
-        }
+        
+        // Removed: if (isPlaying) Stop();
+        // This allows multiple single-shot sounds to layer without interrupting each other.
+        // The 'isPlaying' flag primarily manages internal sequence progression, not individual sound outputs.
     
         isPlaying = true;
         PlayNextEvent();
