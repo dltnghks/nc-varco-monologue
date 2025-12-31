@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4160029712",
+    "Type": "Event",
+    "GUID": "{D8D8ECAF-76ED-40F7-A26D-AF96490A45D4}",
+    "Language": "SFX",
+    "Hash": "{E640E80D-6F93-3924-1851-801264F93812}",
+    "ObjectPath": "Play_SFX_Swipe_Up",
+    "ShortName": "Play_SFX_Swipe_Up",
+    "Path": "Event/Play_SFX_Swipe_Up.bnk",
+    "Media": [
+     {
+      "Id": "612498766",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Swipe_Up.wav",
+      "Path": "Media/612498766.wem",
+      "CachePath": "7B/{7B2C02BE-D953-1551-858D-813624B2CEB5}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4160029712",
+      "Name": "Play_SFX_Swipe_Up",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Swipe_Up",
+      "GUID": "{D8D8ECAF-76ED-40F7-A26D-AF96490A45D4}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.8243021",
+      "DurationMax": "1.8243021",
+      "MediaRefs": [
+       {
+        "Id": "612498766"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{7E948342-03D2-6877-44F8-56F3D90A074C}"
+ }
+}

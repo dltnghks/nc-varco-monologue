@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2840398577	Play_SFX_Footstep_Glass			\Default Work Unit\Play_SFX_Footstep_Glass	
+

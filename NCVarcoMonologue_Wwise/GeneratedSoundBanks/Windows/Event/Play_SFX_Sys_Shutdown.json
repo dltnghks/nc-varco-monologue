@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1729752934",
+    "Type": "Event",
+    "GUID": "{191A3B1C-9C24-4EC4-B99B-D4A2E3D967D4}",
+    "Language": "SFX",
+    "Hash": "{BA4264B1-A851-7640-6AE5-4FF3643CB918}",
+    "ObjectPath": "Play_SFX_Sys_Shutdown",
+    "ShortName": "Play_SFX_Sys_Shutdown",
+    "Path": "Event/Play_SFX_Sys_Shutdown.bnk",
+    "Media": [
+     {
+      "Id": "65625335",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Sys_Shutdown.wav",
+      "Path": "Media/65625335.wem",
+      "CachePath": "BF/{BF9E94DD-E2C9-BC4C-30B5-87DE1CBE9D5F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1729752934",
+      "Name": "Play_SFX_Sys_Shutdown",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Sys_Shutdown",
+      "GUID": "{191A3B1C-9C24-4EC4-B99B-D4A2E3D967D4}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3573542",
+      "DurationMax": "1.3573542",
+      "MediaRefs": [
+       {
+        "Id": "65625335"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C0F99135-80C0-C544-90D9-905ACF43194D}"
+ }
+}

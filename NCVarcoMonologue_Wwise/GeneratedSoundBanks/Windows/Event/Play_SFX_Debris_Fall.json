@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4224361305",
+    "Type": "Event",
+    "GUID": "{0C95E852-F8AA-4719-8F14-049F830DD231}",
+    "Language": "SFX",
+    "Hash": "{46B2953A-22F4-CDCD-3E89-4F558EE0C7DF}",
+    "ObjectPath": "Play_SFX_Debris_Fall",
+    "ShortName": "Play_SFX_Debris_Fall",
+    "Path": "Event/Play_SFX_Debris_Fall.bnk",
+    "Media": [
+     {
+      "Id": "1072414887",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Debris_Fall.wav",
+      "Path": "Media/1072414887.wem",
+      "CachePath": "A9/{A9C96661-74D3-2FF9-80E6-479721B7F945}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4224361305",
+      "Name": "Play_SFX_Debris_Fall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Debris_Fall",
+      "GUID": "{0C95E852-F8AA-4719-8F14-049F830DD231}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.599875",
+      "DurationMax": "1.599875",
+      "MediaRefs": [
+       {
+        "Id": "1072414887"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{96C3E321-D599-3852-FD60-9C5C5B3E5FED}"
+ }
+}

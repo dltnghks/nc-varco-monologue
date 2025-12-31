@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1560004293",
+    "Type": "Event",
+    "GUID": "{43AEA702-D917-4801-AB57-C6BD77BB2430}",
+    "Language": "SFX",
+    "Hash": "{A7AD90ED-6E81-2676-DA7A-E9E448E3A9CE}",
+    "ObjectPath": "Play_SFX_Warning_Beep",
+    "ShortName": "Play_SFX_Warning_Beep",
+    "Path": "Event/Play_SFX_Warning_Beep.bnk",
+    "Media": [
+     {
+      "Id": "739721429",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Warning_Beep.wav",
+      "Path": "Media/739721429.wem",
+      "CachePath": "BA/{BA81684A-0EAC-0726-584A-2AB564E67EF3}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1560004293",
+      "Name": "Play_SFX_Warning_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Warning_Beep",
+      "GUID": "{43AEA702-D917-4801-AB57-C6BD77BB2430}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0625",
+      "DurationMax": "2.0625",
+      "MediaRefs": [
+       {
+        "Id": "739721429"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{45FF112D-2382-E8B2-7036-52AB74E26DCE}"
+ }
+}

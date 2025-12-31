@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2199223429",
+    "Type": "Event",
+    "GUID": "{858329DE-C87F-4270-A06E-A7385CDFB2A2}",
+    "Language": "SFX",
+    "Hash": "{71F80E95-D907-E736-92EC-5A70E35DCEFD}",
+    "ObjectPath": "Play_SFX_Door_Open_Heavy",
+    "ShortName": "Play_SFX_Door_Open_Heavy",
+    "Path": "Event/Play_SFX_Door_Open_Heavy.bnk",
+    "Media": [
+     {
+      "Id": "750607744",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Door_Open_Heavy.wav",
+      "Path": "Media/750607744.wem",
+      "CachePath": "7D/{7D2B18BD-D9F6-F019-B42E-CE483E3FCDD6}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2199223429",
+      "Name": "Play_SFX_Door_Open_Heavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Open_Heavy",
+      "GUID": "{858329DE-C87F-4270-A06E-A7385CDFB2A2}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "8.388803",
+      "DurationMax": "8.388803",
+      "MediaRefs": [
+       {
+        "Id": "750607744"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{E5761BAE-9115-F928-95FE-D2FD75B1279E}"
+ }
+}
