@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartingRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 4703349276950416949, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
+      propertyPath: travelTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8795820650437675523, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -445,7 +449,8 @@ MonoBehaviour:
       Value:
       - {fileID: 11400000, guid: 8a13ace2dc566ca47830720eaa721c13, type: 2}
     - Key: 3
-      Value: []
+      Value:
+      - {fileID: 11400000, guid: 8a13ace2dc566ca47830720eaa721c13, type: 2}
     - Key: 4
       Value: []
     - Key: 5
@@ -856,10 +861,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 539139454}
     m_Modifications:
-    - target: {fileID: 1685773333891256175, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: arcFillAmount
-      value: 0.083333336
-      objectReference: {fileID: 0}
     - target: {fileID: 7623353459323201259, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

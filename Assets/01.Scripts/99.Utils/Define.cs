@@ -11,6 +11,12 @@ public enum EGameEvent
     GameEnd,              // 게임 종료
 }
 
+public enum EEnemyEvent
+{
+    Center,
+    Scream,
+}
+
 // 사운드 종류
 public enum ESoundType
 {

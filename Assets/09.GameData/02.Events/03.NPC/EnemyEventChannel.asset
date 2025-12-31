@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e964dc06fe8d7194c9e9399e260db3a4, type: 3}
-  m_Name: T04_OpenDoor_E
+  m_Script: {fileID: 11500000, guid: 9edd00b8dfdeb2a4697f95f03ca60775, type: 3}
+  m_Name: EnemyEventChannel
   m_EditorClassIdentifier: 
-  TutorialID: 9
-  AutomateNextEvent: 0
-  TutorialText: 
-  AudioData: {fileID: 11400000, guid: c70e120ec36b95740997d2b708d6dbef, type: 2}
-  DelayBetweenEvents: 0.5
+  showDebugLog: 1

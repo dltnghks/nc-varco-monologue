@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 899c594ba4801f14e8e707317575aa48, type: 3}
-  m_Name: SFX_Footstep_Glass
+  m_Name: SFX_Enemy_Scream
   m_EditorClassIdentifier: 
   wwiseEvents:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b7a433f1bdc7f0d43bb9c138c15907dd, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: e74f5a5c83b4d0348aad2d5aac778b6f, type: 2}
   needsVisualIndicator: 1
   soundType: 1
+  blocksPlayerInteraction: 0
   comment: 
