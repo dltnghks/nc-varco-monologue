@@ -460,7 +460,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 414bea284326caa4e831bb78a86ad6ee, type: 2}
   rtpcTweenDuration: 2
   rtpcEaseType: 7
-  dangerStateDuration: 10
+  dangerStateDuration: 2
   dangerGracePeriod: 1
   eventToVoiceData:
     _serializedList:

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{E7F5DA0D-59FF-4E2B-A89F-2312A932A26F}",
     "Language": "SFX",
-    "Hash": "{8F366A64-0EE9-7185-206D-0F426ADD1E8A}",
+    "Hash": "{00F35E21-8B09-2965-E173-9EF9F9063EF0}",
     "ObjectPath": "Play_SFX_Door_Unlock",
     "ShortName": "Play_SFX_Door_Unlock",
     "Path": "Event/Play_SFX_Door_Unlock.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Door_Unlock",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Door_Unlock",
       "GUID": "{E7F5DA0D-59FF-4E2B-A89F-2312A932A26F}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.625",
       "DurationMax": "1.625",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{D58739E3-BD1C-4347-E208-9F49CF09AC3F}"
+  "FileHash": "{749F1107-F82D-5818-E5A0-41F4DEA1DBB7}"
  }
 }

@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private WwiseAudioData ambientAudioData;
     
     private Sequence patrolSequence;
+    private bool isAmbientSoundMuted = false;
 
     private void OnEnable()
     {
@@ -72,7 +73,7 @@ public class Enemy : MonoBehaviour
         }
 
         StartPatrol();
-        //StartCoroutine(DangerEventRoutine());
+        StartCoroutine(SoundLoop());
     }
 
     private void Update()
@@ -135,13 +136,31 @@ public class Enemy : MonoBehaviour
 
         patrolSequence = DOTween.Sequence();
         patrolSequence.Append(transform.DOMove(centerPoint.position, travelTime).SetEase(Ease.Linear)
-                .OnComplete(() => gameEventChannel.RaiseEvent(OnEnemyGameEvent)))
+                .OnComplete(() =>
+                {
+                    gameEventChannel.RaiseEvent(OnEnemyGameEvent);
+                    if (screamAudioData != null)
+                    {
+                        AudioManager.Instance.PlayOneShot(screamAudioData, transform.position);
+                        isAmbientSoundMuted = true;
+                    }
+                }))
             .AppendInterval(waitAtCenterTime)
-            .Append(transform.DOMove(pointB.position, travelTime).SetEase(Ease.Linear))
+            .Append(transform.DOMove(pointB.position, travelTime).SetEase(Ease.Linear)
+                .OnStart(() => isAmbientSoundMuted = false))
             .Append(transform.DOMove(centerPoint.position, travelTime).SetEase(Ease.Linear)
-                .OnComplete(() => gameEventChannel.RaiseEvent(OnEnemyGameEvent)))
+                .OnComplete(() =>
+                {
+                    gameEventChannel.RaiseEvent(OnEnemyGameEvent);
+                    if (screamAudioData != null)
+                    {
+                        AudioManager.Instance.PlayOneShot(screamAudioData, transform.position);
+                        isAmbientSoundMuted = true;
+                    }
+                }))
             .AppendInterval(waitAtCenterTime)
-            .Append(transform.DOMove(pointA.position, travelTime).SetEase(Ease.Linear))
+            .Append(transform.DOMove(pointA.position, travelTime).SetEase(Ease.Linear)
+                .OnStart(() => isAmbientSoundMuted = false))
             .SetLoops(-1);
     }
     
@@ -163,6 +182,19 @@ public class Enemy : MonoBehaviour
                     gameEventChannel.RaiseEvent(EGameEvent.DangerDetected);
                 }
             }
+        }
+    }
+
+
+    private IEnumerator SoundLoop()
+    {
+        while (true)
+        {
+            if (!isAmbientSoundMuted)
+            {
+                AudioManager.Instance.PlayOneShot(ambientAudioData, transform.position);
+            }
+            yield return new WaitForSeconds(2f);
         }
     }
 }

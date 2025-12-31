@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{82E3C2F6-5044-4614-89B3-0FFC20C09073}",
     "Language": "SFX",
-    "Hash": "{8502036D-5F10-8FBC-EC54-8CFAF7747E32}",
+    "Hash": "{516940C5-523C-0FC1-E4C0-ABAB28850255}",
     "ObjectPath": "Play_SFX_EscapeRoute_Open",
     "ShortName": "Play_SFX_EscapeRoute_Open",
     "Path": "Event/Play_SFX_EscapeRoute_Open.bnk",
@@ -40,7 +40,7 @@
       "Name": "Play_SFX_EscapeRoute_Open",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_EscapeRoute_Open",
       "GUID": "{82E3C2F6-5044-4614-89B3-0FFC20C09073}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "3.7208948",
       "DurationMax": "3.7208948",
@@ -56,6 +56,6 @@
     ]
    }
   ],
-  "FileHash": "{8D4933D9-ABE8-58BD-74B7-C7C24E6B510F}"
+  "FileHash": "{36575853-34DF-4A83-F8DD-81E1A0121774}"
  }
 }

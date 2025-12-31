@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{43AEA702-D917-4801-AB57-C6BD77BB2430}",
     "Language": "SFX",
-    "Hash": "{0559301C-897B-9EBB-6FF6-208FD420A96B}",
+    "Hash": "{5606BA07-2E9F-937B-2DF6-985411832DCF}",
     "ObjectPath": "Play_SFX_Warning_Beep",
     "ShortName": "Play_SFX_Warning_Beep",
     "Path": "Event/Play_SFX_Warning_Beep.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Warning_Beep",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Warning_Beep",
       "GUID": "{43AEA702-D917-4801-AB57-C6BD77BB2430}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "2.0625",
       "DurationMax": "2.0625",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{69C5F3C8-002B-13A4-C600-4BE4BA97E731}"
+  "FileHash": "{9926D50F-FB08-C241-64E8-7917F73B107B}"
  }
 }

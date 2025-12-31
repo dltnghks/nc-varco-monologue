@@ -1,3 +1,3 @@
 Event	ID	Name			Wwise Object Path	Notes
-	4160029712	Play_SFX_Swipe_Up			\Default Work Unit\Play_SFX_Swipe_Up	
+	4160029712	Play_SFX_Swipe_Up			\Default Work Unit\SFX\Play_SFX_Swipe_Up	
 

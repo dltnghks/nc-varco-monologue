@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
     "Language": "SFX",
-    "Hash": "{0F8715F0-A227-58B3-E2E5-3B3F4FCD644E}",
+    "Hash": "{D366C80F-5279-8C45-8761-72730C19E3E7}",
     "ObjectPath": "Play_SFX_FootStep_Metal",
     "ShortName": "Play_SFX_FootStep_Metal",
     "Path": "Event/Play_SFX_FootStep_Metal.bnk",
@@ -49,7 +49,7 @@
       "Name": "Play_SFX_FootStep_Metal",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_FootStep_Metal",
       "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.17178562",
       "DurationMax": "0.24933533",
@@ -68,6 +68,6 @@
     ]
    }
   ],
-  "FileHash": "{835A144D-308B-EE63-4AD1-48FDF4CD9310}"
+  "FileHash": "{D35E81ED-EB71-1E29-4C51-EC9BC8F66A20}"
  }
 }

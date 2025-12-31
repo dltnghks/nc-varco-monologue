@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43929a8f9f1e3454eb792b87285e8f11, type: 3}
-  m_Name: A08BF425-58E7-4BBF-B17D-0AD550CF82CF
+  m_Script: {fileID: 11500000, guid: 899c594ba4801f14e8e707317575aa48, type: 3}
+  m_Name: AMB_Lab_Horror_Tension
   m_EditorClassIdentifier: 
-  objectName: Play_SFX_Monster_Breath
-  id: 833084561
-  guid: A08BF425-58E7-4BBF-B17D-0AD550CF82CF
-  IsInUserDefinedSoundBank: 1
+  wwiseEvents: []
+  needsVisualIndicator: 1
+  soundType: 0
+  blocksPlayerInteraction: 0
+  comment: 

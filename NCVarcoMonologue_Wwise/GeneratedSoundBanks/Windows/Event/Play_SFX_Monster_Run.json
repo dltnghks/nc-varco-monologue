@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{A411FC72-E9A2-4CB6-93E8-D7ADE30861F4}",
     "Language": "SFX",
-    "Hash": "{B1DC95BB-F2DA-D1D1-77A0-B645D1936F77}",
+    "Hash": "{23D4AC91-9844-A2B5-AC75-73531F69D32F}",
     "ObjectPath": "Play_SFX_Monster_Run",
     "ShortName": "Play_SFX_Monster_Run",
     "Path": "Event/Play_SFX_Monster_Run.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Monster_Run.wav",
       "Path": "Media/963425529.wem",
-      "CachePath": "AC/{AC7F3248-6E2D-06DC-F1BA-E7CE36E1FE6B}.wem"
+      "CachePath": "25/{256579A4-7020-454B-5743-3F954B8462AC}.wem"
      }
     ],
     "Events": [
@@ -31,10 +31,10 @@
       "Name": "Play_SFX_Monster_Run",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Monster_Run",
       "GUID": "{A411FC72-E9A2-4CB6-93E8-D7ADE30861F4}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "8.932813",
-      "DurationMax": "8.932813",
+      "DurationMin": "1.2816426",
+      "DurationMax": "1.3115996",
       "MediaRefs": [
        {
         "Id": "963425529"
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{2E1DF8A3-373D-BD4E-860E-95371F1AC272}"
+  "FileHash": "{E529D40A-D5CA-E304-9D8E-2EF31566C0D6}"
  }
 }

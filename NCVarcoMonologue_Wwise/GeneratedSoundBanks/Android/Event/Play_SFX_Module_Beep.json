@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}",
     "Language": "SFX",
-    "Hash": "{1DCFAC41-2A69-C2E1-7B78-1511E6B61B99}",
+    "Hash": "{F6818284-6CA8-463A-E38F-A7AA8EC709C8}",
     "ObjectPath": "Play_SFX_Module_Beep",
     "ShortName": "Play_SFX_Module_Beep",
     "Path": "Event/Play_SFX_Module_Beep.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Module_Beep",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Module_Beep",
       "GUID": "{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.87733525",
       "DurationMax": "0.87733525",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{2343797B-F244-51B3-B8E9-9BAD85CD21D9}"
+  "FileHash": "{6779A711-D57E-13B9-9FA6-B0E61EA19079}"
  }
 }

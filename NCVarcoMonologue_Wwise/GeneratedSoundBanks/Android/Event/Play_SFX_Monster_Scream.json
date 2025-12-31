@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{CBE105F0-84C5-46C8-8295-85DA39F07119}",
     "Language": "SFX",
-    "Hash": "{08789F06-3B50-BD4F-7FE5-FBB10B3C3A0F}",
+    "Hash": "{093D6591-8E47-8625-9B1A-621615F12607}",
     "ObjectPath": "Play_SFX_Monster_Scream",
     "ShortName": "Play_SFX_Monster_Scream",
     "Path": "Event/Play_SFX_Monster_Scream.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Monster_Scream",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Monster_Scream",
       "GUID": "{CBE105F0-84C5-46C8-8295-85DA39F07119}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.72",
       "DurationMax": "1.72",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{AA7461B1-464B-EA49-8A78-8757F952C713}"
+  "FileHash": "{57568DC5-D22D-002D-928B-C7D90CF57CC2}"
  }
 }

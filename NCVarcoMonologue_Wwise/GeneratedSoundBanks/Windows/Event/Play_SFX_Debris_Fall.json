@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{0C95E852-F8AA-4719-8F14-049F830DD231}",
     "Language": "SFX",
-    "Hash": "{56756206-77AC-420D-9A4F-AF1F6A0A63A0}",
+    "Hash": "{3FE42C30-31BA-F6A4-4B5D-C968F37F5309}",
     "ObjectPath": "Play_SFX_Debris_Fall",
     "ShortName": "Play_SFX_Debris_Fall",
     "Path": "Event/Play_SFX_Debris_Fall.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Debris_Fall",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Debris_Fall",
       "GUID": "{0C95E852-F8AA-4719-8F14-049F830DD231}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.599875",
       "DurationMax": "1.599875",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{84E2C3F5-0139-DBDE-B462-8319D28882BF}"
+  "FileHash": "{6DF41973-ED12-02A7-2F96-41F8F426D682}"
  }
 }

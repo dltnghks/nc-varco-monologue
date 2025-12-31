@@ -1,3 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	833084561	Play_SFX_Monster_Breath			\Default Work Unit\Play_SFX_Monster_Breath	
-

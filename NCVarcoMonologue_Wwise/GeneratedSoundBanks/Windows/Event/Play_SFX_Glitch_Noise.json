@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{4E5AAB95-821B-4EF4-8FAA-59832444FF92}",
     "Language": "SFX",
-    "Hash": "{41B62C47-1885-69BB-85B1-7A4C8AF15763}",
+    "Hash": "{73326BDC-E7C9-BA0A-5C97-1717837684E7}",
     "ObjectPath": "Play_SFX_Glitch_Noise",
     "ShortName": "Play_SFX_Glitch_Noise",
     "Path": "Event/Play_SFX_Glitch_Noise.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Glitch_Noise",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Glitch_Noise",
       "GUID": "{4E5AAB95-821B-4EF4-8FAA-59832444FF92}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "4.5",
       "DurationMax": "4.5",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{0CC50C46-7903-68F7-88C7-04587C81147F}"
+  "FileHash": "{1569AECE-EDF9-A436-8619-BEBFFED84BF8}"
  }
 }
