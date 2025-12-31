@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Play_End_S
   id: 1334100343
   guid: 7DE61DCA-4386-44FC-BA83-5AFE3E0F0A09
-  IsInUserDefinedSoundBank: 0
+  AutoBank: {fileID: 0}
+  IsInUserDefinedSoundBank: 1

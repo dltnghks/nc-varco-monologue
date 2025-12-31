@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 public class Drone : MonoBehaviour
 {
     [Header("Tutorial Event Channel")]
@@ -23,19 +23,19 @@ public class Drone : MonoBehaviour
 
     public void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
+        // rb = GetComponent<Rigidbody>();
+        // rb.useGravity = false;
     }
 
     public void Update()
     {
-        transform.LookAt(playerTransform);
+        //transform.LookAt(playerTransform);
     }
 
     public void FixedUpdate()
     {
-        HandleMovement();
-        IsPlayerAimingAtDrone();
+        //HandleMovement();
+        //IsPlayerAimingAtDrone();
     }
 
     private void HandleMovement()

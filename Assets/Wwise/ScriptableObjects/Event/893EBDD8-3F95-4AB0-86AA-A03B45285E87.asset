@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Play_AMB_Dsgn_Factory_Hall_with_Large_Steam_Mashines_02_JSE_SG
   id: 1931373960
   guid: 893EBDD8-3F95-4AB0-86AA-A03B45285E87
-  IsInUserDefinedSoundBank: 1
+  AutoBank: {fileID: 11400000, guid: bed8cb927109bdb4f8b068d8aec793f2, type: 2}
+  IsInUserDefinedSoundBank: 0

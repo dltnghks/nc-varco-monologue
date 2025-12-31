@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Play_SFX_Footsteps_Metal
   id: 2186204307
   guid: C990B005-D4AB-48B8-9138-16590D9018B2
-  IsInUserDefinedSoundBank: 1
+  AutoBank: {fileID: 0}
+  IsInUserDefinedSoundBank: 0

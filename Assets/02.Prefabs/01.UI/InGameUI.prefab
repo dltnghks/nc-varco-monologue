@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6c39aa99656384da80390b805d1713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEventChannel: {fileID: 11400000, guid: 3459504629851ce4bbeeaac9de359a22, type: 2}
   centerCircle: {fileID: 7396517220797225506}
   soundIndicatorPrefab: {fileID: 1577121945389298053, guid: 0f0729c098af8774290b4c7cbca833e2, type: 3}
   fadeInDuration: 0.1

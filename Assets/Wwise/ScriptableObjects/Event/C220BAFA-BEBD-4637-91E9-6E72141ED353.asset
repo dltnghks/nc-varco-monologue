@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Play_T03_E
   id: 2473281905
   guid: C220BAFA-BEBD-4637-91E9-6E72141ED353
-  IsInUserDefinedSoundBank: 0
+  AutoBank: {fileID: 0}
+  IsInUserDefinedSoundBank: 1

@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3053511078",
+    "Type": "Event",
+    "GUID": "{B0E7FF04-A173-4BFA-B928-2BB8753A2617}",
+    "Language": "SFX",
+    "Hash": "{6A2C9D20-2DFC-9E0D-0872-0A64BC9485C2}",
+    "ObjectPath": "Play_SFX_Scan_Active",
+    "ShortName": "Play_SFX_Scan_Active",
+    "Path": "Event/Play_SFX_Scan_Active.bnk",
+    "Media": [
+     {
+      "Id": "651928919",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Scan_Active.wav",
+      "Path": "Media/651928919.wem",
+      "CachePath": "30/{30C50D1C-0867-488A-C98C-1AADF83A4F02}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3053511078",
+      "Name": "Play_SFX_Scan_Active",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Scan_Active",
+      "GUID": "{B0E7FF04-A173-4BFA-B928-2BB8753A2617}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "4.810698",
+      "DurationMax": "4.810698",
+      "MediaRefs": [
+       {
+        "Id": "651928919"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{90A018EB-383B-CBD1-075C-62F999E9DC2D}"
+ }
+}

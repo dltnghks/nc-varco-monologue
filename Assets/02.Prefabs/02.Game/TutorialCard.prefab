@@ -125,3 +125,5 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
   tutorialEventChannel: {fileID: 11400000, guid: a141eaea368b7144ab0331b9aa68450b, type: 2}
   OnPickUp_E: 7
+  pickupSound: {fileID: 11400000, guid: 07804761404839a4ca3d098c6a6512cd, type: 2}
+  ambientLoopSound: {fileID: 11400000, guid: d6e800e205dcd0e40b66332fe9c40850, type: 2}

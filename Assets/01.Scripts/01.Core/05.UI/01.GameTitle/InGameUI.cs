@@ -140,23 +140,33 @@ public class InGameUI : MonoBehaviour
     
     public void ShowSoundIndicator(Vector3 soundWorldPosition, ESoundType soundType)
     {
-        if (centerCircle == null || mainCamera == null) return;
+        Debug.Log($"[InGameUI Debug] ShowSoundIndicator called for Type: {soundType}, Position: {soundWorldPosition}");
+
+        if (centerCircle == null || mainCamera == null)
+        {
+            Debug.LogWarning("[InGameUI Debug] Center Circle or Main Camera is not set. Cannot show indicator.");
+            return;
+        }
 
         Image indicator = GetIndicatorFromPool();
         if (indicator == null)
         {
-            Debug.LogWarning("Sound indicator pool is exhausted, and no prefab is set.");
+            Debug.LogWarning("[InGameUI Debug] Sound indicator pool is exhausted, and no prefab is set. Cannot show indicator.");
             return;
         }
+        Debug.Log($"[InGameUI Debug] Indicator '{indicator.gameObject.name}' retrieved from pool for {soundType}.");
+
 
         if (activeIndicatorCoroutines.TryGetValue(indicator, out Coroutine existingCoroutine) && existingCoroutine != null)
         {
             StopCoroutine(existingCoroutine);
             activeIndicatorCoroutines.Remove(indicator);
+            Debug.Log($"[InGameUI Debug] Stopped existing coroutine for indicator '{indicator.gameObject.name}'.");
         }
         
         Coroutine newCoroutine = StartCoroutine(ProcessFortniteIndicator(indicator, soundWorldPosition, soundType, mainCamera.transform));
         activeIndicatorCoroutines[indicator] = newCoroutine;
+        Debug.Log($"[InGameUI Debug] Started new coroutine for indicator '{indicator.gameObject.name}', Type: {soundType}.");
     }
 
     private IEnumerator ProcessFortniteIndicator(Image indicator, Vector3 soundWorldPosition, ESoundType soundType, Transform playerTransform)

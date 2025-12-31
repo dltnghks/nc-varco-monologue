@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3872142358",
+    "Type": "Event",
+    "GUID": "{74A50078-183A-4E69-9405-D55A9C54F029}",
+    "Language": "SFX",
+    "Hash": "{0C753711-ED1E-4CBD-C9D2-B6D056A27879}",
+    "ObjectPath": "Play_SFX_Glitch_Noise",
+    "ShortName": "Play_SFX_Glitch_Noise",
+    "Path": "Event/Play_SFX_Glitch_Noise.bnk",
+    "Media": [
+     {
+      "Id": "810883541",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Glitch_Noise.wav",
+      "Path": "Media/810883541.wem",
+      "CachePath": "09/{0905A664-EBBA-8532-E221-FF0021BFF635}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3872142358",
+      "Name": "Play_SFX_Glitch_Noise",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Glitch_Noise",
+      "GUID": "{74A50078-183A-4E69-9405-D55A9C54F029}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "4.5",
+      "DurationMax": "4.5",
+      "MediaRefs": [
+       {
+        "Id": "810883541"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D76958E6-90E1-97A2-5BB1-418C1C051796}"
+ }
+}

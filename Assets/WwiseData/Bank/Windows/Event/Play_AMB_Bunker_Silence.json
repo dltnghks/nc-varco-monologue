@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "859388510",
+    "Type": "Event",
+    "GUID": "{8216A353-F853-4668-8FA9-D63EC2C6302E}",
+    "Language": "SFX",
+    "Hash": "{F728E5C7-E347-3F41-00BA-E7B0D7E54CEE}",
+    "ObjectPath": "Play_AMB_Bunker_Silence",
+    "ShortName": "Play_AMB_Bunker_Silence",
+    "Path": "Event/Play_AMB_Bunker_Silence.bnk",
+    "Media": [
+     {
+      "Id": "381612052",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "AMB_Bunker_Silence.wav",
+      "Path": "Media/381612052.wem",
+      "CachePath": "A5/{A57304BB-3DCB-33A4-E43D-E4B9DB5B876B}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "859388510",
+      "Name": "Play_AMB_Bunker_Silence",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_AMB_Bunker_Silence",
+      "GUID": "{8216A353-F853-4668-8FA9-D63EC2C6302E}",
+      "DurationType": "OneShot",
+      "DurationMin": "297.504",
+      "DurationMax": "297.504",
+      "MediaRefs": [
+       {
+        "Id": "381612052"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{09D99A6F-C0D3-EB00-8330-D2C2696091F0}"
+ }
+}

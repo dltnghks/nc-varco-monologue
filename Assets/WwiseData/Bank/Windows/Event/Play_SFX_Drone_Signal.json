@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1336410719",
+    "Type": "Event",
+    "GUID": "{00C01674-06FA-4D66-A206-E3F604C671B3}",
+    "Language": "SFX",
+    "Hash": "{C13AD604-0C28-03F6-0392-CE78F02174E9}",
+    "ObjectPath": "Play_SFX_Drone_Signal",
+    "ShortName": "Play_SFX_Drone_Signal",
+    "Path": "Event/Play_SFX_Drone_Signal.bnk",
+    "Media": [
+     {
+      "Id": "360225617",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Drone_Signal.wav",
+      "Path": "Media/360225617.wem",
+      "CachePath": "13/{1360E420-64D4-B7AE-CB63-46889F4BE057}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1336410719",
+      "Name": "Play_SFX_Drone_Signal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Drone_Signal",
+      "GUID": "{00C01674-06FA-4D66-A206-E3F604C671B3}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.08057292",
+      "DurationMax": "0.08057292",
+      "MediaRefs": [
+       {
+        "Id": "360225617"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{A74B2FAA-FA0F-D2AE-4D48-9E986D0E0074}"
+ }
+}

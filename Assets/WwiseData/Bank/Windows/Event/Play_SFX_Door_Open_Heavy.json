@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2199223429",
+    "Type": "Event",
+    "GUID": "{0BE8CC9F-A757-4B20-8A55-94DF7DA787C7}",
+    "Language": "SFX",
+    "Hash": "{D7CF023D-34E2-0ECE-A53E-051170B69CAD}",
+    "ObjectPath": "Play_SFX_Door_Open_Heavy",
+    "ShortName": "Play_SFX_Door_Open_Heavy",
+    "Path": "Event/Play_SFX_Door_Open_Heavy.bnk",
+    "Media": [
+     {
+      "Id": "750607744",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Door_Open_Heavy.wav",
+      "Path": "Media/750607744.wem",
+      "CachePath": "7D/{7D2B18BD-D9F6-F019-B42E-CE483E3FCDD6}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2199223429",
+      "Name": "Play_SFX_Door_Open_Heavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Open_Heavy",
+      "GUID": "{0BE8CC9F-A757-4B20-8A55-94DF7DA787C7}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "8.388803",
+      "DurationMax": "8.388803",
+      "MediaRefs": [
+       {
+        "Id": "750607744"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{DD1B6318-CA42-D42B-2EC5-18E697E1D89C}"
+ }
+}

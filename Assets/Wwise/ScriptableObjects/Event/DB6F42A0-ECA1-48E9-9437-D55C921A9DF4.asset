@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Play_T00_S
   id: 2473428952
   guid: DB6F42A0-ECA1-48E9-9437-D55C921A9DF4
-  IsInUserDefinedSoundBank: 0
+  AutoBank: {fileID: 0}
+  IsInUserDefinedSoundBank: 1

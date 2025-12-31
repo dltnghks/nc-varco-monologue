@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c594ba4801f14e8e707317575aa48, type: 3}
   m_Name: SFX_Footstep_Glass
   m_EditorClassIdentifier: 
-  wwiseEvents: []
+  wwiseEvents:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 02f483535c6cbae409fac04899e7adb6, type: 2}
   needsVisualIndicator: 1
   soundType: 0
   comment: 

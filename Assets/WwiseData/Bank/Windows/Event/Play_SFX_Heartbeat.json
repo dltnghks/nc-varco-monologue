@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4054446234",
+    "Type": "Event",
+    "GUID": "{B39E34AF-4B69-4676-B62B-04F3AB4488E7}",
+    "Language": "SFX",
+    "Hash": "{D083B050-DD06-3D4E-BF09-40C2DDC547F5}",
+    "ObjectPath": "Play_SFX_Heartbeat",
+    "ShortName": "Play_SFX_Heartbeat",
+    "Path": "Event/Play_SFX_Heartbeat.bnk",
+    "Media": [
+     {
+      "Id": "286851484",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Heartbeat.wav",
+      "Path": "Media/286851484.wem",
+      "CachePath": "A2/{A263C009-10F3-5ACB-9D8F-D9E7B90C3AF9}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4054446234",
+      "Name": "Play_SFX_Heartbeat",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Heartbeat",
+      "GUID": "{B39E34AF-4B69-4676-B62B-04F3AB4488E7}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "14.506667",
+      "DurationMax": "14.506667",
+      "MediaRefs": [
+       {
+        "Id": "286851484"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{248CED44-2908-6ADD-FC3B-1D829147B2FF}"
+ }
+}

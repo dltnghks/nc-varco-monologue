@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3448000873",
+    "Type": "Event",
+    "GUID": "{5DFADEA8-4684-446D-BBB7-53F30C030965}",
+    "Language": "SFX",
+    "Hash": "{5B2B2816-B640-2EE4-4325-5F8DFF8F5C33}",
+    "ObjectPath": "Play_SFX_Door_Unlock",
+    "ShortName": "Play_SFX_Door_Unlock",
+    "Path": "Event/Play_SFX_Door_Unlock.bnk",
+    "Media": [
+     {
+      "Id": "271290716",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Door_Unlock.wav",
+      "Path": "Media/271290716.wem",
+      "CachePath": "CD/{CD1B4C35-227F-7ECD-BE80-8E46E5DA6008}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3448000873",
+      "Name": "Play_SFX_Door_Unlock",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Unlock",
+      "GUID": "{5DFADEA8-4684-446D-BBB7-53F30C030965}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "1.625",
+      "DurationMax": "1.625",
+      "MediaRefs": [
+       {
+        "Id": "271290716"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{37C10D8D-2296-AE41-365A-86DDA201A06B}"
+ }
+}
