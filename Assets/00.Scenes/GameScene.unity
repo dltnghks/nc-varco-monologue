@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &405634451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4503553475128286441, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_Name
+      value: '@SceneManager'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 610.4273
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 792.12836
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 252.7111
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689724938002675733, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35393fdf46350d1479fab50b37824e2d, type: 3}
 --- !u!1001 &412637714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,10 +187,6 @@ PrefabInstance:
     - target: {fileID: 2348532308282356028, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
       propertyPath: m_Name
       value: StartingRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703349276950416949, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
-      propertyPath: travelTime
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8795820650437675523, guid: d6e5a744b4714e346b1bad3508184ad8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -492,37 +545,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1681699017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1681699018}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1681699018
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681699017}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 731.36865, y: 827.4553, z: -305.04736}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1181,4 +1203,4 @@ SceneRoots:
   - {fileID: 998472406}
   - {fileID: 4378716961683185335}
   - {fileID: 5310562096242727111}
-  - {fileID: 1681699018}
+  - {fileID: 405634451}

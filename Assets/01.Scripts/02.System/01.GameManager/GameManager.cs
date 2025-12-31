@@ -1,8 +1,10 @@
 using System.Collections.Generic;
-using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using System;
 using System.Collections;
+using AK.Wwise;
+using AYellowpaper.SerializedCollections;
+using DG.Tweening;
 // using UnityEngine.SceneManagement; // Now handled by SceneTransitionManager
 
 /// <summary>
@@ -22,6 +24,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerEventChannel playerEventChannel;
     [SerializeField] private EGameEvent onStartGameEvent; 
 
+    [Header("Wwise")]
+    [Tooltip("The ambient sound to play at the start of the game.")]
+    [SerializeField] private AK.Wwise.Event ambEvent;
+    [Tooltip("The RTPC to control the danger level.")]
+    [SerializeField] private AK.Wwise.RTPC dangerLevelRtpc;
+    [Tooltip("How long the RTPC tween takes in seconds.")]
+    [SerializeField] private float rtpcTweenDuration = 2.0f;
+    [Tooltip("The easing function for the RTPC transition.")]
+    [SerializeField] private Ease rtpcEaseType = Ease.InOutQuad;
+
     /// <summary>
     /// Returns true if player interaction should be blocked (e.g., during a specific dialogue).
     /// This provides a central point for other systems to check this state.
@@ -37,12 +49,15 @@ public class GameManager : MonoBehaviour
     //SerializedDictionary
     [Header("Event to Voice")]
     [SerializeField] private SerializedDictionary<EGameEvent, List<WwiseAudioData>> eventToVoiceData = new SerializedDictionary<EGameEvent, List<WwiseAudioData>>();
-    
+
+
     // State machine fields
     private bool isGameOverInProgress = false;
     private bool isEnteringDangerState = false;
     private bool isInDangerState = false;
     private Coroutine dangerStateCoroutine;
+    private Tween dangerLevelTween;
+    private float currentDangerLevel = 0f;
 
     private void Awake()
     {
@@ -75,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
+        dangerLevelTween?.Kill();
         if (gameEventChannel != null)
         {
             gameEventChannel.OnEventRaised -= HandleGameEvent;
@@ -168,9 +184,8 @@ public class GameManager : MonoBehaviour
             DialogueManager.Instance.PlayDialogueSequence(gameOverDialogue, onDialogueFinished);
         }
         else
-        {
             onDialogueFinished();
-        }
+        
     }
 
     /// <summary>
@@ -185,7 +200,15 @@ public class GameManager : MonoBehaviour
 
         isEnteringDangerState = false;
         isInDangerState = true;
-        Debug.Log($"[GameManager] Grace period over. Now in Danger State for {dangerStateDuration} seconds.");
+        
+        dangerLevelTween?.Kill();
+        dangerLevelTween = DOTween.To(() => currentDangerLevel, x => {
+            currentDangerLevel = x;
+            dangerLevelRtpc?.SetValue(gameObject, currentDangerLevel);
+        }, 100f, rtpcTweenDuration).SetEase(rtpcEaseType);
+        
+        Debug.Log($"[GameManager] Grace period over. Now in Danger State for {dangerStateDuration} seconds. Tweening DangerLevel to 100.");
+
 
         // Start the main timer for how long the danger state lasts.
         dangerStateCoroutine = StartCoroutine(DangerStateTimer());
@@ -197,7 +220,14 @@ public class GameManager : MonoBehaviour
     private IEnumerator DangerStateTimer()
     {
         yield return new WaitForSeconds(dangerStateDuration);
-        Debug.Log("[GameManager] Danger State has expired.");
+        Debug.Log("[GameManager] Danger State has expired. Tweening DangerLevel back to 0.");
+
+        dangerLevelTween?.Kill();
+        dangerLevelTween = DOTween.To(() => currentDangerLevel, x => {
+            currentDangerLevel = x;
+            dangerLevelRtpc?.SetValue(gameObject, currentDangerLevel);
+        }, 0f, rtpcTweenDuration).SetEase(rtpcEaseType);
+
         isInDangerState = false;
     }
 
@@ -207,6 +237,11 @@ public class GameManager : MonoBehaviour
     private void HandleGameStart()
     {
         Debug.Log("GAME STARTED LOGIC");
+        if (ambEvent != null)
+        {
+            ambEvent.Post(gameObject);
+            Debug.Log("[GameManager] Posted AMB event.");
+        }
         this.enabled = true; // Ensure the component is active at game start.
     }
 

@@ -130,6 +130,32 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Sets the value of a Wwise RTPC (Real-Time Parameter Control).
+    /// </summary>
+    /// <param name="rtpcName">The name of the RTPC as defined in Wwise.</param>
+    /// <param name="value">The float value to set the RTPC to.</param>
+    /// <param name="gameObj">Optional: The GameObject on which to set the RTPC. If null, the RTPC is set globally.</param>
+    public void SetRTPCValue(string rtpcName, float value, GameObject gameObj = null)
+    {
+        if (string.IsNullOrEmpty(rtpcName))
+        {
+            Debug.LogWarning("[AudioManager] Attempted to set RTPC with null or empty name.");
+            return;
+        }
+
+        if (gameObj != null)
+        {
+            AkSoundEngine.SetRTPCValue(rtpcName, value, gameObj);
+            // Debug.Log($"[AudioManager] Set RTPC '{rtpcName}' to {value} on GameObject '{gameObj.name}'");
+        }
+        else
+        {
+            AkSoundEngine.SetRTPCValue(rtpcName, value);
+            // Debug.Log($"[AudioManager] Set global RTPC '{rtpcName}' to {value}");
+        }
+    }
+
+    /// <summary>
     /// Plays a list of audio data sequentially at a given position.
     /// </summary>
     /// <param name="audioSequence">The list of WwiseAudioData to play in order.</param>

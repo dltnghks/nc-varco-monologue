@@ -141,18 +141,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFX_Door_Open_Heavy" ID="{858329DE-C87F-4270-A06E-A7385CDFB2A2}">
-							<ChildrenList>
-								<Action Name="" ID="{12C19B98-1810-46B8-B616-142365D882D2}" ShortID="591712088">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_Door_Open_Heavy" ID="{44198BED-7BF7-47D4-A68A-7277DE1CC39D}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_SFX_Drone_Signal" ID="{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}">
+						<Event Name="Play_SFX_Item_Pickup" ID="{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}">
 							<ChildrenList>
 								<Action Name="" ID="{395F6601-D4F9-47AF-8E7D-4AD12CAA35F2}" ShortID="672170199">
 									<ReferenceList>
@@ -323,6 +312,32 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_Sys_Boot" ID="{B078560A-1DF8-4B5D-8EEE-E52F24AC7614}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFX_EscapeRoute_Open" ID="{82E3C2F6-5044-4614-89B3-0FFC20C09073}">
+							<ChildrenList>
+								<Action Name="" ID="{5A2F1938-EF78-4DD6-BC4A-CADF7BD87B50}" ShortID="920458018">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_EscapeRoute_Open" ID="{35D84CEC-9696-405D-987C-E4AF7140A0D5}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="AMB" ID="{6B8867B3-9724-4A02-B7AA-1FD1D1FF21F5}" ShortID="586652639">
+					<ChildrenList>
+						<Event Name="Play_AMB_System" ID="{C3092BEE-9352-4207-81CC-E3FD2CA6D88B}">
+							<ChildrenList>
+								<Action Name="" ID="{0B95236D-18CC-4298-A38F-7B8C86088C05}" ShortID="699698588">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_System" ID="{895EEF25-2185-4EC6-B062-66AF724CDDEA}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
