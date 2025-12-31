@@ -439,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   onStartGameEvent: 0
+  onGameOverEvnet: 1
   eventToVoiceData:
     _serializedList:
     - Key: 0

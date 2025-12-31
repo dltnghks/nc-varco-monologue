@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using System;
 
 /// <summary>
 /// Manages the overall game flow, state, and transitions.
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("The channel for receiving general game events.")]
     [SerializeField] private GameEventChannel gameEventChannel;
     [SerializeField] private EGameEvent onStartGameEvent; 
+    [SerializeField] private EGameEvent onGameOverEvnet; 
 
     /// <summary>
     /// Returns true if player interaction should be blocked (e.g., during a specific dialogue).
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     [Header("Event to Voice")]
     [SerializeField] private SerializedDictionary<EGameEvent, List<WwiseAudioData>> eventToVoiceData = new SerializedDictionary<EGameEvent, List<WwiseAudioData>>();
     
+    private int consecutiveDangerDetectedCount = 0;
 
     private void Awake()
     {
@@ -69,49 +72,66 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log($"[GameManager] Received Event: <color=green>{eventKey}</color>");
 
-        List<WwiseAudioData> audioDatas;
-        if(eventToVoiceData.TryGetValue(eventKey, out audioDatas))
+        // --- State Update: Check for consecutive danger events ---
+        if (eventKey == EGameEvent.DangerDetected)
         {
-            DialogueManager.Instance.PlayDialogueSequence(audioDatas);
+            consecutiveDangerDetectedCount++;
+        }
+        else
+        {
+            consecutiveDangerDetectedCount = 0;
         }
 
+        // --- Rule Logic: If danger count is too high, override the event to GameOver ---
+        if(consecutiveDangerDetectedCount >= 2)
+        {
+            Debug.LogWarning("[GameManager] Two consecutive DangerDetected events! Overriding to GameOver.");
+            eventKey = EGameEvent.GameOver;
+            consecutiveDangerDetectedCount = 0;
+        }
+
+        // --- Logic Definition: Define what to do AFTER dialogue for each event ---
+        Action onDialogueFinished = null;
         switch (eventKey)
         {
-            case EGameEvent.GameStarted:
-                // Logic for when the game starts
-                break;
-
             case EGameEvent.GameOver:
-                // Logic for game over (e.g., show game over screen, stop player input)
+                onDialogueFinished = () => {
+                    Debug.Log("GAME OVER LOGIC: Show UI, stop player, etc.");
+                    // gameEventChannel.RaiseEvent(onGameOverEvnet); // Be careful not to create an infinite loop if GameOver has its own dialogue.
+                };
                 break;
 
-            case EGameEvent.StepOnGlass:
-                // Logic for when the player steps on glass
+            case EGameEvent.GameStarted:
+                onDialogueFinished = () => HandleGameStart();
                 break;
+            
+            // Add other cases here for logic that should run after dialogue.
+            // For events with no follow-up logic, no case is needed.
+        }
 
-            case EGameEvent.DangerDetected:
-                // Logic for when danger is detected
-                break;
+        // --- Execution: Play dialogue and pass the defined logic as a callback ---
+        HandleDefaultEvent(eventKey, onDialogueFinished);
+    }
 
-            case EGameEvent.SecurityModuleAcquired:
-                // Logic for when a security module is acquired
-                break;
+    private void HandleGameStart()
+    {
+        Debug.Log("GAME STARTED LOGIC");
+    }
 
-            case EGameEvent.EscapeRouteOpenFail:
-                // Logic for when the escape route is failed open 
-                break;
-
-            case EGameEvent.EscapeRouteOpen:
-                // Logic for when the escape route is opened
-                break;
-
-            case EGameEvent.GameEnd:
-                // Logic for when the game officially ends (e.g., showing credits, returning to main menu)
-                break;
-
-            default:
-                Debug.LogWarning($"[GameManager] No handler for event: {eventKey}");
-                break;
+    /// <summary>
+    /// The default event handler, which plays an associated dialogue and executes a callback upon completion.
+    /// </summary>
+    private void HandleDefaultEvent(EGameEvent eventKey, Action onFinished = null)
+    {
+        if (eventToVoiceData.TryGetValue(eventKey, out var audioDatas) && audioDatas.Count > 0)
+        {
+            // If dialogue exists, play it and pass the callback to the DialogueManager.
+            DialogueManager.Instance.PlayDialogueSequence(audioDatas, onFinished);
+        }
+        else
+        {
+            // If no dialogue exists, execute the callback immediately.
+            onFinished?.Invoke();
         }
     }
 }
