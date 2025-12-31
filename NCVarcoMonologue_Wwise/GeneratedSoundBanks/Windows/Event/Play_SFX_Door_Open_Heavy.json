@@ -29,7 +29,7 @@
      {
       "Id": "2199223429",
       "Name": "Play_SFX_Door_Open_Heavy",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Open_Heavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Door_Open_Heavy",
       "GUID": "{858329DE-C87F-4270-A06E-A7385CDFB2A2}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{BD3AAC09-3735-2501-87D1-A9F5151FB669}"
+  "FileHash": "{48B48B82-C543-B264-6709-50D10606D06E}"
  }
 }

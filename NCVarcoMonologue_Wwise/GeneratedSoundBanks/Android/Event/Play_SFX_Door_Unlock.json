@@ -29,7 +29,7 @@
      {
       "Id": "3448000873",
       "Name": "Play_SFX_Door_Unlock",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Unlock",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Door_Unlock",
       "GUID": "{E7F5DA0D-59FF-4E2B-A89F-2312A932A26F}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{F412DFD5-B7DD-2B62-19CD-FA90E49084F7}"
+  "FileHash": "{427A403B-9228-331B-0F96-0A5B3164763F}"
  }
 }

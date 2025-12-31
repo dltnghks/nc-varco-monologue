@@ -29,7 +29,7 @@
      {
       "Id": "4224361305",
       "Name": "Play_SFX_Debris_Fall",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Debris_Fall",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Debris_Fall",
       "GUID": "{0C95E852-F8AA-4719-8F14-049F830DD231}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{BDB7F485-AE86-54EC-EBD2-D38FA3BE6451}"
+  "FileHash": "{84E2C3F5-0139-DBDE-B462-8319D28882BF}"
  }
 }

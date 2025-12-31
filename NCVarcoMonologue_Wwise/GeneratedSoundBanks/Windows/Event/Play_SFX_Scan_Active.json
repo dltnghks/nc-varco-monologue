@@ -29,7 +29,7 @@
      {
       "Id": "3053511078",
       "Name": "Play_SFX_Scan_Active",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Scan_Active",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Scan_Active",
       "GUID": "{135AD107-2FF7-45DC-9EE8-57F0B7DBF385}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{A158F6E0-E6A1-2323-239C-744ED8101F5A}"
+  "FileHash": "{F62D28D2-30FE-8387-A464-CA2E5EE4EF76}"
  }
 }

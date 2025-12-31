@@ -29,7 +29,7 @@
      {
       "Id": "4270445848",
       "Name": "Play_SFX_Monster_Scream",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Scream",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Monster_Scream",
       "GUID": "{CBE105F0-84C5-46C8-8295-85DA39F07119}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{DE87B690-101E-2817-6384-96A90D5D3499}"
+  "FileHash": "{834B6160-D3E2-8562-F5C5-094444C47AAD}"
  }
 }

@@ -29,7 +29,7 @@
      {
       "Id": "3328004224",
       "Name": "Play_SFX_Sys_Boot",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Sys_Boot",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Sys_Boot",
       "GUID": "{FD0BAF65-D10D-4225-94CE-971BE58AF702}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{93BC683B-6434-3124-C2DD-5451FAECA2A3}"
+  "FileHash": "{888CDF17-4AD5-414A-5D59-DFDE7AF1C243}"
  }
 }

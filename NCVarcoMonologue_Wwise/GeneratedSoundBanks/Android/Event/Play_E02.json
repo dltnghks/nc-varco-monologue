@@ -1,0 +1,78 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3848055465",
+    "Type": "Event",
+    "GUID": "{6520A04E-14B5-4644-A603-6A1238E54495}",
+    "Language": "SFX",
+    "Hash": "{EFAA840E-C29C-986E-16CE-889AC2B908C4}",
+    "ObjectPath": "Play_E02",
+    "ShortName": "Play_E02",
+    "Path": "Event/Play_E02.bnk",
+    "Media": [
+     {
+      "Id": "388253143",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "E02.wav",
+      "Path": "Media/388253143.wem",
+      "CachePath": "E7/{E7BD5E93-08BF-52D7-AA2A-30ABEC3B7D21}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "165333937",
+       "Name": "Time Stretch (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [1]: (Time Stretch)]\\Time Stretch (Custom)",
+       "GUID": "{8C64B8EE-DD65-4727-8A20-7C2890F2317E}",
+       "LibName": "Wwise Time Stretch",
+       "LibId": "8519683"
+      },
+      {
+       "Id": "838641098",
+       "Name": "Dual_Filters_Radio_Comm (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [0]: (Parametric EQ)]\\Dual_Filters_Radio_Comm (Custom)",
+       "GUID": "{30056662-5889-42B2-A0B5-386B13C51AC0}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "3848055465",
+      "Name": "Play_E02",
+      "ObjectPath": "\\Events\\Default Work Unit\\Voice\\Play_E02",
+      "GUID": "{6520A04E-14B5-4644-A603-6A1238E54495}",
+      "DurationType": "OneShot",
+      "DurationMin": "7.232517",
+      "DurationMax": "7.232517",
+      "MediaRefs": [
+       {
+        "Id": "388253143"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "165333937"
+        },
+        {
+         "Id": "838641098"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0E3C2558-406A-22BF-A0F5-F336847D1CAE}"
+ }
+}

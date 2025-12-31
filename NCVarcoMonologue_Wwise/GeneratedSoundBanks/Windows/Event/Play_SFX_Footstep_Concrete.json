@@ -29,7 +29,7 @@
      {
       "Id": "4169252818",
       "Name": "Play_SFX_Footstep_Concrete",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footstep_Concrete",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Footstep_Concrete",
       "GUID": "{4C384975-2F1F-4EF3-A68C-184AB319F7C3}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{7F0B28B0-198E-6401-9A41-B6B2D4446BFD}"
+  "FileHash": "{92477757-55A8-55B5-39C2-567E2357CC0C}"
  }
 }

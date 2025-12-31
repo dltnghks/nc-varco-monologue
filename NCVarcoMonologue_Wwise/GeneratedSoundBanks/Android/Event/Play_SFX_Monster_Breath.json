@@ -29,7 +29,7 @@
      {
       "Id": "833084561",
       "Name": "Play_SFX_Monster_Breath",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Breath",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Monster_Breath",
       "GUID": "{A08BF425-58E7-4BBF-B17D-0AD550CF82CF}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{113A156F-E215-6CCA-34F3-C579E97FF6E6}"
+  "FileHash": "{13A901D5-E015-7B9C-0D1D-FA962A0E9640}"
  }
 }

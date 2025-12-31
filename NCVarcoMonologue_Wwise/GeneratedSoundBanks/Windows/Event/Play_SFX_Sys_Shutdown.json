@@ -29,7 +29,7 @@
      {
       "Id": "1729752934",
       "Name": "Play_SFX_Sys_Shutdown",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Sys_Shutdown",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Sys_Shutdown",
       "GUID": "{191A3B1C-9C24-4EC4-B99B-D4A2E3D967D4}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{4DB9F11E-07C0-F2CD-CCB1-0DA7CC92AACC}"
+  "FileHash": "{C80D36F0-EA96-6BB9-4BC0-D5F5B5008353}"
  }
 }

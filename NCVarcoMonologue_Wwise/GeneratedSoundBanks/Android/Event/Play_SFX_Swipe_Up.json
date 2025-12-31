@@ -29,7 +29,7 @@
      {
       "Id": "4160029712",
       "Name": "Play_SFX_Swipe_Up",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Swipe_Up",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Swipe_Up",
       "GUID": "{D8D8ECAF-76ED-40F7-A26D-AF96490A45D4}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{C83DE11A-6144-F26D-B13A-FC28945DD9BD}"
+  "FileHash": "{F6748D85-ADB4-1DF1-5040-90FF0327626A}"
  }
 }

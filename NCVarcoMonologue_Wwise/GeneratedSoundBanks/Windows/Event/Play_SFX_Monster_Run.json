@@ -29,7 +29,7 @@
      {
       "Id": "2528789258",
       "Name": "Play_SFX_Monster_Run",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Run",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Monster_Run",
       "GUID": "{A411FC72-E9A2-4CB6-93E8-D7ADE30861F4}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{1A7AE2A2-C5F1-1A21-B1D0-09726C247578}"
+  "FileHash": "{2E1DF8A3-373D-BD4E-860E-95371F1AC272}"
  }
 }

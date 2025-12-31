@@ -29,7 +29,7 @@
      {
       "Id": "3872142358",
       "Name": "Play_SFX_Glitch_Noise",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Glitch_Noise",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Glitch_Noise",
       "GUID": "{4E5AAB95-821B-4EF4-8FAA-59832444FF92}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{E57711FF-AE59-4CE7-21C2-396953B3291F}"
+  "FileHash": "{0CC50C46-7903-68F7-88C7-04587C81147F}"
  }
 }

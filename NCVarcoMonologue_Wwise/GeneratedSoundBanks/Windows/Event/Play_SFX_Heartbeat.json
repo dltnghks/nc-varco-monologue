@@ -29,7 +29,7 @@
      {
       "Id": "4054446234",
       "Name": "Play_SFX_Heartbeat",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Heartbeat",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Heartbeat",
       "GUID": "{561107BE-B042-4769-AD43-1F0948F29CC1}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{634F2788-CC27-4841-3D24-491C88644599}"
+  "FileHash": "{4A2BEC64-0419-98C1-23FE-8EAA71275A0D}"
  }
 }

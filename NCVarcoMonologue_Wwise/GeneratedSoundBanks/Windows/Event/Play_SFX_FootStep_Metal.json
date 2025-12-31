@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
     "Language": "SFX",
-    "Hash": "{C8689354-818C-2828-6BC7-12426278313B}",
+    "Hash": "{18D588AF-C54C-A7A3-1AB0-FA2D84CBD754}",
     "ObjectPath": "Play_SFX_FootStep_Metal",
     "ShortName": "Play_SFX_FootStep_Metal",
     "Path": "Event/Play_SFX_FootStep_Metal.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Footsteps_Metal.wav",
       "Path": "Media/293786288.wem",
-      "CachePath": "DF/{DF4571CB-97C2-6C01-D5F1-1F525CEB62B6}.wem"
+      "CachePath": "FC/{FCD21B97-8922-2509-2F90-B7603071C93D}.wem"
      },
      {
       "Id": "425573192",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Footsteps_Metal.wav",
       "Path": "Media/425573192.wem",
-      "CachePath": "70/{70E6B3EE-B5BF-524A-54BC-233BC63E1B06}.wem"
+      "CachePath": "5F/{5FBACCF0-38FD-89ED-0AD6-89B1DBFB5253}.wem"
      },
      {
       "Id": "632772421",
@@ -40,7 +40,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Footsteps_Metal.wav",
       "Path": "Media/632772421.wem",
-      "CachePath": "44/{444C0B90-7890-8A78-E391-7FE81EC5C2B8}.wem"
+      "CachePath": "B1/{B17685AF-A7D2-0C9F-C84A-EA2985A9886F}.wem"
      },
      {
       "Id": "873169443",
@@ -49,19 +49,19 @@
       "Location": "Loose",
       "ShortName": "SFX_Footsteps_Metal.wav",
       "Path": "Media/873169443.wem",
-      "CachePath": "AA/{AA6C86D1-02B2-A63E-D4B1-1BE87610DEEF}.wem"
+      "CachePath": "86/{861695DA-8F4D-D83C-A07D-424B1B89724B}.wem"
      }
     ],
     "Events": [
      {
       "Id": "4156180716",
       "Name": "Play_SFX_FootStep_Metal",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_FootStep_Metal",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_FootStep_Metal",
       "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
-      "DurationMin": "0.0672851",
-      "DurationMax": "0.24223724",
+      "DurationMin": "0.06536962",
+      "DurationMax": "0.24933533",
       "MediaRefs": [
        {
         "Id": "293786288"
@@ -80,6 +80,6 @@
     ]
    }
   ],
-  "FileHash": "{655AF4A5-D484-CB78-FF12-86C57B83C1CF}"
+  "FileHash": "{F41DBF86-6D0B-FF5C-CF8E-CB9ED382DE30}"
  }
 }

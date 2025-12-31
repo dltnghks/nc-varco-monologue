@@ -29,7 +29,7 @@
      {
       "Id": "1336410719",
       "Name": "Play_SFX_Drone_Signal",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Drone_Signal",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Drone_Signal",
       "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{7CDEE30A-4AF7-1426-BAAC-968478F51C02}"
+  "FileHash": "{01A52664-AC19-AD9C-77D0-31346CD9515F}"
  }
 }

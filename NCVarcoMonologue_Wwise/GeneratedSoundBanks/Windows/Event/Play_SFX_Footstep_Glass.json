@@ -29,7 +29,7 @@
      {
       "Id": "2840398577",
       "Name": "Play_SFX_Footstep_Glass",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footstep_Glass",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Footstep_Glass",
       "GUID": "{977FAA07-F392-4005-95F5-DF7307B737E5}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{5473117E-9B79-D096-1899-D4265EA8D1F7}"
+  "FileHash": "{20A6E6BF-DEB7-B27B-F96B-72C827317117}"
  }
 }

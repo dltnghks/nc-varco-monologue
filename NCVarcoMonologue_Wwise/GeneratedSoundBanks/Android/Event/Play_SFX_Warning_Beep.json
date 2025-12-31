@@ -29,7 +29,7 @@
      {
       "Id": "1560004293",
       "Name": "Play_SFX_Warning_Beep",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Warning_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Warning_Beep",
       "GUID": "{43AEA702-D917-4801-AB57-C6BD77BB2430}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{C694C859-3A37-E986-B669-1D21D43A2FCF}"
+  "FileHash": "{69C5F3C8-002B-13A4-C600-4BE4BA97E731}"
  }
 }

@@ -29,7 +29,7 @@
      {
       "Id": "1114635637",
       "Name": "Play_SFX_Module_Beep",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Module_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Module_Beep",
       "GUID": "{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{80F670E9-F846-CF36-A044-49286B640BEA}"
+  "FileHash": "{AB52F811-25E0-F629-6562-333AFE096650}"
  }
 }

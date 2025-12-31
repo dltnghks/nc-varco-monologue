@@ -29,7 +29,7 @@
      {
       "Id": "4102901186",
       "Name": "Play_SFX_Door_Slam",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Slam",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Door_Slam",
       "GUID": "{8D078E8E-D710-44C5-AD6C-ADBF757BD3F5}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{F2779642-91BE-28B7-65B2-EC3C63DF341F}"
+  "FileHash": "{384F8CFB-4FDD-E891-3963-11868786E62B}"
  }
 }
