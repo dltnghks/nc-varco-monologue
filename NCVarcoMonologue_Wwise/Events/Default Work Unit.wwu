@@ -234,7 +234,7 @@
 								<Action Name="" ID="{2B97474F-A0FF-4A21-9FBC-7D443575DB53}" ShortID="597505680">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SFX_Footstep_Glass" ID="{40B156F2-EC62-4FB6-9D7B-42753D36BE5B}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+											<ObjectRef Name="SFX_Glass_Crack" ID="{40B156F2-EC62-4FB6-9D7B-42753D36BE5B}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

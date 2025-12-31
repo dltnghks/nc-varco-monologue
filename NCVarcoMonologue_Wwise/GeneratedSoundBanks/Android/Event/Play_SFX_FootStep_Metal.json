@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
     "Language": "SFX",
-    "Hash": "{97CC5372-23D4-34E6-08AA-ABA1CF4D1771}",
+    "Hash": "{0F8715F0-A227-58B3-E2E5-3B3F4FCD644E}",
     "ObjectPath": "Play_SFX_FootStep_Metal",
     "ShortName": "Play_SFX_FootStep_Metal",
     "Path": "Event/Play_SFX_FootStep_Metal.bnk",
@@ -68,6 +68,6 @@
     ]
    }
   ],
-  "FileHash": "{BC6184A3-A35C-010D-7AA2-8BDB665E7D33}"
+  "FileHash": "{835A144D-308B-EE63-4AD1-48FDF4CD9310}"
  }
 }

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{977FAA07-F392-4005-95F5-DF7307B737E5}",
     "Language": "SFX",
-    "Hash": "{0D72C9B1-C49E-7B8B-01D7-A53270F2348F}",
+    "Hash": "{9CA5C8C0-5A1E-BCFB-C70E-F854F8448FE5}",
     "ObjectPath": "Play_SFX_Footstep_Glass",
     "ShortName": "Play_SFX_Footstep_Glass",
     "Path": "Event/Play_SFX_Footstep_Glass.bnk",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{20A6E6BF-DEB7-B27B-F96B-72C827317117}"
+  "FileHash": "{E6FAFC5C-1588-C441-E85B-A4C60E625FF8}"
  }
 }

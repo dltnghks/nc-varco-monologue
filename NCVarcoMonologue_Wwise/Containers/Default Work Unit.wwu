@@ -256,7 +256,14 @@
 										<ActiveSource Name="SFX_Footstep_Concrete" ID="{71C8E9E7-30B9-4E1D-974C-66BED5EB36EC}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="SFX_Footstep_Glass" ID="{40B156F2-EC62-4FB6-9D7B-42753D36BE5B}" ShortID="880246782">
+								<Sound Name="SFX_Glass_Crack" ID="{40B156F2-EC62-4FB6-9D7B-42753D36BE5B}" ShortID="880246782">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
