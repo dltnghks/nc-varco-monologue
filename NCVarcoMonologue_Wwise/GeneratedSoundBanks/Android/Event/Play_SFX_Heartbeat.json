@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{561107BE-B042-4769-AD43-1F0948F29CC1}",
     "Language": "SFX",
-    "Hash": "{5E36BE95-4663-1D83-DA81-AF154200B7F3}",
+    "Hash": "{1328BF23-FD1E-F6A3-73ED-918F51BBC291}",
     "ObjectPath": "Play_SFX_Heartbeat",
     "ShortName": "Play_SFX_Heartbeat",
     "Path": "Event/Play_SFX_Heartbeat.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Heartbeat",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Heartbeat",
       "GUID": "{561107BE-B042-4769-AD43-1F0948F29CC1}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "14.506667",
       "DurationMax": "14.506667",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{FCB7D872-DE5E-F6E4-F9E8-A38A44999EA0}"
+  "FileHash": "{FD105D4F-7AE6-AC1F-9172-2D2D41433228}"
  }
 }

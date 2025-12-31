@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour, IInteractObject
@@ -18,33 +19,35 @@ public class ItemPickup : MonoBehaviour, IInteractObject
 
     private void Start()
     {
-        Debug.Log($"[ItemPickup Debug] Start called for {gameObject.name}.");
+        // Debug.Log($"[ItemPickup Debug] Start called for {gameObject.name}.");
 
-        // 아이템이 씬에 나타날 때 지속적으로 재생될 사운드를 시작합니다.
-        if (ambientLoopSound == null)
-        {
-            Debug.LogWarning($"[ItemPickup Debug] 'ambientLoopSound' is not assigned on {gameObject.name}. No ambient sound will be played.");
-            return;
-        }
+        // // 아이템이 씬에 나타날 때 지속적으로 재생될 사운드를 시작합니다.
+        // if (ambientLoopSound == null)
+        // {
+        //     Debug.LogWarning($"[ItemPickup Debug] 'ambientLoopSound' is not assigned on {gameObject.name}. No ambient sound will be played.");
+        //     return;
+        // }
 
-        if (AudioManager.Instance == null)
-        {
-            Debug.LogError($"[ItemPickup Debug] AudioManager.Instance is not available when Start() is called on {gameObject.name}. Check script execution order or if AudioManager exists in the scene.");
-            return;
-        }
+        // if (AudioManager.Instance == null)
+        // {
+        //     Debug.LogError($"[ItemPickup Debug] AudioManager.Instance is not available when Start() is called on {gameObject.name}. Check script execution order or if AudioManager exists in the scene.");
+        //     return;
+        // }
 
-        Debug.Log($"[ItemPickup Debug] Attempting to play attached ambient sound '{ambientLoopSound.name}' on {gameObject.name}.");
-        // PlayAttached는 이 게임오브젝트에 WwiseSoundEmitter를 추가/가져와서 사운드를 재생합니다.
-        ambientEmitter = AudioManager.Instance.PlayAttached(ambientLoopSound, gameObject);
+        // Debug.Log($"[ItemPickup Debug] Attempting to play attached ambient sound '{ambientLoopSound.name}' on {gameObject.name}.");
+        // // PlayAttached는 이 게임오브젝트에 WwiseSoundEmitter를 추가/가져와서 사운드를 재생합니다.
+        // ambientEmitter = AudioManager.Instance.PlayAttached(ambientLoopSound, gameObject);
 
-        if (ambientEmitter != null)
-        {
-            Debug.Log($"[ItemPickup Debug] Successfully got or added a WwiseSoundEmitter on {gameObject.name}. Ambient sound should be playing.");
-        }
-        else
-        {
-            Debug.LogError($"[ItemPickup Debug] Failed to get or add a WwiseSoundEmitter on {gameObject.name}. AudioManager.PlayAttached returned null. Check if '{ambientLoopSound.name}' (WwiseAudioData) has Wwise events assigned in its list.");
-        }
+        // if (ambientEmitter != null)
+        // {
+        //     Debug.Log($"[ItemPickup Debug] Successfully got or added a WwiseSoundEmitter on {gameObject.name}. Ambient sound should be playing.");
+        // }
+        // else
+        // {
+        //     Debug.LogError($"[ItemPickup Debug] Failed to get or add a WwiseSoundEmitter on {gameObject.name}. AudioManager.PlayAttached returned null. Check if '{ambientLoopSound.name}' (WwiseAudioData) has Wwise events assigned in its list.");
+        // }
+
+        StartCoroutine(SoundLoop());
     }
 
     private void OnDestroy()
@@ -94,5 +97,14 @@ public class ItemPickup : MonoBehaviour, IInteractObject
         }
 
         Pickup();
+    }
+
+    private IEnumerator SoundLoop()
+    {
+        while(true){
+            AudioManager.Instance.PlayOneShot(ambientLoopSound, transform.position);
+            yield return new WaitForSeconds(2f);
+        }
+
     }
 }

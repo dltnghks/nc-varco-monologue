@@ -3,12 +3,12 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{A94C645F-4CE2-4E1D-8450-2E4C3A72F8FA}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_SFX_Card_Beep" ID="{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}">
+				<Event Name="Play_SFX_Module_Beep" ID="{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}">
 					<ChildrenList>
 						<Action Name="" ID="{30C795FC-C265-4CC3-900D-313EE83CD51D}" ShortID="250385783">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="SFX_Card_Beep" ID="{979C2049-3794-49B0-8F49-E4DD8C619776}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+									<ObjectRef Name="SFX_Module_Beep" ID="{979C2049-3794-49B0-8F49-E4DD8C619776}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -12,11 +12,14 @@
 							<ReferenceList>
 								<Reference Name="Attenuation">
 									<Custom>
-										<Attenuation Name="Attenuation (Custom)" ID="{1B93024E-EDDF-47B2-B7DA-BA4676761B09}" ShortID="700943150">
+										<Attenuation Name="Attenuation (Custom)" ID="{0AE1EC6D-CCBC-4880-B087-B2A2370E9C46}" ShortID="164733117">
+											<PropertyList>
+												<Property Name="RadiusMax" Type="Real64" Value="20"/>
+											</PropertyList>
 											<CurveUsageInfoList>
 												<VolumeDryUsage>
 													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-														<Curve Name="VolumeDry" ID="{06B5243A-B826-438B-9F32-9C3DBEE8CB92}">
+														<Curve Name="VolumeDry" ID="{7156A674-04E4-49A0-9106-53B56B50B02B}">
 															<PropertyList>
 																<Property Name="Flags" Type="int32" Value="3"/>
 															</PropertyList>
@@ -27,7 +30,12 @@
 																	<Flags>5</Flags>
 																</Point>
 																<Point>
-																	<XPos>100</XPos>
+																	<XPos>4.88649</XPos>
+																	<YPos>-11.48814</YPos>
+																	<Flags>0</Flags>
+																</Point>
+																<Point>
+																	<XPos>20</XPos>
 																	<YPos>-200</YPos>
 																	<Flags>37</Flags>
 																</Point>
@@ -116,9 +124,23 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="SFX_Card_Beep" ID="{979C2049-3794-49B0-8F49-E4DD8C619776}" ShortID="396368011">
+								<Sound Name="SFX_Module_Beep" ID="{979C2049-3794-49B0-8F49-E4DD8C619776}" ShortID="396368011">
 									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>300</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -130,6 +152,11 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="SFX_Card_Beep" ID="{E8627701-FFE5-4D48-810F-F9E4B3B7F988}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.0147161916097"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>SFX_Card_Beep.wav</AudioFile>
 											<MediaIDList>

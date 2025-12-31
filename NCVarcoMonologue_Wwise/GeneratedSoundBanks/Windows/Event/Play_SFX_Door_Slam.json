@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8D078E8E-D710-44C5-AD6C-ADBF757BD3F5}",
     "Language": "SFX",
-    "Hash": "{EF4D403D-A43D-5687-622B-328DD75119E2}",
+    "Hash": "{D972FD43-83B1-5A46-F9FE-41F8E85B8FDB}",
     "ObjectPath": "Play_SFX_Door_Slam",
     "ShortName": "Play_SFX_Door_Slam",
     "Path": "Event/Play_SFX_Door_Slam.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Door_Slam",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Slam",
       "GUID": "{8D078E8E-D710-44C5-AD6C-ADBF757BD3F5}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "14.793032",
       "DurationMax": "14.793032",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{F9E9B0C2-C646-A9BF-ED20-898643199090}"
+  "FileHash": "{F2779642-91BE-28B7-65B2-EC3C63DF341F}"
  }
 }

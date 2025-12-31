@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{858329DE-C87F-4270-A06E-A7385CDFB2A2}",
     "Language": "SFX",
-    "Hash": "{71F80E95-D907-E736-92EC-5A70E35DCEFD}",
+    "Hash": "{58A0945C-14CF-2677-0FF9-DACE207467D2}",
     "ObjectPath": "Play_SFX_Door_Open_Heavy",
     "ShortName": "Play_SFX_Door_Open_Heavy",
     "Path": "Event/Play_SFX_Door_Open_Heavy.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Door_Open_Heavy",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Door_Open_Heavy",
       "GUID": "{858329DE-C87F-4270-A06E-A7385CDFB2A2}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "8.388803",
       "DurationMax": "8.388803",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{45E69BBF-2EB1-FE3D-25FC-3D94428B88E4}"
+  "FileHash": "{BD3AAC09-3735-2501-87D1-A9F5151FB669}"
  }
 }

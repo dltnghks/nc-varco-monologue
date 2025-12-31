@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{FD0BAF65-D10D-4225-94CE-971BE58AF702}",
     "Language": "SFX",
-    "Hash": "{B01BC5CC-52B0-E51F-882E-D82E47529EAB}",
+    "Hash": "{5C2A6275-6401-7309-4EB9-B7CC0524E29E}",
     "ObjectPath": "Play_SFX_Sys_Boot",
     "ShortName": "Play_SFX_Sys_Boot",
     "Path": "Event/Play_SFX_Sys_Boot.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Sys_Boot",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Sys_Boot",
       "GUID": "{FD0BAF65-D10D-4225-94CE-971BE58AF702}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "1.4375",
       "DurationMax": "1.4375",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{A3A38E6E-EF6C-5794-C490-0D1CB6A8C129}"
+  "FileHash": "{41DF237F-55B9-B857-53C6-BE8A7A030E35}"
  }
 }

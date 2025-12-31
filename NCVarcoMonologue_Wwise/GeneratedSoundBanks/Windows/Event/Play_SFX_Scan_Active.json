@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{135AD107-2FF7-45DC-9EE8-57F0B7DBF385}",
     "Language": "SFX",
-    "Hash": "{C6677EBC-F371-E16C-61EC-23A9F20D58D9}",
+    "Hash": "{D90B8D25-7096-DAED-51FC-F379E3A10A1B}",
     "ObjectPath": "Play_SFX_Scan_Active",
     "ShortName": "Play_SFX_Scan_Active",
     "Path": "Event/Play_SFX_Scan_Active.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Scan_Active",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Scan_Active",
       "GUID": "{135AD107-2FF7-45DC-9EE8-57F0B7DBF385}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "4.810698",
       "DurationMax": "4.810698",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{F15AA308-8389-CE6A-1E49-A1BB39DF768C}"
+  "FileHash": "{A158F6E0-E6A1-2323-239C-744ED8101F5A}"
  }
 }

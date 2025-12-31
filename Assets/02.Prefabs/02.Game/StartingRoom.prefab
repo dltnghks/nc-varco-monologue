@@ -1051,6 +1051,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 478258185270734516}
     m_Modifications:
+    - target: {fileID: 1557894199362617390, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
+      propertyPath: ambientLoopSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 43a2ea87ec773a74c8fdc4a816ac8f35, type: 2}
     - target: {fileID: 3015529160026156961, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

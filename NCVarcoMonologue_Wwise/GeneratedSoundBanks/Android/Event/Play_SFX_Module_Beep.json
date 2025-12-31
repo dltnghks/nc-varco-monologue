@@ -6,14 +6,14 @@
   "SoundBankVersion": "172",
   "SoundBanks": [
    {
-    "Id": "1641089727",
+    "Id": "1114635637",
     "Type": "Event",
     "GUID": "{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}",
     "Language": "SFX",
-    "Hash": "{9D7D00B6-43F1-38DF-2FE7-AA0B4BE51E63}",
-    "ObjectPath": "Play_SFX_Card_Beep",
-    "ShortName": "Play_SFX_Card_Beep",
-    "Path": "Event/Play_SFX_Card_Beep.bnk",
+    "Hash": "{981D5991-3433-968E-92D2-045BD957B551}",
+    "ObjectPath": "Play_SFX_Module_Beep",
+    "ShortName": "Play_SFX_Module_Beep",
+    "Path": "Event/Play_SFX_Module_Beep.bnk",
     "Media": [
      {
       "Id": "141226847",
@@ -22,17 +22,19 @@
       "Location": "Loose",
       "ShortName": "SFX_Card_Beep.wav",
       "Path": "Media/141226847.wem",
-      "CachePath": "92/{9232979D-6E02-B9A6-DD09-4A5BE0BF93E0}.wem"
+      "CachePath": "55/{555601FE-99CE-8689-D312-54607C4948B5}.wem"
      }
     ],
     "Events": [
      {
-      "Id": "1641089727",
-      "Name": "Play_SFX_Card_Beep",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Card_Beep",
+      "Id": "1114635637",
+      "Name": "Play_SFX_Module_Beep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Module_Beep",
       "GUID": "{A1D48D6A-05E1-4AAB-9EA2-059D87F1C868}",
-      "MaxAttenuation": "100",
-      "DurationType": "Infinite",
+      "MaxAttenuation": "20",
+      "DurationType": "OneShot",
+      "DurationMin": "0.87733525",
+      "DurationMax": "0.87733525",
       "MediaRefs": [
        {
         "Id": "141226847"
@@ -42,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{02C90EA0-25C1-505C-5BFB-9C6E4369577F}"
+  "FileHash": "{817B098C-6C62-98F2-657C-70A106C0C6E5}"
  }
 }

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{D8D8ECAF-76ED-40F7-A26D-AF96490A45D4}",
     "Language": "SFX",
-    "Hash": "{E640E80D-6F93-3924-1851-801264F93812}",
+    "Hash": "{4F192E4B-77EF-5796-268D-88374F946380}",
     "ObjectPath": "Play_SFX_Swipe_Up",
     "ShortName": "Play_SFX_Swipe_Up",
     "Path": "Event/Play_SFX_Swipe_Up.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Swipe_Up",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Swipe_Up",
       "GUID": "{D8D8ECAF-76ED-40F7-A26D-AF96490A45D4}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "1.8243021",
       "DurationMax": "1.8243021",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{E13C6425-D160-73AF-6321-CD366A86036E}"
+  "FileHash": "{3CFC4F16-03BE-A24C-9E5D-EEB3FC7CC9E8}"
  }
 }

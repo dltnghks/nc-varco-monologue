@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
     "Language": "SFX",
-    "Hash": "{519F752F-794C-8D71-9FB1-FB9D9973960E}",
+    "Hash": "{E671DE4B-8234-3582-BAD7-6F0A51A82AB2}",
     "ObjectPath": "Play_SFX_Drone_Signal",
     "ShortName": "Play_SFX_Drone_Signal",
     "Path": "Event/Play_SFX_Drone_Signal.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Drone_Signal",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Drone_Signal",
       "GUID": "{ECCC32C3-9CD7-4B72-9F6E-919FB9E5B6A8}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "0.08057292",
       "DurationMax": "0.08057292",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{C618E5C5-B955-DAC5-2648-6F12ABF9F7B1}"
+  "FileHash": "{7CDEE30A-4AF7-1426-BAAC-968478F51C02}"
  }
 }

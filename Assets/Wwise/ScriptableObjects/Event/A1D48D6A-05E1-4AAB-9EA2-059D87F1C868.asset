@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43929a8f9f1e3454eb792b87285e8f11, type: 3}
   m_Name: A1D48D6A-05E1-4AAB-9EA2-059D87F1C868
   m_EditorClassIdentifier: 
-  objectName: Play_SFX_Card_Beep
-  id: 1641089727
+  objectName: Play_SFX_Module_Beep
+  id: 1114635637
   guid: A1D48D6A-05E1-4AAB-9EA2-059D87F1C868
   IsInUserDefinedSoundBank: 0

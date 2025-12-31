@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{A08BF425-58E7-4BBF-B17D-0AD550CF82CF}",
     "Language": "SFX",
-    "Hash": "{7ECAC501-F40C-C99B-CDDE-E588D82915F5}",
+    "Hash": "{6AE60138-D9EC-DD30-47BF-32F479DC8429}",
     "ObjectPath": "Play_SFX_Monster_Breath",
     "ShortName": "Play_SFX_Monster_Breath",
     "Path": "Event/Play_SFX_Monster_Breath.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Monster_Breath",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Breath",
       "GUID": "{A08BF425-58E7-4BBF-B17D-0AD550CF82CF}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "1.72",
       "DurationMax": "1.72",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{CD0FADCC-097E-D62A-4DDB-E6F018BB5F73}"
+  "FileHash": "{113A156F-E215-6CCA-34F3-C579E97FF6E6}"
  }
 }

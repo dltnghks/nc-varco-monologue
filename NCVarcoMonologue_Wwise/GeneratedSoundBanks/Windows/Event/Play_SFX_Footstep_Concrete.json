@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{4C384975-2F1F-4EF3-A68C-184AB319F7C3}",
     "Language": "SFX",
-    "Hash": "{1342089D-59A2-4547-C7AE-81569FECD954}",
+    "Hash": "{1CF718F8-C49A-339C-BCAE-0C1055373255}",
     "ObjectPath": "Play_SFX_Footstep_Concrete",
     "ShortName": "Play_SFX_Footstep_Concrete",
     "Path": "Event/Play_SFX_Footstep_Concrete.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Footstep_Concrete",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footstep_Concrete",
       "GUID": "{4C384975-2F1F-4EF3-A68C-184AB319F7C3}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "2",
       "DurationMax": "2",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{261A7777-B994-139C-788A-C60A4F54E6B1}"
+  "FileHash": "{7F0B28B0-198E-6401-9A41-B6B2D4446BFD}"
  }
 }

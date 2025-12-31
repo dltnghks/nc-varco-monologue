@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{977FAA07-F392-4005-95F5-DF7307B737E5}",
     "Language": "SFX",
-    "Hash": "{C21E8B11-E042-41D9-7F9C-197CBC19BADF}",
+    "Hash": "{0D72C9B1-C49E-7B8B-01D7-A53270F2348F}",
     "ObjectPath": "Play_SFX_Footstep_Glass",
     "ShortName": "Play_SFX_Footstep_Glass",
     "Path": "Event/Play_SFX_Footstep_Glass.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Footstep_Glass",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Footstep_Glass",
       "GUID": "{977FAA07-F392-4005-95F5-DF7307B737E5}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "0.7133021",
       "DurationMax": "0.7133021",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{039FEDA3-ED55-8E9A-BE5D-3B88BCDD756B}"
+  "FileHash": "{5419EACE-35B3-97A5-ED04-0D166BC34C50}"
  }
 }

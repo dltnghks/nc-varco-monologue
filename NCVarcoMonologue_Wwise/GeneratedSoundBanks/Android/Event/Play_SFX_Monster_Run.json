@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{A411FC72-E9A2-4CB6-93E8-D7ADE30861F4}",
     "Language": "SFX",
-    "Hash": "{7A015020-CF5E-DF4E-D28F-0D70FBAA2662}",
+    "Hash": "{B1DC95BB-F2DA-D1D1-77A0-B645D1936F77}",
     "ObjectPath": "Play_SFX_Monster_Run",
     "ShortName": "Play_SFX_Monster_Run",
     "Path": "Event/Play_SFX_Monster_Run.bnk",
@@ -31,7 +31,7 @@
       "Name": "Play_SFX_Monster_Run",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Monster_Run",
       "GUID": "{A411FC72-E9A2-4CB6-93E8-D7ADE30861F4}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "8.932813",
       "DurationMax": "8.932813",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{B23C5275-CFE5-BAAD-EACE-E230C9E4D63A}"
+  "FileHash": "{46B53DB9-4DDF-434C-B2F3-E673A8D80D06}"
  }
 }
