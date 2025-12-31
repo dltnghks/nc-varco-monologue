@@ -1,0 +1,1 @@
+C:\Users\dltrn\Github\nc-varco-monologue\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\4q6u665j\obj\arm64-v8a
