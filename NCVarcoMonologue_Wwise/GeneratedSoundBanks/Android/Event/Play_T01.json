@@ -8,9 +8,9 @@
    {
     "Id": "1597147539",
     "Type": "Event",
-    "GUID": "{C6F2670B-0BB8-4F86-8B75-8B7FFF292351}",
+    "GUID": "{EFB06DE1-96CA-40DB-8921-373A9B056FA7}",
     "Language": "SFX",
-    "Hash": "{FB18E8E8-90EC-1426-E9D8-525CFFCF3E7E}",
+    "Hash": "{A9DBFB0A-FB73-C97C-0E36-A4A18397F582}",
     "ObjectPath": "Play_T01",
     "ShortName": "Play_T01",
     "Path": "Event/Play_T01.bnk",
@@ -50,7 +50,7 @@
       "Id": "1597147539",
       "Name": "Play_T01",
       "ObjectPath": "\\Events\\Default Work Unit\\Voice\\Play_T01",
-      "GUID": "{C6F2670B-0BB8-4F86-8B75-8B7FFF292351}",
+      "GUID": "{EFB06DE1-96CA-40DB-8921-373A9B056FA7}",
       "DurationType": "OneShot",
       "DurationMin": "11.791194",
       "DurationMax": "11.791194",
@@ -73,6 +73,6 @@
     ]
    }
   ],
-  "FileHash": "{6D4EFB3B-2760-242F-FF9E-B59492AF8220}"
+  "FileHash": "{F95F8B97-C56F-1A8E-7195-95DA4C66B936}"
  }
 }

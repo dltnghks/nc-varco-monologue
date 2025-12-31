@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEventChannel: {fileID: 0}
+  onTrapEvent: 0
   noiseSound: {fileID: 11400000, guid: d6e800e205dcd0e40b66332fe9c40850, type: 2}
 --- !u!135 &566996140827436478
 SphereCollider:
@@ -1048,6 +1049,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 478258185270734516}
     m_Modifications:
+    - target: {fileID: 1557894199362617390, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
+      propertyPath: pickupEvent
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3015529160026156961, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1090,7 +1095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7373083221185525914, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: m_Name
-      value: TutorialCard
+      value: SecurityModule
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

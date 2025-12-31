@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 /// <summary>
@@ -13,6 +15,12 @@ public class GameManager : MonoBehaviour
     [Header("Event Channel")]
     [Tooltip("The channel for receiving general game events.")]
     [SerializeField] private GameEventChannel gameEventChannel;
+    [SerializeField] private EGameEvent onStartGameEvent; 
+
+    //SerializedDictionary
+    [Header("Event to Voice")]
+    [SerializeField] private SerializedDictionary<EGameEvent, List<WwiseAudioData>> eventToVoiceData = new SerializedDictionary<EGameEvent, List<WwiseAudioData>>();
+    
 
     private void Awake()
     {
@@ -24,6 +32,11 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject); // Make the GameManager persist across scene loads
+    }
+
+    private void Start()
+    {
+        gameEventChannel.RaiseEvent(onStartGameEvent);
     }
 
     private void OnEnable()
@@ -49,6 +62,10 @@ public class GameManager : MonoBehaviour
     private void HandleGameEvent(EGameEvent eventKey)
     {
         Debug.Log($"[GameManager] Received Event: <color=green>{eventKey}</color>");
+
+        List<WwiseAudioData> audioDatas;
+        if(eventToVoiceData.TryGetValue(eventKey, out audioDatas))
+            AudioManager.Instance.PlayAudioSequence(audioDatas, Camera.main.transform.position);
 
         switch (eventKey)
         {

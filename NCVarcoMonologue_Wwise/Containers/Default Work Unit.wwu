@@ -1526,76 +1526,6 @@
 										<ActiveSource Name="T02" ID="{99DBAF79-A9A3-4700-904D-FB95D6E89EC3}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="T03_1" ID="{9649953D-188A-494C-8734-D14F116C7CC3}" ShortID="358859033">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8DA48C16-4634-4C2C-AC79-54623DC1BF39}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="T03_1" ID="{E956EF2E-F7B6-4DA8-B820-5FC471471440}">
-											<PropertyList>
-												<Property Name="LoopBegin" Type="Real64" Value="0"/>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>T03_1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="893899480"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="T03_1" ID="{E956EF2E-F7B6-4DA8-B820-5FC471471440}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="T03_2" ID="{CE00CF99-02C1-4DB1-A14A-482A6A27197D}" ShortID="579958877">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8DA48C16-4634-4C2C-AC79-54623DC1BF39}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="T03_2" ID="{7EF7F9A4-380A-4DD1-A9B0-B7D6938BAFCA}">
-											<Language>SFX</Language>
-											<AudioFile>T03_2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1003456371"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="T03_2" ID="{7EF7F9A4-380A-4DD1-A9B0-B7D6938BAFCA}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="T03_3" ID="{C776DA0C-CDBA-44B4-81CC-279C85504EE2}" ShortID="717046281">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8DA48C16-4634-4C2C-AC79-54623DC1BF39}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="T03_3" ID="{6F6CACD6-C3FD-4DD1-A30E-765C70195743}">
-											<Language>SFX</Language>
-											<AudioFile>T03_3.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="203362941"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="T03_3" ID="{6F6CACD6-C3FD-4DD1-A30E-765C70195743}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 								<Sound Name="T04" ID="{D07A277A-7418-44EC-A31C-D7F5D6FEF751}" ShortID="900284846">
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1662,6 +1592,97 @@
 										<ActiveSource Name="W02" ID="{83FB734C-09C1-4B43-87F7-D128B5C62462}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<RandomSequenceContainer Name="Warning_Random Container" ID="{62F671CF-123D-4238-A165-48056EB5817E}" ShortID="943016201">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8DA48C16-4634-4C2C-AC79-54623DC1BF39}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="T03_1" ID="{9649953D-188A-494C-8734-D14F116C7CC3}" ShortID="358859033">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8DA48C16-4634-4C2C-AC79-54623DC1BF39}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="T03_1" ID="{E956EF2E-F7B6-4DA8-B820-5FC471471440}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>T03_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="893899480"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="T03_1" ID="{E956EF2E-F7B6-4DA8-B820-5FC471471440}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="T03_2" ID="{CE00CF99-02C1-4DB1-A14A-482A6A27197D}" ShortID="579958877">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8DA48C16-4634-4C2C-AC79-54623DC1BF39}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="T03_2" ID="{7EF7F9A4-380A-4DD1-A9B0-B7D6938BAFCA}">
+													<Language>SFX</Language>
+													<AudioFile>T03_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1003456371"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="T03_2" ID="{7EF7F9A4-380A-4DD1-A9B0-B7D6938BAFCA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="T03_3" ID="{C776DA0C-CDBA-44B4-81CC-279C85504EE2}" ShortID="717046281">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E34E8AB5-1B12-4EC8-A1AE-564A5F6E43F1}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8DA48C16-4634-4C2C-AC79-54623DC1BF39}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="T03_3" ID="{6F6CACD6-C3FD-4DD1-A30E-765C70195743}">
+													<Language>SFX</Language>
+													<AudioFile>T03_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="203362941"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="T03_3" ID="{6F6CACD6-C3FD-4DD1-A30E-765C70195743}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="Effects">

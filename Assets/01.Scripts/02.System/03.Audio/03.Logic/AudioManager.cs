@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -125,6 +126,39 @@ public class AudioManager : MonoBehaviour
         if (soundEventChannel != null && audioData.needsVisualIndicator)
         {
             soundEventChannel.RaiseEvent(transform.position, audioData.soundType);
+        }
+    }
+
+    /// <summary>
+    /// Plays a list of audio data sequentially at a given position.
+    /// </summary>
+    /// <param name="audioSequence">The list of WwiseAudioData to play in order.</param>
+    /// <param name="position">The world position to play the sounds at.</param>
+    public void PlayAudioSequence(List<WwiseAudioData> audioSequence, Vector3 position)
+    {
+        StartCoroutine(PlaySequenceCoroutine(audioSequence, position));
+    }
+
+    private IEnumerator PlaySequenceCoroutine(List<WwiseAudioData> audioSequence, Vector3 position)
+    {
+        foreach (var audioData in audioSequence)
+        {
+            if (audioData == null || audioData.wwiseEvents.Count == 0) continue;
+
+            WwiseSoundEmitter emitter = GetEmitter();
+            emitter.transform.position = position;
+            
+            // Play the sequence and configure it to return to the pool when done.
+            emitter.PlaySequenceAndReturn(audioData);
+
+            // Handle visual indicator
+            if (soundEventChannel != null && audioData.needsVisualIndicator)
+            {
+                soundEventChannel.RaiseEvent(position, audioData.soundType);
+            }
+
+            // Wait until the emitter has finished its sequence.
+            yield return new WaitUntil(() => !emitter.IsPlaying);
         }
     }
 }

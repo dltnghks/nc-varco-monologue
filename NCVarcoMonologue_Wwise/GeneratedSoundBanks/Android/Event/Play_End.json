@@ -8,9 +8,9 @@
    {
     "Id": "2472290785",
     "Type": "Event",
-    "GUID": "{7F9CEB41-C1B6-40DA-A1BF-4966B4F2939B}",
+    "GUID": "{89132890-4F85-47AC-AD62-8BBE39773C2C}",
     "Language": "SFX",
-    "Hash": "{95B09C77-DCE5-5DEC-F42B-A019550E7C39}",
+    "Hash": "{27B3E1A9-C2FA-30C9-7C9F-0891CA8D3FA7}",
     "ObjectPath": "Play_End",
     "ShortName": "Play_End",
     "Path": "Event/Play_End.bnk",
@@ -50,7 +50,7 @@
       "Id": "2472290785",
       "Name": "Play_End",
       "ObjectPath": "\\Events\\Default Work Unit\\Voice\\Play_End",
-      "GUID": "{7F9CEB41-C1B6-40DA-A1BF-4966B4F2939B}",
+      "GUID": "{89132890-4F85-47AC-AD62-8BBE39773C2C}",
       "DurationType": "OneShot",
       "DurationMin": "8.087268",
       "DurationMax": "8.087268",
@@ -73,6 +73,6 @@
     ]
    }
   ],
-  "FileHash": "{8A638FBD-2973-9A2D-F6B8-D083CEE136F2}"
+  "FileHash": "{361D6BCD-EC2B-FE55-2ADD-08EB2F2A3ECE}"
  }
 }

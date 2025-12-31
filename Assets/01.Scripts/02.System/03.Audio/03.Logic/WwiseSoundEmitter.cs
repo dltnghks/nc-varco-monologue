@@ -10,7 +10,7 @@ public class WwiseSoundEmitter : MonoBehaviour
     [Tooltip("각 이벤트 사이의 딜레이 (초)")]
     public float DelayBetweenEvents = 0.5f;
     
-    private bool isPlaying = false;
+    public bool IsPlaying { get; private set; } = false;
     private Action onSequenceFinished;
     private AK.Wwise.Event currentEvent;
 
@@ -33,9 +33,9 @@ public class WwiseSoundEmitter : MonoBehaviour
         
         // Removed: if (isPlaying) Stop();
         // This allows multiple single-shot sounds to layer without interrupting each other.
-        // The 'isPlaying' flag primarily manages internal sequence progression, not individual sound outputs.
+        // The 'IsPlaying' flag primarily manages internal sequence progression, not individual sound outputs.
     
-        isPlaying = true;
+        IsPlaying = true;
         PlayNextEvent();
     }
 
@@ -91,7 +91,7 @@ public class WwiseSoundEmitter : MonoBehaviour
 
     private void FinishSequence()
     {
-        isPlaying = false;
+        IsPlaying = false;
         currentEvent = null;
         Debug.Log($"Wwise Sequence Completed on {gameObject.name}!");
         
@@ -104,7 +104,7 @@ public class WwiseSoundEmitter : MonoBehaviour
     /// </summary>
     public void Stop()
     {
-        if (isPlaying && currentEvent != null)
+        if (IsPlaying && currentEvent != null)
         {
             // Stop the specific event instance on this game object.
             currentEvent.Stop(gameObject);
@@ -112,7 +112,7 @@ public class WwiseSoundEmitter : MonoBehaviour
         
         StopAllCoroutines();
         EventsSequenceQueue.Clear();
-        isPlaying = false;
+        IsPlaying = false;
         currentEvent = null;
         onSequenceFinished = null;
     }

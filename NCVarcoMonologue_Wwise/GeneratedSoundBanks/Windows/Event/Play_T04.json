@@ -8,9 +8,9 @@
    {
     "Id": "1597147542",
     "Type": "Event",
-    "GUID": "{08A24F28-6B3F-4F6C-A0FD-BF264E160F7C}",
+    "GUID": "{9BE5B668-7FF9-46D2-AAC4-B5F17BD716D9}",
     "Language": "SFX",
-    "Hash": "{A67D9797-1571-1DB2-FAF5-6003F573006A}",
+    "Hash": "{138372C6-76D3-7442-ED0F-B0E79F4BDB33}",
     "ObjectPath": "Play_T04",
     "ShortName": "Play_T04",
     "Path": "Event/Play_T04.bnk",
@@ -50,7 +50,7 @@
       "Id": "1597147542",
       "Name": "Play_T04",
       "ObjectPath": "\\Events\\Default Work Unit\\Voice\\Play_T04",
-      "GUID": "{08A24F28-6B3F-4F6C-A0FD-BF264E160F7C}",
+      "GUID": "{9BE5B668-7FF9-46D2-AAC4-B5F17BD716D9}",
       "DurationType": "OneShot",
       "DurationMin": "3.7039251",
       "DurationMax": "3.7039251",
@@ -73,6 +73,6 @@
     ]
    }
   ],
-  "FileHash": "{A3B513EA-808C-7408-36BE-7AF9E9F7A6D0}"
+  "FileHash": "{7DFC05BD-DDDA-FCD4-E4EE-B5FB09CACCF5}"
  }
 }

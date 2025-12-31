@@ -5,6 +5,7 @@ public class NoiseTrap : MonoBehaviour, IInteractObject
 
     [Header("이벤트 채널")]
     public GameEventChannel gameEventChannel;
+    [SerializeField] private EGameEvent onTrapEvent;
 
     [Header("Audio Data")]
     [SerializeField] private WwiseAudioData noiseSound; // 상호작용할 때 나는 소리
@@ -13,7 +14,7 @@ public class NoiseTrap : MonoBehaviour, IInteractObject
     {
         if (gameEventChannel != null)
         {
-            gameEventChannel.RaiseEvent(EGameEvent.PlayerDamaged);
+            gameEventChannel.RaiseEvent(onTrapEvent);
         }
         
         if (noiseSound != null && AudioManager.Instance != null)
