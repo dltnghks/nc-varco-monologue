@@ -8,9 +8,9 @@
    {
     "Id": "1597147538",
     "Type": "Event",
-    "GUID": "{CB7F311A-122F-4389-8EE6-05D3A3B07E65}",
+    "GUID": "{04F9A892-AF67-4945-9571-57A3BB100489}",
     "Language": "SFX",
-    "Hash": "{EF968E78-EE29-9866-B297-B53820C5755C}",
+    "Hash": "{0C40D445-6458-6B0F-2984-7BF60D8B70FA}",
     "ObjectPath": "Play_T00",
     "ShortName": "Play_T00",
     "Path": "Event/Play_T00.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "T00.wav",
       "Path": "Media/515217977.wem",
-      "CachePath": "2D/{2D784F8E-816A-5CDD-7874-90645513987D}.wem"
+      "CachePath": "14/{14B71BC4-6CDF-EB7F-84E7-B219DF4C61D4}.wem"
      }
     ],
     "Plugins": {
@@ -49,11 +49,11 @@
      {
       "Id": "1597147538",
       "Name": "Play_T00",
-      "ObjectPath": "\\Events\\Default Work Unit\\Voice\\Play_T00",
-      "GUID": "{CB7F311A-122F-4389-8EE6-05D3A3B07E65}",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_T00",
+      "GUID": "{04F9A892-AF67-4945-9571-57A3BB100489}",
       "DurationType": "OneShot",
-      "DurationMin": "5.8736806",
-      "DurationMax": "5.8736806",
+      "DurationMin": "5.281929",
+      "DurationMax": "5.281929",
       "MediaRefs": [
        {
         "Id": "515217977"
@@ -73,6 +73,6 @@
     ]
    }
   ],
-  "FileHash": "{784D9FA6-3D38-24F1-DC90-14CB3A2F54FB}"
+  "FileHash": "{12930B10-90DE-67ED-9227-5EE97DB7C810}"
  }
 }

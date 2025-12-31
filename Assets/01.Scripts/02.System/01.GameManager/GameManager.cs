@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameEventChannel gameEventChannel;
     [Tooltip("The channel for receiving player-specific events.")]
     [SerializeField] private PlayerEventChannel playerEventChannel;
+    [Tooltip("The event to raise when the danger state ends.")]
+    [SerializeField] private EGameEvent onDangerEndedEvent;
 
     [Header("Wwise")]
     [Tooltip("The ambient sound to play at the start of the game.")]
@@ -240,6 +242,12 @@ public class GameManager : MonoBehaviour
         }, 0f, rtpcTweenDuration).SetEase(rtpcEaseType);
 
         isInDangerState = false;
+
+        if (gameEventChannel != null)
+        {
+            Debug.Log($"[GameManager] Raising {onDangerEndedEvent} event.");
+            gameEventChannel.RaiseEvent(onDangerEndedEvent);
+        }
     }
 
     /// <summary>

@@ -1088,26 +1088,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
-      propertyPath: eventToVoiceData._serializedList.Array.data[0].Value.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
-      propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: e38f83db6fbe6bf4693d56e289f1abbc, type: 2}
-    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
-      propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 91ddd799681f8c64e93a17626c3c16fd, type: 2}
-    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
-      propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 5d695125fdfb41143b17f42ecaed0ee3, type: 2}
-    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
-      propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[3]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ceb83fd6349b8a3448e291965152be9c, type: 2}
     - target: {fileID: 7838712468910096408, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
       propertyPath: m_Name
       value: '@GameManager'

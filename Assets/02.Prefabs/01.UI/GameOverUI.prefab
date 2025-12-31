@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -187,7 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endingDialogue:
-  - {fileID: 11400000, guid: a6a63527e403290439c8a29dd54d386f, type: 2}
+  - {fileID: 11400000, guid: e2aae9e974bde6a41a82842b51ec3191, type: 2}
+  - {fileID: 11400000, guid: 372fec747d711dc498adb684b539cb86, type: 2}
 --- !u!1 &7258147740588036461
 GameObject:
   m_ObjectHideFlags: 0

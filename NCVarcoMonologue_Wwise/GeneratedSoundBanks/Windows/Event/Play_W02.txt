@@ -1,7 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	1496334763	Play_W02			\Default Work Unit\Voice\Play_W02	
-
-Effect plug-ins	ID	Name	Type				Notes
-	165333937	Time Stretch (Custom)	Wwise Time Stretch			
-	838641098	Dual_Filters_Radio_Comm (Custom)	Wwise Parametric EQ			
-

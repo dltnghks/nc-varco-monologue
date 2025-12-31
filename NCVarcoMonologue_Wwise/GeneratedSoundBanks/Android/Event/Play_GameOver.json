@@ -1,0 +1,78 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3174629258",
+    "Type": "Event",
+    "GUID": "{F01CCE0D-A7D8-40AD-B54B-1466BA233B36}",
+    "Language": "SFX",
+    "Hash": "{56439F68-22E0-8287-222B-0996C87FDC8D}",
+    "ObjectPath": "Play_GameOver",
+    "ShortName": "Play_GameOver",
+    "Path": "Event/Play_GameOver.bnk",
+    "Media": [
+     {
+      "Id": "574839044",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "GameOver.wav",
+      "Path": "Media/574839044.wem",
+      "CachePath": "51/{5145A2B7-EE8E-9B3E-82B1-D070E5671C24}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "165333937",
+       "Name": "Time Stretch (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [1]: (Time Stretch)]\\Time Stretch (Custom)",
+       "GUID": "{8C64B8EE-DD65-4727-8A20-7C2890F2317E}",
+       "LibName": "Wwise Time Stretch",
+       "LibId": "8519683"
+      },
+      {
+       "Id": "838641098",
+       "Name": "Dual_Filters_Radio_Comm (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Voice\\Voice_Property Container\\[Effect Slot [0]: (Parametric EQ)]\\Dual_Filters_Radio_Comm (Custom)",
+       "GUID": "{30056662-5889-42B2-A0B5-386B13C51AC0}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "3174629258",
+      "Name": "Play_GameOver",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_GameOver",
+      "GUID": "{F01CCE0D-A7D8-40AD-B54B-1466BA233B36}",
+      "DurationType": "OneShot",
+      "DurationMin": "7.5393505",
+      "DurationMax": "7.5393505",
+      "MediaRefs": [
+       {
+        "Id": "574839044"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "165333937"
+        },
+        {
+         "Id": "838641098"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{41247C1E-42C1-F991-2C1B-A2D32A1B25EF}"
+ }
+}

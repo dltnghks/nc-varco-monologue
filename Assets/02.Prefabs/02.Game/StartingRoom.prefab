@@ -1122,7 +1122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5164033079310053666, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
       propertyPath: waitAtCenterTime
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8090780093712793286, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1316,7 +1316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1557894199362617390, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: pickupEvent
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1557894199362617390, guid: b9ba5b25884eddc449c79e6993a8c6f0, type: 3}
       propertyPath: pickupSound

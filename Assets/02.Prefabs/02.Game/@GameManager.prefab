@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   playerEventChannel: {fileID: 11400000, guid: 4f784510c29c90444b8c3a2bef609fa5, type: 2}
-  onStartGameEvent: 0
+  onDangerEndedEvent: 4
   ambEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -61,33 +61,33 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 414bea284326caa4e831bb78a86ad6ee, type: 2}
   rtpcTweenDuration: 2
   rtpcEaseType: 7
-  dangerStateDuration: 2
+  dangerStateDuration: 8
   dangerGracePeriod: 1
   eventToVoiceData:
     _serializedList:
     - Key: 0
       Value:
-      - {fileID: 0}
-      - {fileID: 0}
-    - Key: 2
+      - {fileID: 11400000, guid: e38f83db6fbe6bf4693d56e289f1abbc, type: 2}
+      - {fileID: 11400000, guid: 91ddd799681f8c64e93a17626c3c16fd, type: 2}
+      - {fileID: 11400000, guid: ceb83fd6349b8a3448e291965152be9c, type: 2}
+      - {fileID: 11400000, guid: 5d695125fdfb41143b17f42ecaed0ee3, type: 2}
+      - {fileID: 11400000, guid: a3bf644543bb8dd4f82720fd52dbe383, type: 2}
+      - {fileID: 11400000, guid: db7d7d3efddcf8e40b7582ec82542892, type: 2}
+      - {fileID: 11400000, guid: d410308814ed3e64dabcd7f646bb2a6d, type: 2}
+      - {fileID: 11400000, guid: adf3553da4185c440aec4c5b9d54e331, type: 2}
+    - Key: 4
       Value:
-      - {fileID: 11400000, guid: 8a13ace2dc566ca47830720eaa721c13, type: 2}
+      - {fileID: 11400000, guid: 94798d7309a99ad4a8527446e79e6c15, type: 2}
     - Key: 3
       Value:
       - {fileID: 11400000, guid: 8a13ace2dc566ca47830720eaa721c13, type: 2}
-    - Key: 4
-      Value:
-      - {fileID: 11400000, guid: fe52204685e68354ab9ff822bbb22127, type: 2}
     - Key: 5
       Value:
-      - {fileID: 11400000, guid: 8a13ace2dc566ca47830720eaa721c13, type: 2}
-    - Key: 6
-      Value:
-      - {fileID: 11400000, guid: fe52204685e68354ab9ff822bbb22127, type: 2}
+      - {fileID: 11400000, guid: d3028f383d9193c46991ffe2d73c0fed, type: 2}
     - Key: 7
       Value:
-      - {fileID: 11400000, guid: 448ba85c09d4a9844a843dcd0d082a7f, type: 2}
+      - {fileID: 11400000, guid: 8448cdf434e022443a883d81a3eb7900, type: 2}
     - Key: 1
       Value:
-      - {fileID: 11400000, guid: c08ac928733978343a9b1ddb64cbe335, type: 2}
-      - {fileID: 11400000, guid: 94798d7309a99ad4a8527446e79e6c15, type: 2}
+      - {fileID: 11400000, guid: 0f3a98887472e164aaffe45456a114e6, type: 2}
+      - {fileID: 11400000, guid: dd258d4262688f54fafd762704643f6c, type: 2}

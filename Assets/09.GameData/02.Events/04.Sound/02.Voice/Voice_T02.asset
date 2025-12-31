@@ -18,4 +18,5 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 808a9a2daa722d840a3965ecaecc8f31, type: 2}
   needsVisualIndicator: 0
   soundType: 0
+  blocksPlayerInteraction: 1
   comment: 

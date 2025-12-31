@@ -1,5 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
-	1597147539	Play_T01			\Default Work Unit\Voice\Play_T01	
+	1597147539	Play_T01			\Default Work Unit\Play_T01	
 
 Effect plug-ins	ID	Name	Type				Notes
 	165333937	Time Stretch (Custom)	Wwise Time Stretch			
