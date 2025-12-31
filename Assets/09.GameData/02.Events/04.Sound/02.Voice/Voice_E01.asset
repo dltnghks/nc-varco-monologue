@@ -16,6 +16,6 @@ MonoBehaviour:
   - idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 40a11da63306e5042a5f878194f9f339, type: 2}
-  needsVisualIndicator: 1
+  needsVisualIndicator: 0
   soundType: 0
   comment: 

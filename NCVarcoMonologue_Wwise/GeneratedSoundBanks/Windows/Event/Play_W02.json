@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{E4AC3864-A1EC-4DB9-BA7A-D965848C0509}",
     "Language": "SFX",
-    "Hash": "{387CB36B-4393-653D-2733-B80285F1F1B9}",
+    "Hash": "{3E5CB6B8-B908-EF56-C3B0-5A0A6345AC5C}",
     "ObjectPath": "Play_W02",
     "ShortName": "Play_W02",
     "Path": "Event/Play_W02.bnk",
@@ -73,6 +73,6 @@
     ]
    }
   ],
-  "FileHash": "{9917DA04-11C7-A790-C6E4-9C30803DE26F}"
+  "FileHash": "{02A9FC39-56CB-CDD7-5D36-746F3C0F7C25}"
  }
 }

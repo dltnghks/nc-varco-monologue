@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{4E0D3CEC-C71B-41C0-B936-6EC00C1F59D9}",
     "Language": "SFX",
-    "Hash": "{2237A85A-8C2A-BEBB-72F6-BA665CA06329}",
+    "Hash": "{50FDDFBA-9F58-EA4F-07D8-E703EF879A15}",
     "ObjectPath": "Play_Warning_Random_Container",
     "ShortName": "Play_Warning_Random_Container",
     "Path": "Event/Play_Warning_Random_Container.bnk",
@@ -97,6 +97,6 @@
     ]
    }
   ],
-  "FileHash": "{782DBC32-8283-E44D-C3FC-98B137BF1F29}"
+  "FileHash": "{1CE5311B-8F43-B418-DE59-BA9FE6C77168}"
  }
 }

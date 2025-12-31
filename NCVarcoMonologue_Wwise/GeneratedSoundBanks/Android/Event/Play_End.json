@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{89132890-4F85-47AC-AD62-8BBE39773C2C}",
     "Language": "SFX",
-    "Hash": "{27B3E1A9-C2FA-30C9-7C9F-0891CA8D3FA7}",
+    "Hash": "{026A384E-A7D5-581C-0390-51A828C50BFD}",
     "ObjectPath": "Play_End",
     "ShortName": "Play_End",
     "Path": "Event/Play_End.bnk",
@@ -73,6 +73,6 @@
     ]
    }
   ],
-  "FileHash": "{361D6BCD-EC2B-FE55-2ADD-08EB2F2A3ECE}"
+  "FileHash": "{CF970C3E-564E-3419-8A49-7B14329305E4}"
  }
 }

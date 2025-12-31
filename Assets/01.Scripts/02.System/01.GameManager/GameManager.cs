@@ -77,14 +77,6 @@ public class GameManager : MonoBehaviour
                 // Logic for game over (e.g., show game over screen, stop player input)
                 break;
 
-            case EGameEvent.DoorInteracted:
-                // Logic for when a player interacts with a door
-                break;
-
-            case EGameEvent.DoorOpened:
-                // Logic for when a door is successfully opened
-                break;
-
             case EGameEvent.StepOnGlass:
                 // Logic for when the player steps on glass
                 break;
@@ -95,6 +87,10 @@ public class GameManager : MonoBehaviour
 
             case EGameEvent.SecurityModuleAcquired:
                 // Logic for when a security module is acquired
+                break;
+
+            case EGameEvent.EscapeRouteOpenFail:
+                // Logic for when the escape route is failed open 
                 break;
 
             case EGameEvent.EscapeRouteOpen:

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NoiseTrap : MonoBehaviour, IInteractObject
+public class TrapObject : MonoBehaviour, IInteractObject
 {
 
     [Header("이벤트 채널")]

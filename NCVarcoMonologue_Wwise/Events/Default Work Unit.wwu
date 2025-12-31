@@ -60,28 +60,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_T03_1" ID="{63B1FA1A-2578-4591-9526-94967C401D05}">
-							<ChildrenList>
-								<Action Name="" ID="{943EC497-6D21-44B1-B2B4-AA304786B19B}" ShortID="209714076">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="T03_1" ID="{9649953D-188A-494C-8734-D14F116C7CC3}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_T03_3" ID="{488FE2C7-AF4D-4E4B-9011-1DDE8226C816}">
-							<ChildrenList>
-								<Action Name="" ID="{AE57BDC3-915B-473C-BE35-34E94C37FB83}" ShortID="919984368">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="T03_3" ID="{C776DA0C-CDBA-44B4-81CC-279C85504EE2}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_T01" ID="{EFB06DE1-96CA-40DB-8921-373A9B056FA7}">
 							<ChildrenList>
 								<Action Name="" ID="{A8D020B0-0BFA-40C2-B971-F5F58089B535}" ShortID="993458542">
@@ -126,12 +104,12 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_T03_2" ID="{B1C1F012-50DA-479E-B175-0649D24C026B}">
+						<Event Name="Play_Warning_Random_Container" ID="{4E0D3CEC-C71B-41C0-B936-6EC00C1F59D9}">
 							<ChildrenList>
-								<Action Name="" ID="{0CD490BA-C026-4F95-B2B6-0F47C6485CC7}" ShortID="694303149">
+								<Action Name="" ID="{B0188A9F-6C09-42ED-B486-0717B2F85707}" ShortID="832954918">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="T03_2" ID="{CE00CF99-02C1-4DB1-A14A-482A6A27197D}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+											<ObjectRef Name="Warning_Random Container" ID="{62F671CF-123D-4238-A165-48056EB5817E}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

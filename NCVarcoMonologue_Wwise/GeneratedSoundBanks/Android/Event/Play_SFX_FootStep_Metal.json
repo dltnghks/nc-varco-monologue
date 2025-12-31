@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
     "Language": "SFX",
-    "Hash": "{18D588AF-C54C-A7A3-1AB0-FA2D84CBD754}",
+    "Hash": "{97CC5372-23D4-34E6-08AA-ABA1CF4D1771}",
     "ObjectPath": "Play_SFX_FootStep_Metal",
     "ShortName": "Play_SFX_FootStep_Metal",
     "Path": "Event/Play_SFX_FootStep_Metal.bnk",
@@ -34,15 +34,6 @@
       "CachePath": "5F/{5FBACCF0-38FD-89ED-0AD6-89B1DBFB5253}.wem"
      },
      {
-      "Id": "632772421",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "SFX_Footsteps_Metal.wav",
-      "Path": "Media/632772421.wem",
-      "CachePath": "B1/{B17685AF-A7D2-0C9F-C84A-EA2985A9886F}.wem"
-     },
-     {
       "Id": "873169443",
       "Language": "SFX",
       "Streaming": "false",
@@ -60,7 +51,7 @@
       "GUID": "{772DCF7E-089D-45EC-8E09-48CEEE0952B1}",
       "MaxAttenuation": "20",
       "DurationType": "OneShot",
-      "DurationMin": "0.06536962",
+      "DurationMin": "0.17178562",
       "DurationMax": "0.24933533",
       "MediaRefs": [
        {
@@ -70,9 +61,6 @@
         "Id": "425573192"
        },
        {
-        "Id": "632772421"
-       },
-       {
         "Id": "873169443"
        }
       ]
@@ -80,6 +68,6 @@
     ]
    }
   ],
-  "FileHash": "{BC5A0888-61EB-6268-7A6B-F759BAA1D8A3}"
+  "FileHash": "{BC6184A3-A35C-010D-7AA2-8BDB665E7D33}"
  }
 }

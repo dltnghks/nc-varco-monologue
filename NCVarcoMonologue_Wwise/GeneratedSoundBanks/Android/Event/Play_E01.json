@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{694D63BD-61FD-4D40-8B0B-E3871D9C689D}",
     "Language": "SFX",
-    "Hash": "{7A4A3E88-BF97-5790-97D2-C2BC22235927}",
+    "Hash": "{15E4BAEE-6148-29DA-02BC-9BA6D55D2BAA}",
     "ObjectPath": "Play_E01",
     "ShortName": "Play_E01",
     "Path": "Event/Play_E01.bnk",
@@ -73,6 +73,6 @@
     ]
    }
   ],
-  "FileHash": "{EBA98A87-2968-9334-C480-4B42F8BED884}"
+  "FileHash": "{47AC04F0-AD47-E60F-0203-712ED45FD194}"
  }
 }

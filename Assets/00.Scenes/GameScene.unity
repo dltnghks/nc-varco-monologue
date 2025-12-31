@@ -443,7 +443,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: ceb83fd6349b8a3448e291965152be9c, type: 2}
     - Key: 2
       Value:
-      - {fileID: 0}
+      - {fileID: 11400000, guid: 8a13ace2dc566ca47830720eaa721c13, type: 2}
     - Key: 3
       Value: []
     - Key: 4
@@ -461,9 +461,6 @@ MonoBehaviour:
       Value:
       - {fileID: 11400000, guid: c08ac928733978343a9b1ddb64cbe335, type: 2}
       - {fileID: 11400000, guid: 94798d7309a99ad4a8527446e79e6c15, type: 2}
-    - Key: 8
-      Value:
-      - {fileID: 11400000, guid: 925b71db5ce31e7479eaa49e26a81bcb, type: 2}
 --- !u!4 &998472406
 Transform:
   m_ObjectHideFlags: 0
