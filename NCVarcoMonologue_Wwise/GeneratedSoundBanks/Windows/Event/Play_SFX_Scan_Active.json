@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{135AD107-2FF7-45DC-9EE8-57F0B7DBF385}",
     "Language": "SFX",
-    "Hash": "{AC08F4F1-8B62-C5B0-A265-0554612C919F}",
+    "Hash": "{D169FF99-49B9-5EC2-4462-44024B835877}",
     "ObjectPath": "Play_SFX_Scan_Active",
     "ShortName": "Play_SFX_Scan_Active",
     "Path": "Event/Play_SFX_Scan_Active.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Scan_Active.wav",
       "Path": "Media/651928919.wem",
-      "CachePath": "30/{30C50D1C-0867-488A-C98C-1AADF83A4F02}.wem"
+      "CachePath": "AE/{AE678794-F79D-1A4E-90EF-DDE82612C0BB}.wem"
      }
     ],
     "Events": [
@@ -31,10 +31,9 @@
       "Name": "Play_SFX_Scan_Active",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Scan_Active",
       "GUID": "{135AD107-2FF7-45DC-9EE8-57F0B7DBF385}",
-      "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "4.810698",
-      "DurationMax": "4.810698",
+      "DurationMin": "1.6250095",
+      "DurationMax": "1.6250095",
       "MediaRefs": [
        {
         "Id": "651928919"
@@ -44,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{7CD0AB6C-FB6A-6741-8090-1C9B8640CD22}"
+  "FileHash": "{8E004D12-9926-31BC-38FA-21BAC3FBACF1}"
  }
 }

@@ -71,6 +71,22 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // Make the GameManager persist across scene loads
     }
 
+    private void Start()
+    {
+        Debug.Log("GAME STARTED LOGIC");
+        if (ambEvent != null)
+        {
+            ambEvent.Post(gameObject);
+            Debug.Log("[GameManager] Posted AMB event.");
+        }
+
+        if (heartbeatEvent != null)
+        {
+            heartbeatEvent.Post(gameObject);
+            Debug.Log("[GameManager] Posted heartbeatEvent event.");
+        }
+    }
+
     private void OnEnable()
     {
         if (gameEventChannel != null)
@@ -231,18 +247,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandleGameStart()
     {
-        Debug.Log("GAME STARTED LOGIC");
-        if (ambEvent != null)
-        {
-            ambEvent.Post(gameObject);
-            Debug.Log("[GameManager] Posted AMB event.");
-        }
-
-        if (heartbeatEvent != null)
-        {
-            heartbeatEvent.Post(gameObject);
-            Debug.Log("[GameManager] Posted heartbeatEvent event.");
-        }
         this.enabled = true; // Ensure the component is active at game start.
     }
 

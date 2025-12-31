@@ -476,6 +476,92 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1876572286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876572289}
+  - component: {fileID: 1876572288}
+  - component: {fileID: 1876572287}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1876572287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876572286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df36bd95867da814fa6a95bb78a36b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 986c83f462daa6a4792d2f5fca4b4b2e, type: 2}
+  useCallbacks: 0
+  stopSoundOnDestroy: 1
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+--- !u!114 &1876572288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876572286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd258d98e4ca9148950605606f7f4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!4 &1876572289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876572286}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 1140, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1882620911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,11 +1089,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
+      propertyPath: eventToVoiceData._serializedList.Array.data[0].Value.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
       propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e38f83db6fbe6bf4693d56e289f1abbc, type: 2}
+    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
+      propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: 91ddd799681f8c64e93a17626c3c16fd, type: 2}
     - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
-      propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[1]'
+      propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d695125fdfb41143b17f42ecaed0ee3, type: 2}
+    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
+      propertyPath: 'eventToVoiceData._serializedList.Array.data[0].Value.Array.data[3]'
       value: 
       objectReference: {fileID: 11400000, guid: ceb83fd6349b8a3448e291965152be9c, type: 2}
     - target: {fileID: 7838712468910096408, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
@@ -1137,3 +1235,4 @@ SceneRoots:
   - {fileID: 6101564206241920644}
   - {fileID: 5310562096242727111}
   - {fileID: 405634451}
+  - {fileID: 1876572289}

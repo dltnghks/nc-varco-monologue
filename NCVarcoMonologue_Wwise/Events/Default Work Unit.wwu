@@ -345,17 +345,21 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Play_BGM" ID="{5259C64E-A153-44CE-BB1B-A70E82618E39}">
+				<Folder Name="BGM" ID="{647967D0-AA21-45C8-837B-C91B68FD968D}" ShortID="59088824">
 					<ChildrenList>
-						<Action Name="" ID="{1578E063-A42C-4144-84C1-A4DA3E3A8651}" ShortID="77777414">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="BGM" ID="{CEF5B923-7510-4C02-BEF7-35AB8CB35FD4}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Play_BGM" ID="{5259C64E-A153-44CE-BB1B-A70E82618E39}">
+							<ChildrenList>
+								<Action Name="" ID="{1578E063-A42C-4144-84C1-A4DA3E3A8651}" ShortID="77777414">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="BGM" ID="{CEF5B923-7510-4C02-BEF7-35AB8CB35FD4}" WorkUnitID="{21FECE23-4FF6-4396-A3DD-4066F480B6F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

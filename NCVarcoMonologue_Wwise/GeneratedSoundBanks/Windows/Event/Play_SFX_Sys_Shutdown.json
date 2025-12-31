@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{191A3B1C-9C24-4EC4-B99B-D4A2E3D967D4}",
     "Language": "SFX",
-    "Hash": "{26B139EE-1C83-525F-F48A-BF324496128A}",
+    "Hash": "{552C8E39-7603-AF46-3EDC-B023964B494B}",
     "ObjectPath": "Play_SFX_Sys_Shutdown",
     "ShortName": "Play_SFX_Sys_Shutdown",
     "Path": "Event/Play_SFX_Sys_Shutdown.bnk",
@@ -31,7 +31,6 @@
       "Name": "Play_SFX_Sys_Shutdown",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Sys_Shutdown",
       "GUID": "{191A3B1C-9C24-4EC4-B99B-D4A2E3D967D4}",
-      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.3573542",
       "DurationMax": "1.3573542",
@@ -44,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{0EC2BF42-C9B4-2066-AD24-4B34DE22E1FA}"
+  "FileHash": "{4C6C2C36-02ED-3837-DCFF-25B628C50367}"
  }
 }
