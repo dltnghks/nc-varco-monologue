@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     private Coroutine dangerStateCoroutine;
     private Tween dangerLevelTween;
     private float currentDangerLevel = 0f;
+    public float CurrentDangerLevelRate => Instance.currentDangerLevel/100.0f;
 
     private void Awake()
     {
