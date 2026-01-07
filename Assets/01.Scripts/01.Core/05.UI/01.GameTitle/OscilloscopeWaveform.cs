@@ -105,6 +105,7 @@ public class UIHeartbeatGraph : MaskableGraphic
     // 다음 박동의 간격과 진폭을 계산 (변동성 적용)
     private void CalculateNextBeatParameters()
     {
+        if(GameManager.Instance == null) return;
         // BPM 변동성 적용
         float randomBpmFactor = Random.Range(-bpmVariability, bpmVariability);
         float variedBpm = bpm * (1.0f + randomBpmFactor) * (1.0f + GameManager.Instance.CurrentDangerLevelRate);

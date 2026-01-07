@@ -19,7 +19,7 @@ public class GameOverUI : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.Instance.IsInteractionBlocked) return;
+        if(GameManager.Instance != null && GameManager.Instance.IsInteractionBlocked) return;
         // Detect any mouse click or touch input
         if (Input.GetMouseButtonDown(0)) // Left mouse button click
         {
