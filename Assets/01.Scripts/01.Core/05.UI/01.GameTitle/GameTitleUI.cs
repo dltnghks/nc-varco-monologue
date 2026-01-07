@@ -76,6 +76,9 @@ public class GameTitleUI : MonoBehaviour
 
     void Update()
     {
+        if(GameManager.Instance.IsInteractionBlocked) return;
+
+        
         // Detect any mouse click or touch input
         if (Input.GetMouseButtonDown(0)) // Left mouse button click
         {

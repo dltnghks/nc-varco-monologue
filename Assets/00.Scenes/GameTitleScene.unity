@@ -129,19 +129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2202200686136438923, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2202200686136438923, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2202200686136438923, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2202200686136438923, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4783162098188492270, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
       propertyPath: m_Pivot.x
@@ -223,25 +215,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7354939154447068941, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
-      propertyPath: backgroundMusicEvent.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: b51a38c3c38bff648b30a83b36e4cb3c, type: 2}
     - target: {fileID: 8057300663617286618, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
       propertyPath: m_fontSize
-      value: 120
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8057300663617286618, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
       propertyPath: m_fontSizeBase
-      value: 120
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8936261348620401316, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
       propertyPath: m_Name
       value: GameTitle
-      objectReference: {fileID: 0}
-    - target: {fileID: 8936261348620401316, guid: 138698b1552b6aa4380593c901d61c44, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

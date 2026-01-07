@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ed5bcb6a820b244b09814b5319cbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTest: 1
+  isTest: 0
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   playerEventChannel: {fileID: 11400000, guid: 4f784510c29c90444b8c3a2bef609fa5, type: 2}
   onDangerEndedEvent: 4
@@ -62,7 +62,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 414bea284326caa4e831bb78a86ad6ee, type: 2}
   rtpcTweenDuration: 2
   rtpcEaseType: 7
-  dangerStateDuration: 8
+  dangerStateDuration: 5
   dangerGracePeriod: 1
   eventToVoiceData:
     _serializedList:

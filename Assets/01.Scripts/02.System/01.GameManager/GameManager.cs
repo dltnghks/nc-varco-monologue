@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOverInProgress) return;
 
-        if (playerEvent == EPlayerEvent.StartedRunning && isInDangerState)
+        if ((playerEvent == EPlayerEvent.Walking || playerEvent == EPlayerEvent.Interacted) && isInDangerState)
         {
             Debug.LogWarning("[GameManager] Game Over: Player started running during Danger State!");
             StartGameOverSequence("Running makes too much noise when you're in danger.");
@@ -171,8 +171,9 @@ public class GameManager : MonoBehaviour
             case EGameEvent.EscapeRouteOpen:
                 // For GameEnd (Game Clear), play a final dialogue, then load the clear scene.
                 Action onGameEndDialogueFinished = () => {
-                    Debug.Log("GAME CLEAR: Loading GameClearScene with fade.");
-                    SceneTransitionManager.Instance.LoadScene("GameClearScene");
+                    gameEventChannel.RaiseEvent(EGameEvent.GameEnd);
+                    // Debug.Log("GAME CLEAR: Loading GameClearScene with fade.");
+                    // SceneTransitionManager.Instance.LoadScene("GameClearScene");
                 };
                 HandleDefaultEvent(eventKey, onGameEndDialogueFinished);
                 break;
@@ -333,11 +334,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandleDefaultEvent(EGameEvent eventKey, Action onFinished = null)
     {
-        if (eventToVoiceData.TryGetValue(eventKey, out var audioDatas) && audioDatas.Count > 0)
-        {
-            // 테스트일 때는 대화 X
-            if(isTest) return;
+        if(isGameOverInProgress) return;
 
+        if (eventToVoiceData.TryGetValue(eventKey, out var audioDatas) && audioDatas.Count > 0 && !isTest)
+        {
             DialogueManager.Instance.PlayDialogueSequence(audioDatas, onFinished);
         }
         else

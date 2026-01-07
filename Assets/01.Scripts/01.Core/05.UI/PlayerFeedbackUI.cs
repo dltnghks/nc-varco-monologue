@@ -18,7 +18,7 @@ public class PlayerFeedbackUI : MonoBehaviour
     [Tooltip("Number of touch feedback prefabs to pre-instantiate for object pooling.")]
     [SerializeField] private int touchFeedbackPoolSize = 10;
     [Tooltip("Duration in seconds the touch feedback image stays visible.")]
-    [SerializeField] private float touchFeedbackDisplayDuration = 0.1f;
+    [SerializeField] private float touchFeedbackDisplayDuration = 0.5f;
     [Tooltip("Scale multiplier for the touch feedback image.")]
     [SerializeField] private float touchFeedbackScaleMultiplier = 1.5f;
 

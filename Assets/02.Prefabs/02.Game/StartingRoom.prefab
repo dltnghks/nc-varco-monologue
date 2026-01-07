@@ -616,7 +616,7 @@ Transform:
   m_GameObject: {fileID: 4302906891203254229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49, z: -5.26}
+  m_LocalPosition: {x: 0, y: 0.49, z: -4.81}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -641,7 +641,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2969575830755749932
 MonoBehaviour:
@@ -848,7 +848,7 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   onFailOpenEvent: 6
-  onOpenEvent: 8
+  onOpenEvent: 7
   beaconSound: {fileID: 11400000, guid: 775d90d73c6debe4786ca838ce1f2d70, type: 2}
   openSound: {fileID: 11400000, guid: 0ea9113553f5df5449a13a3b692101b8, type: 2}
 --- !u!1 &7778472967535947702
