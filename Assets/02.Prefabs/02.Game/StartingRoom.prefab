@@ -847,8 +847,8 @@ MonoBehaviour:
   requirementItem: {fileID: 11400000, guid: aef63b3664fc10746bd919e4841475b6, type: 2}
   playerInventory: {fileID: 11400000, guid: 0367a3b684456e047ac75dd0d41bb4cf, type: 2}
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
-  onFailOpenEvent: 5
-  onOpenEvent: 6
+  onFailOpenEvent: 6
+  onOpenEvent: 8
   beaconSound: {fileID: 11400000, guid: 775d90d73c6debe4786ca838ce1f2d70, type: 2}
   openSound: {fileID: 11400000, guid: 0ea9113553f5df5449a13a3b692101b8, type: 2}
 --- !u!1 &7778472967535947702
@@ -1114,7 +1114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3490977411959638036, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5164033079310053666, guid: 2d21cedb60723164e88c850a7fd1f3f3, type: 3}
       propertyPath: travelTime

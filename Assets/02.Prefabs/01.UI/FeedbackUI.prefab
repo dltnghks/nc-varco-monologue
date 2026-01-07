@@ -192,6 +192,6 @@ MonoBehaviour:
   touchFeedbackDisplayDuration: 0.5
   touchFeedbackScaleMultiplier: 1.5
   statusText: {fileID: 1201813530207098205}
-  statusTextDisplayDuration: 1.5
+  statusTextDisplayDuration: 0.5
   statusTextMoveYDistance: 50
   statusTextFadeDuration: 0.2

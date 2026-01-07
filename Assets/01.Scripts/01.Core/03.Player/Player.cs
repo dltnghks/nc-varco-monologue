@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     private bool moveForwardInput = false;
     public bool IsRunning { get; private set; } = false;
     private bool wasRunning = false;
+    private bool wasWalking = false; // Add this to track walking state
 
     // Touch hold state
     private float touchStartTime = 0f;
@@ -97,27 +98,50 @@ public class Player : MonoBehaviour
         }
 
         // After the final state for this frame is determined, check for changes and raise events.
-        if (playerEventChannel != null && IsRunning != wasRunning)
+        if (playerEventChannel != null)
         {
-            if (IsRunning)
-            {
-                Debug.Log("Player started running, raising event.");
-                playerEventChannel.RaiseEvent(EPlayerEvent.StartedRunning);
-            }
-            else if(isHolding)
-            {
-                Debug.Log("Player started walking, raising event.");
-                playerEventChannel.RaiseEvent(EPlayerEvent.Walking);
-            }
-            else
-            {
-                Debug.Log("Player stopped running, raising event.");
-                playerEventChannel.RaiseEvent(EPlayerEvent.StoppedRunning);
-            }
-        }
+            bool currentIsMoving = moveForwardInput; // Player is moving if moveForwardInput is true
+            bool currentIsWalking = currentIsMoving && !IsRunning;
 
-        // Update the state for the next frame.
-        wasRunning = IsRunning;
+            // Handle Running events
+            if (IsRunning != wasRunning)
+            {
+                if (IsRunning)
+                {
+                    Debug.Log("Player started running, raising event.");
+                    playerEventChannel.RaiseEvent(EPlayerEvent.StartedRunning);
+                }
+                else // Stopped Running
+                {
+                    // If stopped running, but still moving (i.e., now walking)
+                    if (currentIsMoving)
+                    {
+                        // No need to raise StoppedRunning if now walking, Walking event handles it
+                    }
+                    else // Stopped all movement
+                    {
+                        Debug.Log("Player stopped running/moving, raising event.");
+                        playerEventChannel.RaiseEvent(EPlayerEvent.StoppedRunning); // Means stopped all movement
+                    }
+                }
+            }
+            
+            // Handle Walking event (only if not running and actually moving)
+            // Only raise Walking event if player is actually walking and it's a state change
+            if (currentIsWalking != wasWalking)
+            {
+                if (currentIsWalking)
+                {
+                    Debug.Log("Player started walking, raising event.");
+                    playerEventChannel.RaiseEvent(EPlayerEvent.Walking);
+                }
+                // else: If stopped walking, EPlayerEvent.StoppedRunning already handles cessation of all movement.
+                // No explicit EPlayerEvent.StoppedWalking is defined/needed with current setup.
+            }
+
+            wasRunning = IsRunning;
+            wasWalking = currentIsWalking; // Update wasWalking state
+        }
     }
 
     void FixedUpdate()

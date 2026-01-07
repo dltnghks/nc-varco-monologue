@@ -214,8 +214,9 @@ public class GameManager : MonoBehaviour
             DialogueManager.Instance.PlayDialogueSequence(gameOverDialogue, onDialogueFinished);
         }
         else
+        {
             onDialogueFinished();
-        
+        }
     }
 
     /// <summary>

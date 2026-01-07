@@ -18,7 +18,7 @@ public class PlayerFeedbackUI : MonoBehaviour
     [Tooltip("Number of touch feedback prefabs to pre-instantiate for object pooling.")]
     [SerializeField] private int touchFeedbackPoolSize = 10;
     [Tooltip("Duration in seconds the touch feedback image stays visible.")]
-    [SerializeField] private float touchFeedbackDisplayDuration = 0.5f;
+    [SerializeField] private float touchFeedbackDisplayDuration = 0.1f;
     [Tooltip("Scale multiplier for the touch feedback image.")]
     [SerializeField] private float touchFeedbackScaleMultiplier = 1.5f;
 
@@ -155,10 +155,16 @@ public class PlayerFeedbackUI : MonoBehaviour
 
         if (statusText != null && !string.IsNullOrEmpty(message))
         {
-            if (statusTextCoroutine != null)
+            // 상호작용의 경우에만 코루틴 중지하고 새로 시작
+            if(EPlayerEvent.Interacted == eventType && statusTextCoroutine != null)
             {
                 StopCoroutine(statusTextCoroutine);
             }
+            else if (statusTextCoroutine != null)
+            {
+                return;
+            }
+
             // Use DOTween for status text animation
             statusTextCoroutine = StartCoroutine(DisplayStatusTextDOTweenRoutine(message));
         }
@@ -177,7 +183,7 @@ public class PlayerFeedbackUI : MonoBehaviour
         Sequence statusSequence = DOTween.Sequence();
 
         // Fade in and move up
-        statusSequence.Append(statusText.DOFade(originalColor.a, statusTextFadeDuration));
+        statusSequence.Append(statusText.DOFade(1f, statusTextFadeDuration));
         statusSequence.Join(statusText.rectTransform.DOAnchorPosY(initialStatusTextPosition.y + statusTextMoveYDistance, statusTextDisplayDuration));
 
         // Wait for display duration minus fade times
