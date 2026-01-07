@@ -742,50 +742,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 539139454}
     m_Modifications:
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[0].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[1].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7600480928233296293, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
-      propertyPath: beatCurve.m_Curve.Array.data[1].outWeight
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7623353459323201259, guid: 6ced24272539afe4d92e72a4e774e079, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1153,6 +1109,14 @@ PrefabInstance:
       propertyPath: isTest
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
+      propertyPath: dangerGracePeriod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186427095630869784, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
+      propertyPath: dangerStateDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7838712468910096408, guid: b4bfa8bae653fdb438cdeda534cdcf61, type: 3}
       propertyPath: m_Name
       value: '@GameManager'
@@ -1221,7 +1185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7378412359359840087, guid: 1c42537e46d2834458313d2f0c3535ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7378412359359840087, guid: 1c42537e46d2834458313d2f0c3535ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1229,19 +1193,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7378412359359840087, guid: 1c42537e46d2834458313d2f0c3535ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.02129361
       objectReference: {fileID: 0}
     - target: {fileID: 7378412359359840087, guid: 1c42537e46d2834458313d2f0c3535ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.00019171253
       objectReference: {fileID: 0}
     - target: {fileID: 7378412359359840087, guid: 1c42537e46d2834458313d2f0c3535ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.9997328
       objectReference: {fileID: 0}
     - target: {fileID: 7378412359359840087, guid: 1c42537e46d2834458313d2f0c3535ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.008997723
       objectReference: {fileID: 0}
     - target: {fileID: 7378412359359840087, guid: 1c42537e46d2834458313d2f0c3535ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

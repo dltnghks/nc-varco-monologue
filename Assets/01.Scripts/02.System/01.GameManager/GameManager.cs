@@ -134,18 +134,18 @@ public class GameManager : MonoBehaviour
         {
             case EGameEvent.StepOnGlass:
                 // Play the glass sound, then immediately raise a DangerDetected event.
-                if (isEnteringDangerState || isInDangerState)
-                {
-                    Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
-                    StartGameOverSequence("One noise is a warning, two is a death sentence.");
-                }
-                else
-                {
-                    // This is the first danger event. Start the process of entering the danger state.
-                    HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
-                    if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
-                    dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod/5f));
-                }
+                // if (isEnteringDangerState || isInDangerState)
+                // {
+                //     Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
+                //     StartGameOverSequence("One noise is a warning, two is a death sentence.");
+                // }
+                // else
+                // {
+                //     // This is the first danger event. Start the process of entering the danger state.
+                //     HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
+                //     if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
+                //     dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod));
+                // }
                 break;
 
             case EGameEvent.DangerDetected:
