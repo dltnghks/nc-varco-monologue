@@ -9,7 +9,7 @@ public abstract class EventChannelSO<T> : ScriptableObject
 {
     [Header("Debug")]
     [Tooltip("Log to the console when an event is raised on this channel.")]
-    [SerializeField] private bool showDebugLog = true;
+    [SerializeField] protected bool showDebugLog = true;
 
     public event UnityAction<T> OnEventRaised;
 

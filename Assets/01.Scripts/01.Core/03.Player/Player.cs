@@ -104,6 +104,11 @@ public class Player : MonoBehaviour
                 Debug.Log("Player started running, raising event.");
                 playerEventChannel.RaiseEvent(EPlayerEvent.StartedRunning);
             }
+            else if(isHolding)
+            {
+                Debug.Log("Player started walking, raising event.");
+                playerEventChannel.RaiseEvent(EPlayerEvent.Walking);
+            }
             else
             {
                 Debug.Log("Player stopped running, raising event.");
@@ -146,11 +151,16 @@ public class Player : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             // Handle double-tap for interaction separately
-            if (touch.phase == TouchPhase.Began && touch.tapCount == 2)
+            if (touch.phase == TouchPhase.Began)
             {
-                Interact();
-                isHolding = false; // Reset hold state to prevent movement
-                return; // Exit to avoid processing movement on a double-tap
+                // 입력 피드백 채널
+                playerEventChannel.RaiseEvent(touch.position);
+                if (touch.tapCount == 2)
+                {
+                    Interact();
+                    isHolding = false; // Reset hold state to prevent movement
+                    return; // Exit to avoid processing movement on a double-tap
+                }
             }
 
             // Handle holding for movement
@@ -286,6 +296,10 @@ public class Player : MonoBehaviour
         }
 
         Debug.Log("Interaction triggered!");
+        if (playerEventChannel != null)
+        {
+            playerEventChannel.RaiseEvent(EPlayerEvent.Interacted);
+        }
 
         // Draw a debug ray to visualize the interaction raycast
         // The ray will be red and visible for 1 second in the Scene view.
