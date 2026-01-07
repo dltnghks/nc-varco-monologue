@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 34400488293746504}
   - component: {fileID: 5952865733944693409}
   - component: {fileID: 6233683590292873065}
+  - component: {fileID: 4811494559016069587}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -124,12 +125,40 @@ MonoBehaviour:
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   centerPoint: {fileID: 0}
-  travelTime: 5
-  waitAtCenterTime: 3
+  moveSpeed: 1
+  multiplierSpeed: 1
+  waitAtCenterTime: 5
+  arrivalThreshold: 0.2
   gameEventChannel: {fileID: 11400000, guid: 0f7b37b741b3ae1439b66daa56826f5e, type: 2}
   OnEnemyGameEvent: 3
   OnEnemyScreamGameEvent: 1
   enemyEventChannel: {fileID: 11400000, guid: d7caf6e14e1252a458ebb0a3c34c9daf, type: 2}
-  dangerEventInterval: 2
   screamAudioData: {fileID: 11400000, guid: 7d18a5c5bd90cf149b5320060ae8517d, type: 2}
   ambientAudioData: {fileID: 11400000, guid: 6740cbe87fea31b4ebaabbc94f804c82, type: 2}
+--- !u!54 &4811494559016069587
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306347315706527167}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

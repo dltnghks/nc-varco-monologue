@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     private bool moveForwardInput = false;
     public bool IsRunning { get; private set; } = false;
     private bool wasRunning = false;
+    private bool wasWalking = false; // Add this to track walking state
 
     // Touch hold state
     private float touchStartTime = 0f;
@@ -97,22 +98,50 @@ public class Player : MonoBehaviour
         }
 
         // After the final state for this frame is determined, check for changes and raise events.
-        if (playerEventChannel != null && IsRunning != wasRunning)
+        if (playerEventChannel != null)
         {
-            if (IsRunning)
-            {
-                Debug.Log("Player started running, raising event.");
-                playerEventChannel.RaiseEvent(EPlayerEvent.StartedRunning);
-            }
-            else
-            {
-                Debug.Log("Player stopped running, raising event.");
-                playerEventChannel.RaiseEvent(EPlayerEvent.StoppedRunning);
-            }
-        }
+            bool currentIsMoving = moveForwardInput; // Player is moving if moveForwardInput is true
+            bool currentIsWalking = currentIsMoving && !IsRunning;
 
-        // Update the state for the next frame.
-        wasRunning = IsRunning;
+            // Handle Running events
+            if (IsRunning != wasRunning)
+            {
+                if (IsRunning)
+                {
+                    Debug.Log("Player started running, raising event.");
+                    playerEventChannel.RaiseEvent(EPlayerEvent.StartedRunning);
+                }
+                else // Stopped Running
+                {
+                    // If stopped running, but still moving (i.e., now walking)
+                    if (currentIsMoving)
+                    {
+                        // No need to raise StoppedRunning if now walking, Walking event handles it
+                    }
+                    else // Stopped all movement
+                    {
+                        Debug.Log("Player stopped running/moving, raising event.");
+                        playerEventChannel.RaiseEvent(EPlayerEvent.StoppedRunning); // Means stopped all movement
+                    }
+                }
+            }
+            
+            // Handle Walking event (only if not running and actually moving)
+            // Only raise Walking event if player is actually walking and it's a state change
+            if (currentIsWalking != wasWalking)
+            {
+                if (currentIsWalking)
+                {
+                    Debug.Log("Player started walking, raising event.");
+                    playerEventChannel.RaiseEvent(EPlayerEvent.Walking);
+                }
+                // else: If stopped walking, EPlayerEvent.StoppedRunning already handles cessation of all movement.
+                // No explicit EPlayerEvent.StoppedWalking is defined/needed with current setup.
+            }
+
+            wasRunning = IsRunning;
+            wasWalking = currentIsWalking; // Update wasWalking state
+        }
     }
 
     void FixedUpdate()
@@ -146,11 +175,16 @@ public class Player : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             // Handle double-tap for interaction separately
-            if (touch.phase == TouchPhase.Began && touch.tapCount == 2)
+            if (touch.phase == TouchPhase.Began)
             {
-                Interact();
-                isHolding = false; // Reset hold state to prevent movement
-                return; // Exit to avoid processing movement on a double-tap
+                // 입력 피드백 채널
+                playerEventChannel.RaiseEvent(touch.position);
+                if (touch.tapCount == 2)
+                {
+                    Interact();
+                    isHolding = false; // Reset hold state to prevent movement
+                    return; // Exit to avoid processing movement on a double-tap
+                }
             }
 
             // Handle holding for movement
@@ -286,6 +320,10 @@ public class Player : MonoBehaviour
         }
 
         Debug.Log("Interaction triggered!");
+        if (playerEventChannel != null)
+        {
+            playerEventChannel.RaiseEvent(EPlayerEvent.Interacted);
+        }
 
         // Draw a debug ray to visualize the interaction raycast
         // The ray will be red and visible for 1 second in the Scene view.

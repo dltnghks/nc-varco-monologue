@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     // Singleton instance
     public static GameManager Instance { get; private set; }
 
+    [Header("Test")]
+    [SerializeField] private bool isTest = false;
+
     [Header("Event Channel")]
     [Tooltip("The channel for receiving general game events.")]
     [SerializeField] private GameEventChannel gameEventChannel;
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour
     private Coroutine dangerStateCoroutine;
     private Tween dangerLevelTween;
     private float currentDangerLevel = 0f;
+    public float CurrentDangerLevelRate => Instance.currentDangerLevel/100.0f;
 
     private void Awake()
     {
@@ -110,7 +114,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOverInProgress) return;
 
-        if (playerEvent == EPlayerEvent.StartedRunning && isInDangerState)
+        if ((playerEvent == EPlayerEvent.Walking || playerEvent == EPlayerEvent.Interacted) && isInDangerState)
         {
             Debug.LogWarning("[GameManager] Game Over: Player started running during Danger State!");
             StartGameOverSequence("Running makes too much noise when you're in danger.");
@@ -130,18 +134,18 @@ public class GameManager : MonoBehaviour
         {
             case EGameEvent.StepOnGlass:
                 // Play the glass sound, then immediately raise a DangerDetected event.
-                if (isEnteringDangerState || isInDangerState)
-                {
-                    Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
-                    StartGameOverSequence("One noise is a warning, two is a death sentence.");
-                }
-                else
-                {
-                    // This is the first danger event. Start the process of entering the danger state.
-                    HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
-                    if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
-                    dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod/5f));
-                }
+                // if (isEnteringDangerState || isInDangerState)
+                // {
+                //     Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
+                //     StartGameOverSequence("One noise is a warning, two is a death sentence.");
+                // }
+                // else
+                // {
+                //     // This is the first danger event. Start the process of entering the danger state.
+                //     HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
+                //     if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
+                //     dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod));
+                // }
                 break;
 
             case EGameEvent.DangerDetected:
@@ -167,8 +171,9 @@ public class GameManager : MonoBehaviour
             case EGameEvent.EscapeRouteOpen:
                 // For GameEnd (Game Clear), play a final dialogue, then load the clear scene.
                 Action onGameEndDialogueFinished = () => {
-                    Debug.Log("GAME CLEAR: Loading GameClearScene with fade.");
-                    SceneTransitionManager.Instance.LoadScene("GameClearScene");
+                    gameEventChannel.RaiseEvent(EGameEvent.GameEnd);
+                    // Debug.Log("GAME CLEAR: Loading GameClearScene with fade.");
+                    // SceneTransitionManager.Instance.LoadScene("GameClearScene");
                 };
                 HandleDefaultEvent(eventKey, onGameEndDialogueFinished);
                 break;
@@ -211,8 +216,9 @@ public class GameManager : MonoBehaviour
             DialogueManager.Instance.PlayDialogueSequence(gameOverDialogue, onDialogueFinished);
         }
         else
+        {
             onDialogueFinished();
-        
+        }
     }
 
     /// <summary>
@@ -328,7 +334,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandleDefaultEvent(EGameEvent eventKey, Action onFinished = null)
     {
-        if (eventToVoiceData.TryGetValue(eventKey, out var audioDatas) && audioDatas.Count > 0)
+        if(isGameOverInProgress) return;
+
+        if (eventToVoiceData.TryGetValue(eventKey, out var audioDatas) && audioDatas.Count > 0 && !isTest)
         {
             DialogueManager.Instance.PlayDialogueSequence(audioDatas, onFinished);
         }

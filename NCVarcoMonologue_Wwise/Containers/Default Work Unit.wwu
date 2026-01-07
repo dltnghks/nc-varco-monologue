@@ -2461,6 +2461,33 @@
 								<Sound Name="SFX_Player_Heartbeat" ID="{05B93DD0-95F3-4AFF-9530-8DEA90DF1928}" ShortID="308344392">
 									<PropertyList>
 										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{CB571FFA-6448-41B0-B15F-C5A612DFB354}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="10"/>
+															<Property Name="Min" Type="Real64" Value="-10"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{62C05014-64E5-4FF9-9E40-DF3AE4A87D43}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="1"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -2508,6 +2535,37 @@
 																	<Point>
 																		<XPos>100</XPos>
 																		<YPos>600</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+											<RTPC Name="" ID="{B936E2D8-D6EB-4F9D-AF88-4D1E23BB23E5}" ShortID="85048560">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="DangerLevel" ID="{59EB514B-D374-4AE4-AD4D-23C520C93AA6}" WorkUnitID="{24A49F06-F47C-4C62-9C1F-57A3FBA656BA}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{96251FCB-A0A6-4E90-B8CD-2404E732D48A}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>6</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>

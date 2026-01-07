@@ -1,13 +1,22 @@
 using UnityEngine;
 using System.Collections;
-using DG.Tweening;
 
 /// <summary>
-/// Controls an enemy that patrols between two points,
-/// waiting at a central location, and periodically raises a DangerDetected event.
+/// Controls an enemy that patrols between points using Rigidbody physics.
+/// Allows for dynamic speed changes and physical interaction.
 /// </summary>
+[RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour
 {
+    // Patrol states
+    private enum PatrolState
+    {
+        MovingToEndpoint, // Moving towards pointA or pointB
+        MovingToCenter,   // Moving towards centerPoint
+        WaitingAtCenter,  // Waiting at centerPoint
+        Stopped
+    }
+
     [Header("Patrol Points")]
     [Tooltip("The first point in the patrol route.")]
     [SerializeField] private Transform pointA;
@@ -16,11 +25,17 @@ public class Enemy : MonoBehaviour
     [Tooltip("The central point where the enemy waits.")]
     [SerializeField] private Transform centerPoint;
 
-    [Header("Patrol Timings")]
-    [Tooltip("Time in seconds to travel from a point to the center.")]
-    [SerializeField] private float travelTime = 15.0f;
+    [Header("Movement Settings")]
+    [Tooltip("The base movement speed of the enemy in units per second.")]
+    [SerializeField] private float moveSpeed = 3.0f;
+    [Tooltip("Multiplier applied to base speed for dynamic adjustments (e.g., when aggroed).")]
+    [SerializeField] private float multiplierSpeed = 1.0f; // Re-introduced multiplier
     [Tooltip("Time in seconds to wait at the center point.")]
     [SerializeField] private float waitAtCenterTime = 3.0f;
+    
+    [SerializeField] private float eventMultiplerSpeed = 4.0f; // 
+    [Tooltip("How close the enemy needs to be to a point to consider it 'arrived'.")]
+    [SerializeField] private float arrivalThreshold = 0.2f;
 
     [Header("Event Settings")]
     [Tooltip("The event channel for general game events.")]
@@ -30,21 +45,30 @@ public class Enemy : MonoBehaviour
     [Tooltip("The event channel for enemy-specific commands.")]
     [SerializeField] private EnemyEventChannel enemyEventChannel;
 
-    [Tooltip("The interval in seconds to raise the DangerDetected event.")]
-    [SerializeField] private float dangerEventInterval = 2.0f;
-
     [Header("Sound Data")]
     [SerializeField] private WwiseAudioData screamAudioData;
     [SerializeField] private WwiseAudioData ambientAudioData;
     
-    private Sequence patrolSequence;
+    private Rigidbody rb;
+    private PatrolState currentState;
+    private Transform currentTarget;
+    private Transform nextPatrolEndpoint; // To remember if next is A or B
+    private float waitTimer;
+    
     private bool isAmbientSoundMuted = false;
+
+    // CurrentSpeed property for dynamic speed calculation
+    private float CurrentSpeed => moveSpeed * multiplierSpeed;
 
     private void OnEnable()
     {
         if (enemyEventChannel != null)
         {
             enemyEventChannel.OnEventRaised += OnEnemyEvent;
+        }
+        if (gameEventChannel != null)
+        {
+            gameEventChannel.OnEventRaised += OnPlayerEvent;
         }
     }
 
@@ -54,6 +78,15 @@ public class Enemy : MonoBehaviour
         {
             enemyEventChannel.OnEventRaised -= OnEnemyEvent;
         }
+        if (gameEventChannel != null)
+        {
+            gameEventChannel.OnEventRaised -= OnPlayerEvent;
+        }
+    }
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Start()
@@ -72,39 +105,149 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        StartPatrol();
+        // Configure Rigidbody for 2D-like movement
+        rb.useGravity = false;
+        rb.freezeRotation = true;
+
+        // Initialize starting position and patrol
+        transform.position = pointA.position; // Start at Point A
+        nextPatrolEndpoint = pointB; // Next endpoint after first center wait is B
+        SetState(PatrolState.MovingToCenter); // Always start by moving to center from A
+        
         StartCoroutine(SoundLoop());
     }
 
-    private void Update()
+    /// <summary>
+    /// The main logic loop for movement, handled in FixedUpdate for physics consistency.
+    /// </summary>
+    private void FixedUpdate()
     {
-        // Pause and resume the enemy's movement and actions based on the global interaction block state.
-        if (GameManager.Instance != null && patrolSequence != null && patrolSequence.IsActive())
+        // Pause movement if interaction is blocked
+        if (GameManager.Instance != null && GameManager.Instance.IsInteractionBlocked)
         {
-            if (GameManager.Instance.IsInteractionBlocked)
-            {
-                if (patrolSequence.IsPlaying())
+            rb.linearVelocity = Vector3.zero;
+            return;
+        }
+
+        switch (currentState)
+        {
+            case PatrolState.MovingToEndpoint:
+            case PatrolState.MovingToCenter:
+                MoveTowardsTarget();
+                break;
+
+            case PatrolState.WaitingAtCenter:
+                WaitAtCenter();
+                break;
+
+            case PatrolState.Stopped:
+                rb.linearVelocity = Vector3.zero;
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Sets a new state and handles entry logic for that state.
+    /// </summary>
+    private void SetState(PatrolState newState)
+    {
+        currentState = newState;
+        // Debug.Log($"[Enemy] New State: {currentState}");
+
+        switch (currentState)
+        {
+            case PatrolState.MovingToEndpoint:
+                currentTarget = nextPatrolEndpoint;
+                isAmbientSoundMuted = false;
+                break;
+            case PatrolState.MovingToCenter:
+                currentTarget = centerPoint;
+                isAmbientSoundMuted = false; // Unmute ambient sound after scream
+                break;
+            case PatrolState.WaitingAtCenter:
+                rb.linearVelocity = Vector3.zero;
+                waitTimer = waitAtCenterTime;
+                // Raise event and play sound upon arrival at center
+                gameEventChannel.RaiseEvent(OnEnemyGameEvent);
+                if (screamAudioData != null)
                 {
-                    patrolSequence.Pause();
+                    AudioManager.Instance.PlayOneShot(screamAudioData, transform.position);
+                    isAmbientSoundMuted = true; // Mute ambient sound while screaming/waiting
                 }
+                multiplierSpeed = 1.0f; // Reset multiplier when waiting
+                break;
+            case PatrolState.Stopped:
+                rb.linearVelocity = Vector3.zero;
+                currentTarget = null;
+                isAmbientSoundMuted = true; // Mute ambient sound when stopped
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Moves the Rigidbody towards the current target and checks for arrival.
+    /// </summary>
+    private void MoveTowardsTarget()
+    {
+        if (currentTarget == null) return;
+
+        Vector3 direction = (currentTarget.position - transform.position);
+        float distanceToTarget = direction.magnitude;
+
+        if (distanceToTarget <= arrivalThreshold)
+        {
+            // Arrived at target, decide next state
+            if (currentState == PatrolState.MovingToCenter)
+            {
+                SetState(PatrolState.WaitingAtCenter);
             }
-            else
+            else if (currentState == PatrolState.MovingToEndpoint)
             {
-                if (!patrolSequence.IsPlaying())
-                {
-                    patrolSequence.Play();
-                }
+                // Arrived at an endpoint (A or B), now go to center
+                SetState(PatrolState.MovingToCenter);
+            }
+        }
+        else
+        {
+            // Not arrived yet, continue moving
+            rb.linearVelocity = direction.normalized * CurrentSpeed;
+            
+            // Optional: Rotate to face the direction of movement
+            if (rb.linearVelocity.sqrMagnitude > 0.01f) // Only rotate if actually moving
+            {
+                transform.rotation = Quaternion.LookRotation(rb.linearVelocity.normalized);
             }
         }
     }
 
-    private void OnDestroy()
+    /// <summary>
+    /// Handles the waiting timer at the center point.
+    /// </summary>
+    private void WaitAtCenter()
     {
-        // Kill any running tweens to prevent errors when the object is destroyed.
-        patrolSequence?.Kill();
-        transform.DOKill();
+        waitTimer -= Time.fixedDeltaTime;
+        if (waitTimer <= 0)
+        {
+            // After waiting, switch the next patrol endpoint and move to it
+            nextPatrolEndpoint = (nextPatrolEndpoint == pointA) ? pointB : pointA;
+            SetState(PatrolState.MovingToEndpoint);
+        }
     }
     
+    /// <summary>
+    /// Handles player-related events.
+    /// </summary>
+    private void OnPlayerEvent(EGameEvent gameEvent)
+    {
+        if(gameEvent == EGameEvent.StepOnGlass)
+        {
+            // Example of how you might change speed and state
+            multiplierSpeed *= eventMultiplerSpeed; // Double speed
+            Debug.Log($"Enemy aggroed! Current Speed: {CurrentSpeed}");
+            SetState(PatrolState.MovingToCenter); // Force enemy to center when aggroed
+        }
+    }
+
     /// <summary>
     /// Handles commands sent through the EnemyEventChannel.
     /// </summary>
@@ -114,87 +257,29 @@ public class Enemy : MonoBehaviour
         {
             case EEnemyEvent.Center:
                 Debug.Log("[Enemy] Received Center command. Moving to center point.");
-                // Stop the patrol and move to the center.
-                patrolSequence?.Kill();
-                transform.DOMove(centerPoint.position, travelTime / 2).SetEase(Ease.OutQuad);
-                gameEventChannel.RaiseEvent(OnEnemyGameEvent);
+                SetState(PatrolState.MovingToCenter);
                 break;
             case EEnemyEvent.Scream:
                 Debug.Log("[Enemy] Received Scream command. Screaming!");
                 gameEventChannel.RaiseEvent(OnEnemyScreamGameEvent);
-                // Placeholder for scream logic (e.g., play sound, animation)
                 break;
         }
     }
-    
-    /// <summary>
-    /// Builds and starts the looping patrol sequence.
-    /// </summary>
-    private void StartPatrol()
-    {
-        transform.position = pointA.position;
-
-        patrolSequence = DOTween.Sequence();
-        patrolSequence.Append(transform.DOMove(centerPoint.position, travelTime).SetEase(Ease.Linear)
-                .OnComplete(() =>
-                {
-                    gameEventChannel.RaiseEvent(OnEnemyGameEvent);
-                    if (screamAudioData != null)
-                    {
-                        AudioManager.Instance.PlayOneShot(screamAudioData, transform.position);
-                        isAmbientSoundMuted = true;
-                    }
-                }))
-            .AppendInterval(waitAtCenterTime)
-            .Append(transform.DOMove(pointB.position, travelTime).SetEase(Ease.Linear)
-                .OnStart(() => isAmbientSoundMuted = false))
-            .Append(transform.DOMove(centerPoint.position, travelTime).SetEase(Ease.Linear)
-                .OnComplete(() =>
-                {
-                    gameEventChannel.RaiseEvent(OnEnemyGameEvent);
-                    if (screamAudioData != null)
-                    {
-                        AudioManager.Instance.PlayOneShot(screamAudioData, transform.position);
-                        isAmbientSoundMuted = true;
-                    }
-                }))
-            .AppendInterval(waitAtCenterTime)
-            .Append(transform.DOMove(pointA.position, travelTime).SetEase(Ease.Linear)
-                .OnStart(() => isAmbientSoundMuted = false))
-            .SetLoops(-1);
-    }
-    
-    /// <summary>
-    /// Coroutine to periodically raise the DangerDetected event, but only when player interaction is not blocked.
-    /// </summary>
-    private IEnumerator DangerEventRoutine()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(dangerEventInterval);
-
-            // Only raise event if interaction is not blocked
-            if (GameManager.Instance != null && !GameManager.Instance.IsInteractionBlocked)
-            {
-                if (gameEventChannel != null)
-                {
-                    Debug.Log("[Enemy] Raising DangerDetected event.");
-                    gameEventChannel.RaiseEvent(EGameEvent.DangerDetected);
-                }
-            }
-        }
-    }
-
 
     private IEnumerator SoundLoop()
     {
         while (true)
         {
-            yield return new WaitForSeconds(2f);
-            if (!isAmbientSoundMuted && !GameManager.Instance.IsInteractionBlocked)
+            yield return new WaitForSeconds(2f / multiplierSpeed);
+            if (!isAmbientSoundMuted && (GameManager.Instance == null || !GameManager.Instance.IsInteractionBlocked))
             {
                 AudioManager.Instance.PlayOneShot(ambientAudioData, transform.position);
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        rb.linearVelocity = Vector3.zero; // Stop movement
     }
 }
