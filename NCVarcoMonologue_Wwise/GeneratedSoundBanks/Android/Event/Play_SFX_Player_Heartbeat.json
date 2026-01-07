@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{0ADA07FE-F6A0-4CD3-9B59-6859A3E32D5D}",
     "Language": "SFX",
-    "Hash": "{7F33C5D9-562C-0571-4309-403D2B84C8C1}",
+    "Hash": "{EAFE28D6-FF5B-2391-9200-8C66806FAC8B}",
     "ObjectPath": "Play_SFX_Player_Heartbeat",
     "ShortName": "Play_SFX_Player_Heartbeat",
     "Path": "Event/Play_SFX_Player_Heartbeat.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "SFX_Player_Heartbeat.wav",
       "Path": "Media/1069880761.wem",
-      "CachePath": "F2/{F2D46E4F-DB61-9689-618C-C34241C5D0DD}.wem"
+      "CachePath": "1C/{1CAAAEC0-25CC-BB6A-9717-AC0E9524BFB1}.wem"
      }
     ],
     "Events": [
@@ -31,9 +31,7 @@
       "Name": "Play_SFX_Player_Heartbeat",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_Player_Heartbeat",
       "GUID": "{0ADA07FE-F6A0-4CD3-9B59-6859A3E32D5D}",
-      "DurationType": "OneShot",
-      "DurationMin": "21.394285",
-      "DurationMax": "21.394285",
+      "DurationType": "Infinite",
       "MediaRefs": [
        {
         "Id": "1069880761"
@@ -51,6 +49,6 @@
     ]
    }
   ],
-  "FileHash": "{6077E035-04CE-6124-1E83-60BBFC54A829}"
+  "FileHash": "{3FC44337-C493-BB84-A8E0-9966146A6E5A}"
  }
 }
