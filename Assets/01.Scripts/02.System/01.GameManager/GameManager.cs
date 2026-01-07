@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     // Singleton instance
     public static GameManager Instance { get; private set; }
 
+    [Header("Test")]
+    [SerializeField] private bool isTest = false;
+
     [Header("Event Channel")]
     [Tooltip("The channel for receiving general game events.")]
     [SerializeField] private GameEventChannel gameEventChannel;
@@ -330,6 +333,9 @@ public class GameManager : MonoBehaviour
     {
         if (eventToVoiceData.TryGetValue(eventKey, out var audioDatas) && audioDatas.Count > 0)
         {
+            // 테스트일 때는 대화 X
+            if(isTest) return;
+
             DialogueManager.Instance.PlayDialogueSequence(audioDatas, onFinished);
         }
         else
