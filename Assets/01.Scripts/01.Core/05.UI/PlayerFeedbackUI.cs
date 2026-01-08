@@ -3,8 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using TMPro; // Assuming TextMeshPro is used for UI text
-using DG.Tweening; // Import DOTween namespace
-
+using DG.Tweening;
 public class PlayerFeedbackUI : MonoBehaviour
 {
     [Header("Event Channels")]
@@ -35,6 +34,7 @@ public class PlayerFeedbackUI : MonoBehaviour
 
 
     private Queue<GameObject> touchFeedbackPool = new Queue<GameObject>();
+    private readonly Dictionary<int, GameObject> activeTouchFeedbacks = new Dictionary<int, GameObject>();
     private Coroutine statusTextCoroutine;
     private Vector2 initialStatusTextPosition;
 
@@ -93,42 +93,69 @@ public class PlayerFeedbackUI : MonoBehaviour
     }
 
     /// <summary>
-    /// Displays a touch feedback image at the given screen position.
+    /// Displays and manages a touch feedback image based on the touch phase.
     /// </summary>
-    /// <param name="screenPosition">The screen coordinates (e.g., Input.mousePosition or Touch.position).</param>
-    public void ShowTouchFeedback(Vector2 screenPosition)
+    public void ShowTouchFeedback(TouchContext touchContext)
     {
-        if (touchFeedbackPool.Count == 0)
+        switch (touchContext.touchPhase)
         {
-            Debug.LogWarning("Touch feedback pool is empty, consider increasing pool size.", this);
-            GameObject newFeedbackObject = Instantiate(touchFeedbackPrefab, feedbackParent);
-            if (newFeedbackObject.GetComponent<CanvasGroup>() == null)
-            {
-                newFeedbackObject.AddComponent<CanvasGroup>();
-            }
-            touchFeedbackPool.Enqueue(newFeedbackObject);
+            case TouchPhase.Began:
+                if (activeTouchFeedbacks.ContainsKey(touchContext.fingerId)) return;
+
+                if (touchFeedbackPool.Count == 0)
+                {
+                    Debug.LogWarning("Touch feedback pool is empty, creating a new one.", this);
+                    GameObject newFeedbackObject = Instantiate(touchFeedbackPrefab, feedbackParent);
+                    if (newFeedbackObject.GetComponent<CanvasGroup>() == null)
+                    {
+                        newFeedbackObject.AddComponent<CanvasGroup>();
+                    }
+                    touchFeedbackPool.Enqueue(newFeedbackObject);
+                }
+
+                GameObject feedbackObject = touchFeedbackPool.Dequeue();
+                activeTouchFeedbacks[touchContext.fingerId] = feedbackObject;
+
+                feedbackObject.transform.position = touchContext.pos;
+                feedbackObject.SetActive(true);
+
+                CanvasGroup canvasGroup = feedbackObject.GetComponent<CanvasGroup>();
+                canvasGroup.alpha = 0f;
+                feedbackObject.transform.localScale = Vector3.one;
+
+                canvasGroup.DOFade(1f, 0.15f);
+                feedbackObject.transform.DOScale(Vector3.one * touchFeedbackScaleMultiplier, 0.15f);
+                break;
+
+            case TouchPhase.Moved:
+            case TouchPhase.Stationary:
+                if (activeTouchFeedbacks.TryGetValue(touchContext.fingerId, out var feedbackToMove))
+                {
+                    feedbackToMove.transform.position = touchContext.pos;
+                }
+                break;
+
+            case TouchPhase.Ended:
+            case TouchPhase.Canceled:
+                if (activeTouchFeedbacks.TryGetValue(touchContext.fingerId, out var feedbackToHide))
+                {
+                    activeTouchFeedbacks.Remove(touchContext.fingerId);
+
+                    CanvasGroup cg = feedbackToHide.GetComponent<CanvasGroup>();
+                    
+                    DOTween.Kill(cg);
+                    DOTween.Kill(feedbackToHide.transform);
+
+                    cg.DOFade(0f, touchFeedbackDisplayDuration).OnComplete(() => {
+                        feedbackToHide.SetActive(false);
+                        if (!touchFeedbackPool.Contains(feedbackToHide))
+                        {
+                            touchFeedbackPool.Enqueue(feedbackToHide);
+                        }
+                    });
+                }
+                break;
         }
-
-        GameObject feedbackObject = touchFeedbackPool.Dequeue();
-        feedbackObject.transform.position = screenPosition;
-        feedbackObject.SetActive(true);
-
-        // Reset state for DOTween animations
-        CanvasGroup canvasGroup = feedbackObject.GetComponent<CanvasGroup>();
-        if (canvasGroup != null) canvasGroup.alpha = 1f;
-        feedbackObject.transform.localScale = Vector3.one;
-
-        // DOTween sequence for touch feedback
-        Sequence touchSequence = DOTween.Sequence();
-        touchSequence.Append(feedbackObject.transform.DOScale(Vector3.one * touchFeedbackScaleMultiplier, touchFeedbackDisplayDuration));
-        if (canvasGroup != null)
-        {
-            touchSequence.Join(canvasGroup.DOFade(0f, touchFeedbackDisplayDuration));
-        }
-        touchSequence.OnComplete(() => {
-            feedbackObject.SetActive(false);
-            touchFeedbackPool.Enqueue(feedbackObject);
-        });
     }
 
     // Removed the old IEnumerator DisplayTouchFeedbackRoutine as it's replaced by DOTween sequence.
@@ -138,13 +165,22 @@ public class PlayerFeedbackUI : MonoBehaviour
     private void HandlePlayerEvent(EPlayerEvent eventType)
     {
         string message = string.Empty;
+        bool onText = true;
         switch (eventType)
         {
             case EPlayerEvent.StartedRunning:
                 message = "Running";
                 break;
-            case EPlayerEvent.Walking:
+            case EPlayerEvent.StartedWalking:
                 message = "Walking";
+                break;
+            case EPlayerEvent.StoppedWalking:
+                onText = false;
+                message = "Stop Walking";
+                break;
+            case EPlayerEvent.StoppedRunning:
+                onText = false;
+                message = "Stop Running";
                 break;
             case EPlayerEvent.Interacted:
                 message = "Interacted!";
@@ -153,7 +189,7 @@ public class PlayerFeedbackUI : MonoBehaviour
                 return;
         }
 
-        if (statusText != null && !string.IsNullOrEmpty(message))
+        if (statusText != null && !string.IsNullOrEmpty(message) && onText)
         {
             // 상호작용의 경우에만 코루틴 중지하고 새로 시작
             if(EPlayerEvent.Interacted == eventType && statusTextCoroutine != null)
@@ -167,6 +203,11 @@ public class PlayerFeedbackUI : MonoBehaviour
 
             // Use DOTween for status text animation
             statusTextCoroutine = StartCoroutine(DisplayStatusTextDOTweenRoutine(message));
+        }
+        else
+        {
+            statusText.gameObject.SetActive(false);
+            statusTextCoroutine = null;
         }
     }
 
@@ -186,20 +227,8 @@ public class PlayerFeedbackUI : MonoBehaviour
         statusSequence.Append(statusText.DOFade(1f, statusTextFadeDuration));
         statusSequence.Join(statusText.rectTransform.DOAnchorPosY(initialStatusTextPosition.y + statusTextMoveYDistance, statusTextDisplayDuration));
 
-        // Wait for display duration minus fade times
-        statusSequence.AppendInterval(statusTextDisplayDuration - (statusTextFadeDuration * 2));
-
-        // Fade out
-        statusSequence.Append(statusText.DOFade(0f, statusTextFadeDuration));
-
-        statusSequence.OnComplete(() => {
-            statusText.gameObject.SetActive(false);
-            statusTextCoroutine = null;
-        });
-
         yield return statusSequence.WaitForCompletion(); // Wait for the DOTween sequence to complete
     }
-
     // Removed the old IEnumerator DisplayStatusTextRoutine as it's replaced by DOTween sequence.
     // private IEnumerator DisplayStatusTextRoutine(string message) { ... }
 }

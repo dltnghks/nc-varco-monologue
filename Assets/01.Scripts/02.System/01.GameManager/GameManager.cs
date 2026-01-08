@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOverInProgress) return;
 
-        if ((playerEvent == EPlayerEvent.Walking || playerEvent == EPlayerEvent.Interacted) && isInDangerState)
+        if ((playerEvent == EPlayerEvent.StartedWalking || playerEvent == EPlayerEvent.Interacted) && isInDangerState)
         {
             Debug.LogWarning("[GameManager] Game Over: Player started running during Danger State!");
             StartGameOverSequence("Running makes too much noise when you're in danger.");

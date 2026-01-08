@@ -133,7 +133,11 @@ public class Player : MonoBehaviour
                 if (currentIsWalking)
                 {
                     Debug.Log("Player started walking, raising event.");
-                    playerEventChannel.RaiseEvent(EPlayerEvent.Walking);
+                    playerEventChannel.RaiseEvent(EPlayerEvent.StartedWalking);
+                }
+                else
+                {
+                    playerEventChannel.RaiseEvent(EPlayerEvent.StoppedWalking);
                 }
                 // else: If stopped walking, EPlayerEvent.StoppedRunning already handles cessation of all movement.
                 // No explicit EPlayerEvent.StoppedWalking is defined/needed with current setup.
@@ -172,13 +176,18 @@ public class Player : MonoBehaviour
         // Touch movement, interaction, and running
         if (Input.touchCount > 0)
         {
+            // Raise feedback events for ALL touches for multi-touch UI feedback
+            foreach (var t in Input.touches)
+            {
+                playerEventChannel.RaiseEvent(new TouchContext(t.fingerId, t.position, t.phase));
+            }
+
+            // Use the FIRST touch for player control (movement, interaction)
             Touch touch = Input.GetTouch(0);
 
             // Handle double-tap for interaction separately
             if (touch.phase == TouchPhase.Began)
             {
-                // 입력 피드백 채널
-                playerEventChannel.RaiseEvent(touch.position);
                 if (touch.tapCount == 2)
                 {
                     Interact();
