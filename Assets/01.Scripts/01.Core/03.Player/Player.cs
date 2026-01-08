@@ -322,7 +322,7 @@ public class Player : MonoBehaviour
     private void Interact()
     {
         // Prevent interaction while dialogue is playing
-                if (GameManager.Instance != null && GameManager.Instance.IsInteractionBlocked)
+        if (GameManager.Instance != null && GameManager.Instance.IsInteractionBlocked)
         {
             Debug.Log("Cannot interact: Dialogue is currently playing.");
             return;
