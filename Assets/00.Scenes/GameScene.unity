@@ -977,6 +977,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3996596613479644173, guid: 4cb3138a177267444be169d52ebb508a, type: 3}
+      propertyPath: runningSprite
+      value: 
+      objectReference: {fileID: 1827688882, guid: b02e41a0ee4d91b47be9dec6ce2cf978, type: 3}
+    - target: {fileID: 3996596613479644173, guid: 4cb3138a177267444be169d52ebb508a, type: 3}
+      propertyPath: walkingSprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 3996596613479644173, guid: 4cb3138a177267444be169d52ebb508a, type: 3}
+      propertyPath: interactSprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7789863630530892895, guid: 4cb3138a177267444be169d52ebb508a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

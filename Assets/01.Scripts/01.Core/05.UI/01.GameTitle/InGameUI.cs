@@ -182,7 +182,7 @@ public class InGameUI : MonoBehaviour
 
         // --- Distance Effects ---
         float distance = Vector3.Distance(soundWorldPosition, playerTransform.position);
-        float scaleMultiplier = 1.0f - Mathf.Clamp01((distance - minDistance) / (maxDistance - minDistance));
+        float scaleMultiplier = Mathf.Clamp01((distance - minDistance) / (maxDistance - minDistance));
         float targetScale = Mathf.Lerp(scaleRange.x, scaleRange.y, scaleMultiplier);
         
         // --- Icon and Color per Sound Type ---
