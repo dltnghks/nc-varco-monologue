@@ -63,7 +63,7 @@ public class FeedbackEffectUI : MonoBehaviour
                 break;
             
             case EGameEvent.SecurityModuleAcquired:
-            case EGameEvent.GameEnd:
+            case EGameEvent.EscapeRouteOpen:
                 ShowFeedback(positiveFeedbackColor);
                 break;
             

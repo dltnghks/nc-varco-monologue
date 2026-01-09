@@ -90,6 +90,8 @@ public class Player : MonoBehaviour
             // Force stop movement and running if interaction is blocked.
             moveForwardInput = false;
             IsRunning = false;
+
+            playerEventChannel.RaiseEvent(new TouchContext(0, Vector2.zero, TouchPhase.Canceled));
         }
         else
         {
