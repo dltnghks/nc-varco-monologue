@@ -28,7 +28,8 @@ public enum ESoundType
 
 public enum EPlayerEvent
 {
-    Walking,
+    StartedWalking,
+    StoppedWalking,
     StartedRunning,
     StoppedRunning,
     Interacted,

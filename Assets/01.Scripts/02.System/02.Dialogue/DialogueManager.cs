@@ -56,6 +56,7 @@ public class DialogueManager : MonoBehaviour
         {
             StopCoroutine(dialogueCoroutine);
             dialogueEmitter.Stop();
+            
             isSequenceRunning = false;
             IsInteractionBlocked = false;
         }

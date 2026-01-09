@@ -114,8 +114,9 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOverInProgress) return;
 
-        if ((playerEvent == EPlayerEvent.Walking || playerEvent == EPlayerEvent.Interacted) && isInDangerState)
+        if ((playerEvent == EPlayerEvent.StartedWalking || playerEvent == EPlayerEvent.Interacted) && isInDangerState)
         {
+            gameEventChannel.RaiseEvent(EGameEvent.GameOver);
             Debug.LogWarning("[GameManager] Game Over: Player started running during Danger State!");
             StartGameOverSequence("Running makes too much noise when you're in danger.");
         }
@@ -133,34 +134,14 @@ public class GameManager : MonoBehaviour
         switch (eventKey)
         {
             case EGameEvent.StepOnGlass:
-                // Play the glass sound, then immediately raise a DangerDetected event.
-                // if (isEnteringDangerState || isInDangerState)
-                // {
-                //     Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
-                //     StartGameOverSequence("One noise is a warning, two is a death sentence.");
-                // }
-                // else
-                // {
-                //     // This is the first danger event. Start the process of entering the danger state.
-                //     HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
-                //     if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
-                //     dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod));
-                // }
+                HandleDefaultEvent(eventKey);
                 break;
 
             case EGameEvent.DangerDetected:
-                if (isEnteringDangerState || isInDangerState)
-                {
-                    Debug.LogWarning("[GameManager] Game Over: Consecutive danger events!");
-                    StartGameOverSequence("One noise is a warning, two is a death sentence.");
-                }
-                else
-                {
-                    // This is the first danger event. Start the process of entering the danger state.
-                    HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
-                    if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
-                    dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod));
-                }
+                // This is the first danger event. Start the process of entering the danger state.
+                HandleDefaultEvent(eventKey); // Play the associated warning dialogue.
+                if (dangerStateCoroutine != null) StopCoroutine(dangerStateCoroutine);
+                dangerStateCoroutine = StartCoroutine(EnterDangerStateSequence(dangerGracePeriod));
                 break;
 
             case EGameEvent.GameStarted:
@@ -186,7 +167,8 @@ public class GameManager : MonoBehaviour
                 };
                 HandleDefaultEvent(eventKey, onGameEndDialogueFinished);
                 break;
-
+            case EGameEvent.GameOver:
+                break;
             default:
                 // For all other events, just play their dialogue.
                 HandleDefaultEvent(eventKey);

@@ -36,8 +36,12 @@ public class GameTitleUI : MonoBehaviour
     [Tooltip("The background music to play on the title screen.")]
     [SerializeField] private AK.Wwise.Event backgroundMusicEvent;
 
+    private bool isGameStared = false;
+
     void Start()
     {
+        isGameStared = false;
+        AkSoundEngine.StopAll();
         // Play background music
         if (backgroundMusicEvent != null)
         {
@@ -76,9 +80,12 @@ public class GameTitleUI : MonoBehaviour
 
     void Update()
     {
+        if(isGameStared) return;
+        
         // Detect any mouse click or touch input
         if (Input.GetMouseButtonDown(0)) // Left mouse button click
         {
+            isGameStared = true;
             Debug.Log("Screen clicked! Loading GameScene with fade...");
             SceneTransitionManager.Instance.LoadScene("GameScene");
         }
