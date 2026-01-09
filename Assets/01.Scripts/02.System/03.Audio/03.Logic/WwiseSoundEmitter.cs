@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System; // For Action
+using System;
 
 public class WwiseSoundEmitter : MonoBehaviour
 {
@@ -13,6 +13,18 @@ public class WwiseSoundEmitter : MonoBehaviour
     public bool IsPlaying { get; private set; } = false;
     private Action onSequenceFinished;
     private AK.Wwise.Event currentEvent;
+
+    // A queue to hold actions that need to be executed on the main thread.
+    private readonly Queue<Action> mainThreadActions = new Queue<Action>();
+
+    private void Update()
+    {
+        // Process any actions that have been queued from other threads (like the audio thread).
+        while (mainThreadActions.Count > 0)
+        {
+            mainThreadActions.Dequeue()?.Invoke();
+        }
+    }
 
     public void SetWwiseAudioData(WwiseAudioData audioData)
     {
@@ -26,23 +38,22 @@ public class WwiseSoundEmitter : MonoBehaviour
         }
     }
 
-    // For sounds attached to an object, managed manually
     public void PlaySequence(WwiseAudioData audioData, Action onFinished = null)
     {
-        SetWwiseAudioData(audioData);
+        if (IsPlaying)
+        {
+            Debug.LogWarning($"WwiseSoundEmitter on {gameObject.name} is already playing a sequence. Interrupting.");
+            Stop();
+        }
         
-        // This allows multiple single-shot sounds to layer without interrupting each other.
-        // The 'IsPlaying' flag primarily manages internal sequence progression, not individual sound outputs.
+        SetWwiseAudioData(audioData);
         onSequenceFinished = onFinished;
-    
         IsPlaying = true;
         PlayNextEvent();
     }
 
-    // For fire-and-forget sounds from the pool
     public void PlaySequenceAndReturn(WwiseAudioData audioData)
     {
-        // When the sequence is done, this emitter will be returned to the pool.
         PlaySequence(audioData, () => AudioManager.Instance.ReturnEmitterToPool(this));
     }
 
@@ -61,8 +72,7 @@ public class WwiseSoundEmitter : MonoBehaviour
         }
         else
         {
-            // If there's a null event in the queue, skip it after a frame.
-            StartCoroutine(WaitAndPlayNext());
+            PlayNextEvent();
         }
     }
 
@@ -70,7 +80,9 @@ public class WwiseSoundEmitter : MonoBehaviour
     {
         if (in_type == AkCallbackType.AK_EndOfEvent)
         {
-            StartCoroutine(WaitAndPlayNext());
+            // This callback comes from the audio thread.
+            // We must queue the coroutine to be started on the main thread in Update.
+            mainThreadActions.Enqueue(() => StartCoroutine(WaitAndPlayNext()));
         }
     }
 
@@ -82,7 +94,7 @@ public class WwiseSoundEmitter : MonoBehaviour
         }
         else
         {
-            yield return null; // Wait a frame to prevent potential stack overflow
+            yield return null;
         }
 
         PlayNextEvent();
@@ -95,21 +107,18 @@ public class WwiseSoundEmitter : MonoBehaviour
         Debug.Log($"Wwise Sequence Completed on {gameObject.name}!");
         
         onSequenceFinished?.Invoke();
-        onSequenceFinished = null; // Reset for next use
+        onSequenceFinished = null;
     }
     
-    /// <summary>
-    /// Stops the currently playing event and clears the sequence queue.
-    /// </summary>
     public void Stop()
     {
         if (IsPlaying && currentEvent != null)
         {
-            // Stop the specific event instance on this game object.
             currentEvent.Stop(gameObject);
         }
         
         StopAllCoroutines();
+        mainThreadActions.Clear(); // Clear any pending actions
         EventsSequenceQueue.Clear();
         IsPlaying = false;
         currentEvent = null;

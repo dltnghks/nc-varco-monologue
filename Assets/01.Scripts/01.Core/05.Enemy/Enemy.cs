@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using AK.Wwise;
 
 /// <summary>
 /// Controls an enemy that patrols between points using Rigidbody physics.
@@ -14,7 +15,8 @@ public class Enemy : MonoBehaviour
         MovingToEndpoint, // Moving towards pointA or pointB
         MovingToCenter,   // Moving towards centerPoint
         WaitingAtCenter,  // Waiting at centerPoint
-        Stopped
+        Stopped,
+        GameOver,
     }
 
     [Header("Patrol Points")]
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform pointB;
     [Tooltip("The central point where the enemy waits.")]
     [SerializeField] private Transform centerPoint;
+    [SerializeField] private Transform player;
 
     [Header("Movement Settings")]
     [Tooltip("The base movement speed of the enemy in units per second.")]
@@ -123,7 +126,12 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         // Pause movement if interaction is blocked
-        if (GameManager.Instance != null && GameManager.Instance.IsInteractionBlocked)
+        if(currentState == PatrolState.GameOver)
+        {
+            //rb.linearVelocity = Vector3.one;
+            //return;
+        }
+        else if (GameManager.Instance != null && GameManager.Instance.IsInteractionBlocked)
         {
             rb.linearVelocity = Vector3.zero;
             return;
@@ -133,6 +141,7 @@ public class Enemy : MonoBehaviour
         {
             case PatrolState.MovingToEndpoint:
             case PatrolState.MovingToCenter:
+            case PatrolState.GameOver:
                 MoveTowardsTarget();
                 break;
 
@@ -246,6 +255,13 @@ public class Enemy : MonoBehaviour
             Debug.Log($"Enemy aggroed! Current Speed: {CurrentSpeed}");
             SetState(PatrolState.MovingToCenter); // Force enemy to center when aggroed
         }
+        else if(gameEvent == EGameEvent.GameOver)
+        {
+            currentTarget = player;
+            rb.linearVelocity = Vector3.one;
+            multiplierSpeed = eventMultiplerSpeed * 1.5f;
+            SetState(PatrolState.GameOver);
+        }
     }
 
     /// <summary>
@@ -271,7 +287,8 @@ public class Enemy : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2f / multiplierSpeed);
-            if (!isAmbientSoundMuted && (GameManager.Instance == null || !GameManager.Instance.IsInteractionBlocked))
+            if ((!isAmbientSoundMuted && (GameManager.Instance == null || !GameManager.Instance.IsInteractionBlocked)) 
+            || currentState == PatrolState.GameOver)
             {
                 AudioManager.Instance.PlayOneShot(ambientAudioData, transform.position);
             }

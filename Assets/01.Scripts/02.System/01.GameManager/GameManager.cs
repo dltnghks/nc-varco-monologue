@@ -167,7 +167,8 @@ public class GameManager : MonoBehaviour
                 };
                 HandleDefaultEvent(eventKey, onGameEndDialogueFinished);
                 break;
-
+            case EGameEvent.GameOver:
+                break;
             default:
                 // For all other events, just play their dialogue.
                 HandleDefaultEvent(eventKey);
